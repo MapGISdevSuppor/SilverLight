@@ -1,0 +1,884 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{75FD6D0E-D835-4AF3-9F1D-A1AC42DF6013}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZDIMSDemo</RootNamespace>
+    <AssemblyName>ZDIMSDemo</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>zh-Hans</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>ZDIMSDemo.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>ZDIMSDemo.App</SilverlightAppEntry>
+    <TestPageFileName>ZDIMSDemoTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="agTweener">
+      <HintPath>..\..\bin\agTweener.dll</HintPath>
+    </Reference>
+    <Reference Include="EasySL.Controls">
+      <HintPath>..\..\bin\EasySL.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="ScatterView">
+      <HintPath>..\..\bin\ScatterView.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Toolkit.Internals, Version=4.0.5.0, Culture=neutral, PublicKeyToken=2c5c654d367bf4a7" />
+    <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="wmtLibrarys.Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\wmtLibrarys.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="ZDIMS1.0">
+      <HintPath>..\..\..\..\ZDIMS\SilverlightLib\ZDIMS1.0.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseUserControl.cs" />
+    <Compile Include="Controls\BinClass.cs" />
+    <Compile Include="Controls\BufferAnalyse.xaml.cs">
+      <DependentUpon>BufferAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BusAnalyse.xaml.cs">
+      <DependentUpon>BusAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Chart.xaml.cs">
+      <DependentUpon>Chart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ClipAnalyse.xaml.cs">
+      <DependentUpon>ClipAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Comm\BusRoad.cs" />
+    <Compile Include="Controls\Comm\IFeatureStyleEditor.cs" />
+    <Compile Include="Controls\Comm\LineStyle.xaml.cs">
+      <DependentUpon>LineStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Comm\PointStyle.xaml.cs">
+      <DependentUpon>PointStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Comm\PolygonStyle.xaml.cs">
+      <DependentUpon>PolygonStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FishEyeMenu\FishEyeMenuH.cs" />
+    <Compile Include="Controls\FishEyeMenu\FishEyeMenuV.cs" />
+    <Compile Include="Controls\FishEyeMenu\MapgisMainMenu.cs" />
+    <Compile Include="Controls\FishEyeMenu\MapgisToolSubMenu.cs" />
+    <Compile Include="Controls\FloatTreeView.xaml.cs">
+      <DependentUpon>FloatTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GPSSample.xaml.cs">
+      <DependentUpon>GPSSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Layer\LayerConditionInput.xaml.cs">
+      <DependentUpon>LayerConditionInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Layer\LayerDataViewer.xaml.cs">
+      <DependentUpon>LayerDataViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Layer\LayerDisplaySet.xaml.cs">
+      <DependentUpon>LayerDisplaySet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Layer\LayerEditor.xaml.cs">
+      <DependentUpon>LayerEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Layer\ToolbarByLayer.xaml.cs">
+      <DependentUpon>ToolbarByLayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Layer\LayerTopAnalyse.xaml.cs">
+      <DependentUpon>LayerTopAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Magnifier.cs" />
+    <Compile Include="Controls\FishEyeMenu\MainMenuFunEnum.cs" />
+    <Compile Include="Controls\MapDoc\ConditionInput.xaml.cs">
+      <DependentUpon>ConditionInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IMSCatalog.cs" />
+    <Compile Include="Controls\LayerStateManager.cs" />
+    <Compile Include="Controls\MapDoc\DisplaySet.xaml.cs">
+      <DependentUpon>DisplaySet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MapDoc\MapDocDataViewer.xaml.cs">
+      <DependentUpon>MapDocDataViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MapDocDataViewerOld.xaml.cs">
+      <DependentUpon>MapDocDataViewerOld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MapDoc\MapDocEditor.xaml.cs">
+      <DependentUpon>MapDocEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MapDoc\TopAnalyse.xaml.cs">
+      <DependentUpon>TopAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MarkerEditer.xaml.cs">
+      <DependentUpon>MarkerEditer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Measure.xaml.cs">
+      <DependentUpon>Measure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MyProgressBar.xaml.cs">
+      <DependentUpon>MyProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MapDoc\ToolbarByMapDoc.xaml.cs">
+      <DependentUpon>ToolbarByMapDoc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NavigationBar.xaml.cs">
+      <DependentUpon>NavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\NavigationPanel.cs" />
+    <Compile Include="Controls\NetAnalyse.xaml.cs">
+      <DependentUpon>NetAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\OverLayAnalyse.xaml.cs">
+      <DependentUpon>OverLayAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PositionInfo.xaml.cs">
+      <DependentUpon>PositionInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Project.xaml.cs">
+      <DependentUpon>Project.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Scale.xaml.cs">
+      <DependentUpon>Scale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Toolbar.xaml.cs">
+      <DependentUpon>Toolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OGCDemo.xaml.cs">
+      <DependentUpon>OGCDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls\Shadow.xaml.cs">
+      <DependentUpon>Shadow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchDemo.xaml.cs">
+      <DependentUpon>SearchDemo.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="Controls\BufferAnalyse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BusAnalyse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Chart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ClipAnalyse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Comm\LineStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Comm\PointStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Comm\PolygonStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FloatTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\GPSSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Layer\LayerConditionInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Layer\LayerDataViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Layer\LayerDisplaySet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Layer\LayerEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Layer\ToolbarByLayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Layer\LayerTopAnalyse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\MapDoc\ConditionInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MapDoc\DisplaySet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MapDoc\MapDocDataViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MapDocDataViewerOld.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MapDoc\MapDocEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MapDoc\TopAnalyse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\MarkerEditer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Measure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MyProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MapDoc\ToolbarByMapDoc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\NavigationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\NetAnalyse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\OverLayAnalyse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PositionInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Project.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Scale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Toolbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OGCDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Shadow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controls\Comm\.svn\all-wcprops" />
+    <None Include="Controls\Comm\.svn\entries" />
+    <None Include="Controls\Comm\.svn\text-base\BusRoad.cs.svn-base" />
+    <None Include="Controls\Comm\.svn\text-base\IFeatureStyleEditor.cs.svn-base" />
+    <None Include="Controls\Comm\.svn\text-base\LineStyle.xaml.cs.svn-base" />
+    <None Include="Controls\Comm\.svn\text-base\LineStyle.xaml.svn-base" />
+    <None Include="Controls\Comm\.svn\text-base\PointStyle.xaml.cs.svn-base" />
+    <None Include="Controls\Comm\.svn\text-base\PointStyle.xaml.svn-base" />
+    <None Include="Controls\Comm\.svn\text-base\PolygonStyle.xaml.cs.svn-base" />
+    <None Include="Controls\Comm\.svn\text-base\PolygonStyle.xaml.svn-base" />
+    <None Include="Controls\FishEyeMenu\.svn\all-wcprops" />
+    <None Include="Controls\FishEyeMenu\.svn\entries" />
+    <None Include="Controls\FishEyeMenu\.svn\text-base\FishEyeMenuH.cs.svn-base" />
+    <None Include="Controls\FishEyeMenu\.svn\text-base\FishEyeMenuV.cs.svn-base" />
+    <None Include="Controls\FishEyeMenu\.svn\text-base\MainMenuFunEnum.cs.svn-base" />
+    <None Include="Controls\FishEyeMenu\.svn\text-base\MapgisMainMenu.cs.svn-base" />
+    <None Include="Controls\FishEyeMenu\.svn\text-base\MapgisToolSubMenu.cs.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\all-wcprops" />
+    <None Include="Controls\FishEyeMenu\images\.svn\entries" />
+    <None Include="Controls\FishEyeMenu\images\.svn\prop-base\image1.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\prop-base\image2.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\prop-base\image3.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\prop-base\image4.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\prop-base\image5.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\prop-base\image6.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\prop-base\image7.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\text-base\image1.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\text-base\image2.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\text-base\image3.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\text-base\image4.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\text-base\image5.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\text-base\image6.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\.svn\text-base\image7.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\.svn\all-wcprops" />
+    <None Include="Controls\FishEyeMenu\images\widget\.svn\entries" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\all-wcprops" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\entries" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\prop-base\btn_17.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\prop-base\btn_18.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\prop-base\btn_19.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\prop-base\btn_20.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\prop-base\btn_21.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\prop-base\btn_22.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\prop-base\btn_23.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\text-base\btn_17.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\text-base\btn_18.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\text-base\btn_19.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\text-base\btn_20.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\text-base\btn_21.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\text-base\btn_22.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\text-base\btn_23.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\all-wcprops" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\entries" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\prop-base\btn_01.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\prop-base\btn_02.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\prop-base\btn_03.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\prop-base\btn_04.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\prop-base\btn_05.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\prop-base\btn_06.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\prop-base\p8.jpg.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\prop-base\tool_6.PNG.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\prop-base\tool_7.gif.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\text-base\btn_01.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\text-base\btn_02.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\text-base\btn_03.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\text-base\btn_04.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\text-base\btn_05.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\text-base\btn_06.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\text-base\p8.jpg.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\text-base\tool_6.PNG.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Display\.svn\text-base\tool_7.gif.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Edit\.svn\all-wcprops" />
+    <None Include="Controls\FishEyeMenu\images\widget\Edit\.svn\entries" />
+    <None Include="Controls\FishEyeMenu\images\widget\Edit\.svn\prop-base\tool_21.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Edit\.svn\prop-base\tool_22.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Edit\.svn\prop-base\tool_23.gif.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Edit\.svn\text-base\tool_21.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Edit\.svn\text-base\tool_22.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Edit\.svn\text-base\tool_23.gif.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\all-wcprops" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\entries" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\prop-base\btn_06.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\prop-base\btn_07.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\prop-base\btn_08.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\prop-base\btn_09.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\prop-base\btn_10.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\prop-base\btn_11.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\prop-base\btn_12.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\prop-base\btn_13.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\prop-base\btn_14.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\prop-base\btn_15.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\prop-base\btn_16.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\text-base\btn_06.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\text-base\btn_07.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\text-base\btn_08.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\text-base\btn_09.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\text-base\btn_10.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\text-base\btn_11.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\text-base\btn_12.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\text-base\btn_13.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\text-base\btn_14.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\text-base\btn_15.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\Select\.svn\text-base\btn_16.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\View\.svn\all-wcprops" />
+    <None Include="Controls\FishEyeMenu\images\widget\View\.svn\entries" />
+    <None Include="Controls\FishEyeMenu\images\widget\View\.svn\prop-base\btn_21.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\View\.svn\prop-base\btn_24.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\View\.svn\prop-base\btn_28.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\View\.svn\prop-base\btn_32.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\View\.svn\prop-base\btn_33.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\View\.svn\text-base\btn_21.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\View\.svn\text-base\btn_24.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\View\.svn\text-base\btn_28.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\View\.svn\text-base\btn_32.png.svn-base" />
+    <None Include="Controls\FishEyeMenu\images\widget\View\.svn\text-base\btn_33.png.svn-base" />
+    <None Include="images\navigator\.svn\all-wcprops" />
+    <None Include="images\navigator\.svn\entries" />
+    <None Include="images\navigator\.svn\prop-base\add.png.svn-base" />
+    <None Include="images\navigator\.svn\prop-base\down.png.svn-base" />
+    <None Include="images\navigator\.svn\prop-base\left.png.svn-base" />
+    <None Include="images\navigator\.svn\prop-base\m.png.svn-base" />
+    <None Include="images\navigator\.svn\prop-base\refresh.png.svn-base" />
+    <None Include="images\navigator\.svn\prop-base\right.png.svn-base" />
+    <None Include="images\navigator\.svn\prop-base\sub.png.svn-base" />
+    <None Include="images\navigator\.svn\prop-base\T.png.svn-base" />
+    <None Include="images\navigator\.svn\prop-base\up.png.svn-base" />
+    <None Include="images\navigator\.svn\text-base\add.png.svn-base" />
+    <None Include="images\navigator\.svn\text-base\down.png.svn-base" />
+    <None Include="images\navigator\.svn\text-base\left.png.svn-base" />
+    <None Include="images\navigator\.svn\text-base\m.png.svn-base" />
+    <None Include="images\navigator\.svn\text-base\refresh.png.svn-base" />
+    <None Include="images\navigator\.svn\text-base\right.png.svn-base" />
+    <None Include="images\navigator\.svn\text-base\sub.png.svn-base" />
+    <None Include="images\navigator\.svn\text-base\T.png.svn-base" />
+    <None Include="images\navigator\.svn\text-base\up.png.svn-base" />
+    <None Include="images\widget\.svn\all-wcprops" />
+    <None Include="images\widget\.svn\entries" />
+    <None Include="images\widget\Anlysis\.svn\all-wcprops" />
+    <None Include="images\widget\Anlysis\.svn\entries" />
+    <None Include="images\widget\Anlysis\.svn\prop-base\23圆裁剪.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\prop-base\24多边形裁剪.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\prop-base\25拓扑分析.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\prop-base\26叠加分析.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\prop-base\27路径分析.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\prop-base\28线缓冲区分析.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\prop-base\29区缓冲分析.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\prop-base\30投影分析.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\prop-base\31公交换乘.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\prop-base\32网络分析.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\text-base\23圆裁剪.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\text-base\24多边形裁剪.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\text-base\25拓扑分析.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\text-base\26叠加分析.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\text-base\27路径分析.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\text-base\28线缓冲区分析.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\text-base\29区缓冲分析.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\text-base\30投影分析.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\text-base\31公交换乘.png.svn-base" />
+    <None Include="images\widget\Anlysis\.svn\text-base\32网络分析.png.svn-base" />
+    <None Include="images\widget\Display\.svn\all-wcprops" />
+    <None Include="images\widget\Display\.svn\entries" />
+    <None Include="images\widget\Display\.svn\prop-base\1放大.png.svn-base" />
+    <None Include="images\widget\Display\.svn\prop-base\2缩小.png.svn-base" />
+    <None Include="images\widget\Display\.svn\prop-base\3移动.png.svn-base" />
+    <None Include="images\widget\Display\.svn\prop-base\4复位.png.svn-base" />
+    <None Include="images\widget\Display\.svn\prop-base\5刷新.png.svn-base" />
+    <None Include="images\widget\Display\.svn\prop-base\6鹰眼.png.svn-base" />
+    <None Include="images\widget\Display\.svn\prop-base\7放大镜.png.svn-base" />
+    <None Include="images\widget\Display\.svn\prop-base\8标注.png.svn-base" />
+    <None Include="images\widget\Display\.svn\text-base\1放大.png.svn-base" />
+    <None Include="images\widget\Display\.svn\text-base\2缩小.png.svn-base" />
+    <None Include="images\widget\Display\.svn\text-base\3移动.png.svn-base" />
+    <None Include="images\widget\Display\.svn\text-base\4复位.png.svn-base" />
+    <None Include="images\widget\Display\.svn\text-base\5刷新.png.svn-base" />
+    <None Include="images\widget\Display\.svn\text-base\6鹰眼.png.svn-base" />
+    <None Include="images\widget\Display\.svn\text-base\7放大镜.png.svn-base" />
+    <None Include="images\widget\Display\.svn\text-base\8标注.png.svn-base" />
+    <None Include="images\widget\Edit\.svn\all-wcprops" />
+    <None Include="images\widget\Edit\.svn\entries" />
+    <None Include="images\widget\Edit\.svn\prop-base\20添加点要素.png.svn-base" />
+    <None Include="images\widget\Edit\.svn\prop-base\21添加线要素.png.svn-base" />
+    <None Include="images\widget\Edit\.svn\prop-base\22添加区要素.png.svn-base" />
+    <None Include="images\widget\Edit\.svn\text-base\20添加点要素.png.svn-base" />
+    <None Include="images\widget\Edit\.svn\text-base\21添加线要素.png.svn-base" />
+    <None Include="images\widget\Edit\.svn\text-base\22添加区要素.png.svn-base" />
+    <None Include="images\widget\MainMenu\.svn\all-wcprops" />
+    <None Include="images\widget\MainMenu\.svn\entries" />
+    <None Include="images\widget\MainMenu\.svn\prop-base\Anlysis.png.svn-base" />
+    <None Include="images\widget\MainMenu\.svn\prop-base\DataTree.png.svn-base" />
+    <None Include="images\widget\MainMenu\.svn\prop-base\Display.png.svn-base" />
+    <None Include="images\widget\MainMenu\.svn\prop-base\Edit.png.svn-base" />
+    <None Include="images\widget\MainMenu\.svn\prop-base\Select.png.svn-base" />
+    <None Include="images\widget\MainMenu\.svn\prop-base\View.png.svn-base" />
+    <None Include="images\widget\MainMenu\.svn\text-base\Anlysis.png.svn-base" />
+    <None Include="images\widget\MainMenu\.svn\text-base\DataTree.png.svn-base" />
+    <None Include="images\widget\MainMenu\.svn\text-base\Display.png.svn-base" />
+    <None Include="images\widget\MainMenu\.svn\text-base\Edit.png.svn-base" />
+    <None Include="images\widget\MainMenu\.svn\text-base\Select.png.svn-base" />
+    <None Include="images\widget\MainMenu\.svn\text-base\View.png.svn-base" />
+    <None Include="images\widget\Select\.svn\all-wcprops" />
+    <None Include="images\widget\Select\.svn\entries" />
+    <None Include="images\widget\Select\.svn\prop-base\10拉框查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\prop-base\11画圆查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\prop-base\12画线查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\prop-base\13多边形查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\prop-base\14属性条件查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\prop-base\15点击条件查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\prop-base\16拉框条件查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\prop-base\17画圆条件查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\prop-base\18画线条件查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\prop-base\19多边形条件查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\prop-base\9点击查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\text-base\10拉框查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\text-base\11画圆查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\text-base\12画线查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\text-base\13多边形查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\text-base\14属性条件查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\text-base\15点击条件查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\text-base\16拉框条件查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\text-base\17画圆条件查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\text-base\18画线条件查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\text-base\19多边形条件查询.png.svn-base" />
+    <None Include="images\widget\Select\.svn\text-base\9点击查询.png.svn-base" />
+    <None Include="images\widget\View\.svn\all-wcprops" />
+    <None Include="images\widget\View\.svn\entries" />
+    <None Include="images\widget\View\.svn\prop-base\33导航控件.png.svn-base" />
+    <None Include="images\widget\View\.svn\prop-base\35位置信息.png.svn-base" />
+    <None Include="images\widget\View\.svn\prop-base\41显示设置.png.svn-base" />
+    <None Include="images\widget\View\.svn\prop-base\42测量.png.svn-base" />
+    <None Include="images\widget\View\.svn\prop-base\43GPS.png.svn-base" />
+    <None Include="images\widget\View\.svn\text-base\33导航控件.png.svn-base" />
+    <None Include="images\widget\View\.svn\text-base\35位置信息.png.svn-base" />
+    <None Include="images\widget\View\.svn\text-base\41显示设置.png.svn-base" />
+    <None Include="images\widget\View\.svn\text-base\42测量.png.svn-base" />
+    <None Include="images\widget\View\.svn\text-base\43GPS.png.svn-base" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Themes\.svn\all-wcprops" />
+    <None Include="Themes\.svn\entries" />
+    <None Include="Themes\.svn\text-base\Generic.xaml.svn-base" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\globe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\navigator\add.png" />
+    <Resource Include="images\navigator\down.png" />
+    <Resource Include="images\navigator\left.png" />
+    <Resource Include="images\navigator\m.png" />
+    <Resource Include="images\navigator\refresh.png" />
+    <Resource Include="images\navigator\right.png" />
+    <Resource Include="images\navigator\sub.png" />
+    <Resource Include="images\navigator\T.png" />
+    <Resource Include="images\navigator\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\alert_icon.png" />
+    <Resource Include="images\button_go.png" />
+    <Resource Include="images\button_go_click.png" />
+    <Resource Include="images\button_go_hover.png" />
+    <Resource Include="images\do_add.png" />
+    <Resource Include="images\do_delete.png" />
+    <Resource Include="images\do_modify.png" />
+    <Resource Include="images\do_refresh.png" />
+    <Resource Include="images\do_split.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\layer.png" />
+    <Resource Include="images\leftHide_icon.png" />
+    <Resource Include="images\leftShow_icon.png" />
+    <Resource Include="images\leftTitle_bg.png" />
+    <Resource Include="images\loading.png" />
+    <Resource Include="images\logo.png" />
+    <Resource Include="images\rightTitle_bg.png" />
+    <Resource Include="images\topmenu_bg.png" />
+    <Resource Include="images\top_bg.png" />
+    <Resource Include="images\区.png" />
+    <Resource Include="images\点.png" />
+    <Resource Include="images\线.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\FishEyeMenu\images\image1.png" />
+    <Resource Include="Controls\FishEyeMenu\images\image2.png" />
+    <Resource Include="Controls\FishEyeMenu\images\image3.png" />
+    <Resource Include="Controls\FishEyeMenu\images\image4.png" />
+    <Resource Include="Controls\FishEyeMenu\images\image5.png" />
+    <Resource Include="Controls\FishEyeMenu\images\image6.png" />
+    <Resource Include="Controls\FishEyeMenu\images\image7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\FishEyeMenu\images\widget\Anlysis\btn_17.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Anlysis\btn_18.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Anlysis\btn_19.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Anlysis\btn_20.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Anlysis\btn_21.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Anlysis\btn_22.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Anlysis\btn_23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\FishEyeMenu\images\widget\Display\btn_01.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Display\btn_02.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Display\btn_03.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Display\btn_04.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Display\btn_05.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Display\btn_06.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Display\p8.jpg" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Display\tool_6.PNG" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Display\tool_7.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\FishEyeMenu\images\widget\Edit\tool_21.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Edit\tool_22.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Edit\tool_23.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\FishEyeMenu\images\widget\Select\btn_06.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Select\btn_07.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Select\btn_08.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Select\btn_09.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Select\btn_10.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Select\btn_11.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Select\btn_12.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Select\btn_13.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Select\btn_14.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Select\btn_15.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\Select\btn_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\FishEyeMenu\images\widget\View\btn_21.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\View\btn_24.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\View\btn_28.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\View\btn_32.png" />
+    <Resource Include="Controls\FishEyeMenu\images\widget\View\btn_33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\image7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\image4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\image5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\image6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\widget\Display\1放大.png" />
+    <Resource Include="images\widget\Display\2缩小.png" />
+    <Resource Include="images\widget\Display\3移动.png" />
+    <Resource Include="images\widget\Display\4复位.png" />
+    <Resource Include="images\widget\Display\5刷新.png" />
+    <Resource Include="images\widget\Display\6鹰眼.png" />
+    <Resource Include="images\widget\Display\7放大镜.png" />
+    <Resource Include="images\widget\Display\8标注.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\widget\Select\10拉框查询.png" />
+    <Resource Include="images\widget\Select\11画圆查询.png" />
+    <Resource Include="images\widget\Select\12画线查询.png" />
+    <Resource Include="images\widget\Select\13多边形查询.png" />
+    <Resource Include="images\widget\Select\14属性条件查询.png" />
+    <Resource Include="images\widget\Select\15点击条件查询.png" />
+    <Resource Include="images\widget\Select\16拉框条件查询.png" />
+    <Resource Include="images\widget\Select\17画圆条件查询.png" />
+    <Resource Include="images\widget\Select\18画线条件查询.png" />
+    <Resource Include="images\widget\Select\19多边形条件查询.png" />
+    <Resource Include="images\widget\Select\9点击查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\widget\Edit\20添加点要素.png" />
+    <Resource Include="images\widget\Edit\21添加线要素.png" />
+    <Resource Include="images\widget\Edit\22添加区要素.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\widget\Anlysis\23圆裁剪.png" />
+    <Resource Include="images\widget\Anlysis\24多边形裁剪.png" />
+    <Resource Include="images\widget\Anlysis\25拓扑分析.png" />
+    <Resource Include="images\widget\Anlysis\26叠加分析.png" />
+    <Resource Include="images\widget\Anlysis\27路径分析.png" />
+    <Resource Include="images\widget\Anlysis\28线缓冲区分析.png" />
+    <Resource Include="images\widget\Anlysis\29区缓冲分析.png" />
+    <Resource Include="images\widget\Anlysis\31公交换乘.png" />
+    <Resource Include="images\widget\Anlysis\32网络分析.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\widget\Anlysis\30投影分析.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\widget\View\33导航控件.png" />
+    <Resource Include="images\widget\View\35位置信息.png" />
+    <Resource Include="images\widget\View\41显示设置.png" />
+    <Resource Include="images\widget\View\42测量.png" />
+    <Resource Include="images\widget\View\43GPS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\widget\MainMenu\Display.png" />
+    <Resource Include="images\widget\MainMenu\Select.png" />
+    <Resource Include="images\widget\MainMenu\Anlysis.png" />
+    <Resource Include="images\widget\MainMenu\Edit.png" />
+    <Resource Include="images\widget\MainMenu\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\widget\MainMenu\DataTree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\Comm\.svn\prop-base\" />
+    <Folder Include="Controls\Comm\.svn\props\" />
+    <Folder Include="Controls\Comm\.svn\tmp\prop-base\" />
+    <Folder Include="Controls\Comm\.svn\tmp\props\" />
+    <Folder Include="Controls\Comm\.svn\tmp\text-base\" />
+    <Folder Include="Controls\FishEyeMenu\.svn\prop-base\" />
+    <Folder Include="Controls\FishEyeMenu\.svn\props\" />
+    <Folder Include="Controls\FishEyeMenu\.svn\tmp\prop-base\" />
+    <Folder Include="Controls\FishEyeMenu\.svn\tmp\props\" />
+    <Folder Include="Controls\FishEyeMenu\.svn\tmp\text-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\.svn\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\.svn\tmp\prop-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\.svn\tmp\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\.svn\tmp\text-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\.svn\prop-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\.svn\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\.svn\text-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\.svn\tmp\prop-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\.svn\tmp\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\.svn\tmp\text-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\tmp\prop-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\tmp\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Anlysis\.svn\tmp\text-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Display\.svn\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Display\.svn\tmp\prop-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Display\.svn\tmp\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Display\.svn\tmp\text-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Edit\.svn\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Edit\.svn\tmp\prop-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Edit\.svn\tmp\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Edit\.svn\tmp\text-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Select\.svn\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Select\.svn\tmp\prop-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Select\.svn\tmp\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\Select\.svn\tmp\text-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\View\.svn\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\View\.svn\tmp\prop-base\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\View\.svn\tmp\props\" />
+    <Folder Include="Controls\FishEyeMenu\images\widget\View\.svn\tmp\text-base\" />
+    <Folder Include="images\navigator\.svn\props\" />
+    <Folder Include="images\navigator\.svn\tmp\prop-base\" />
+    <Folder Include="images\navigator\.svn\tmp\props\" />
+    <Folder Include="images\navigator\.svn\tmp\text-base\" />
+    <Folder Include="images\widget\.svn\prop-base\" />
+    <Folder Include="images\widget\.svn\props\" />
+    <Folder Include="images\widget\.svn\text-base\" />
+    <Folder Include="images\widget\.svn\tmp\prop-base\" />
+    <Folder Include="images\widget\.svn\tmp\props\" />
+    <Folder Include="images\widget\.svn\tmp\text-base\" />
+    <Folder Include="images\widget\Anlysis\.svn\props\" />
+    <Folder Include="images\widget\Anlysis\.svn\tmp\prop-base\" />
+    <Folder Include="images\widget\Anlysis\.svn\tmp\props\" />
+    <Folder Include="images\widget\Anlysis\.svn\tmp\text-base\" />
+    <Folder Include="images\widget\Display\.svn\props\" />
+    <Folder Include="images\widget\Display\.svn\tmp\prop-base\" />
+    <Folder Include="images\widget\Display\.svn\tmp\props\" />
+    <Folder Include="images\widget\Display\.svn\tmp\text-base\" />
+    <Folder Include="images\widget\Edit\.svn\props\" />
+    <Folder Include="images\widget\Edit\.svn\tmp\prop-base\" />
+    <Folder Include="images\widget\Edit\.svn\tmp\props\" />
+    <Folder Include="images\widget\Edit\.svn\tmp\text-base\" />
+    <Folder Include="images\widget\MainMenu\.svn\props\" />
+    <Folder Include="images\widget\MainMenu\.svn\tmp\prop-base\" />
+    <Folder Include="images\widget\MainMenu\.svn\tmp\props\" />
+    <Folder Include="images\widget\MainMenu\.svn\tmp\text-base\" />
+    <Folder Include="images\widget\Select\.svn\props\" />
+    <Folder Include="images\widget\Select\.svn\tmp\prop-base\" />
+    <Folder Include="images\widget\Select\.svn\tmp\props\" />
+    <Folder Include="images\widget\Select\.svn\tmp\text-base\" />
+    <Folder Include="images\widget\View\.svn\props\" />
+    <Folder Include="images\widget\View\.svn\tmp\prop-base\" />
+    <Folder Include="images\widget\View\.svn\tmp\props\" />
+    <Folder Include="images\widget\View\.svn\tmp\text-base\" />
+    <Folder Include="Themes\.svn\prop-base\" />
+    <Folder Include="Themes\.svn\props\" />
+    <Folder Include="Themes\.svn\tmp\prop-base\" />
+    <Folder Include="Themes\.svn\tmp\props\" />
+    <Folder Include="Themes\.svn\tmp\text-base\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

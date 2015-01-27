@@ -1,0 +1,34 @@
+﻿显示矢量地图文档: 
+
+一、示例功能： 
+
+    该示例实现一个简单的矢量地图加载功能，显示中国地图。 
+
+二、实现说明： 
+
+    1、数据：使用中国地图的矢量地图文档（china.Map），该矢量数据服务在GIS服务器中发布。
+
+    2、实现步骤： 
+
+   （1）先在设计面板中拖入一个地图容器控件（IMSMap）； 
+
+   （2）再在地图容器中拖入一个矢量地图文档图层控件（VectorMapDoc），设置相应参数，加载中国地图。 
+
+    3、参数说明
+
+    IMSMap参数： 
+    
+       EnableZoomOutMinLevel：是否允许地图放缩至最小级数 
+
+       RestoreCenterX，RestoreCenterY：复位时的中心点x、y轴坐标 
+
+       XMaxMap,XMinMap,YMaxMap,YMinMap：地图的逻辑范围 
+
+    VectorMapDoc参数：
+
+       MapDocName：要加载的矢量地图文档名称 
+
+       ServerAddress：要加载的瓦片数据服务地址(本示例在页面加载的时候赋值)  
+
+注：详细说明请参见MapGIS IGServer for Silverlight的API手册。
+ 

@@ -1,0 +1,30 @@
+﻿<navigation:Page x:Class="SilverlightDemo.Demo.TheMaticDemo" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:my="clr-namespace:ZDIMS.Map;assembly=ZDIMS1.0" 
+             xmlns:my1="clr-namespace:ZDIMSDemo.Controls"
+             xmlns:my2="clr-namespace:SilverlightDemo.components" 
+             xmlns:my3="clr-namespace:ZDIMS.Drawing;assembly=ZDIMS1.0"
+           Title="统计图"
+               Unloaded="unView" Loaded="UserControl_Loaded">
+    <Grid x:Name="LayoutRoot">
+        <my:IMSMap Name="iMSMap1" Margin="10,10" Canvas.ZIndex="0" 
+                       HorizontalAlignment="Left" VerticalAlignment="Top"
+                   LevelNum="7" InitShowLevel="3" EnableZoomOutMinLevel="False"
+                   RestoreCenterX="-4.046456136786304" RestoreCenterY="15.440117663467205">
+            <my:TileLayer Name="tileLayer1" Canvas.Left="82" Canvas.Top="58" Height="100" Width="200" 
+                          AutoGetMapInfo="True" HdfName="world.HDF"/>
+            <my3:MarkLayer Height="100" HorizontalAlignment="Left" Margin="38,34,0,0" Name="markLayer1" VerticalAlignment="Top" Width="200" />
+        </my:IMSMap>
+        <Button Name="addMatic" Content="添加统计图" Canvas.ZIndex="2" 
+                Margin="0,20,130,0" HorizontalAlignment="Right"  VerticalAlignment="Top"  Height="23" Width="75" 
+                Click="addMatic_Click"/>
+        <Button Name="SandH" Content="Show Form" Canvas.ZIndex="2" 
+                Margin="0,20,50,0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="23" Width="75"
+                Click="SandH_Click"/>
+    </Grid>
+</navigation:Page>

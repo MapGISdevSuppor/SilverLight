@@ -1,0 +1,159 @@
+﻿<navigation:Page x:Class="SilverlightDemo.DrawGraphics" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:my="clr-namespace:ZDIMS.Map;assembly=ZDIMS1.0"  
+           xmlns:my1="clr-namespace:ZDIMS.OtherMap;assembly=ZDIMS1.0"
+           xmlns:my2="clr-namespace:ZDIMS.Drawing;assembly=ZDIMS1.0"
+           xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+           xmlns:my3="clr-namespace:ZdimsExtends.util;assembly=ZdimsExtends"
+           d:DesignWidth="640" d:DesignHeight="480"
+           xmlns:fish="clr-namespace:FishEyeSL;assembly=FishEyeSL" xmlns:my4="clr-namespace:CurveMenuPanel;assembly=CurveMenuPanel" 
+           Title="绘制图形"
+           Loaded="UserControl_Loaded">
+    <Grid x:Name="LayoutRoot" Background="White">
+        
+        <!--添加地图容器 -->
+        <my:IMSMap  Name="iMSMap1"   XMaxMap="188.619962766591" XMinMap="-181.18399779022" YMaxMap="279.069894232288" YMinMap="-90.7340663245236"   HorizontalAlignment="Left" InitShowLevel="3" LevelNum="8"  EnableZoomOutMinLevel="False"  RestoreCenterX="12.99919517012924" RestoreCenterY="30.671057152220655" >
+            <!--添加瓦片图层 -->
+            <my:TileLayer  HdfName="world.hdf" Margin="0"   Name="tileLayer1"></my:TileLayer>
+            <!--添加标注层-->
+            <my2:MarkLayer Margin="0"  Name="markLayer" >
+            </my2:MarkLayer>
+            <!--添加绘图层-->
+            <my2:GraphicsLayer Margin="0" Name="graphicsLayer">
+            </my2:GraphicsLayer>
+        </my:IMSMap>
+        <Grid Background="Transparent" Canvas.ZIndex="2000" Height="55" HorizontalAlignment="Center" VerticalAlignment="Top" Width="440" Margin="100,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55" />
+                <ColumnDefinition Width="55" />
+                <ColumnDefinition Width="55" />
+                <ColumnDefinition Width="55" />
+                <ColumnDefinition Width="55" />
+                <ColumnDefinition Width="55" />
+                <ColumnDefinition Width="55" />
+                <ColumnDefinition Width="55" />
+            </Grid.ColumnDefinitions>
+            <!---标注点-->
+            <ComboBox  Grid.Column="0"  SelectedIndex="0" DropDownClosed="DrawPnt_DropDownClosed" Margin="0" Name="DrawPnt" >
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="圆" Source="/images/shape/circle.png" Stretch="None"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="菱形" Stretch="None" Source="/images/shape/diamond.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="扇形" Stretch="None" Source="/images/shape/sector.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="矩形" Stretch="None" Source="/images/shape/square.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image Tag="五角星"  Stretch="None" Source="/images/shape/star.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image Tag="三角形" Stretch="None" Source="/images/shape/triangle.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+            </ComboBox>
+            <!---线-->
+            <ComboBox Grid.Column="1"   SelectedIndex="0"  Margin="0" Name="DrawLine"  DropDownClosed="DrawLine_DropDownClosed">
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="Soild" Stretch="None" Source="/images/shape/drawLine.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="Dash" Stretch="None" Source="/images/shape/dash.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="DashDot" Stretch="None" Source="/images/shape/dashdot.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="Dot" Source="/images/shape/dot.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image Tag="DashDotDot" Stretch="None" Source="/images/shape/dashdotdot.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+            </ComboBox>
+            <!---填充多边形-->
+            <ComboBox   SelectedIndex="0"  Grid.Column="2"  DropDownClosed="DrawPolygon_DropDownClosed" Margin="0" Name="DrawPolygon" >
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="竖线" Stretch="None" Source="/images/polygon/vertical.png" ></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="颜色填充" Stretch="None" Source="/images/polygon/polygonSolid.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="横线" Stretch="None" Source="/images/polygon/horizontal.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="反斜线" Stretch="None" Source="/images/polygon/backslash.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image Tag="斜线" Stretch="None" Source="/images/polygon/slash.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image Tag="网格" Stretch="None" Source="/images/polygon/cross.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+            </ComboBox>
+            <!---任意线-->
+            <Button Name="DrawFreeLine"  Click="DrawFreeLine_Click"  Grid.Column="5" Margin="0">
+                <Image HorizontalAlignment="Center" VerticalAlignment="Center" Source="/images/free/drawFreeLine.png" Stretch="None" Height="55" Width="55" ></Image>
+            </Button>
+            <!---任意区-->
+            <Button Name="DrawFreePolygon"  Click="DrawFreePolygon_Click" Grid.Column="6" Margin="0">
+                <Image Height="55" Width="55" HorizontalAlignment="Center" VerticalAlignment="Center"   Source="/images/free/drawFreePolygon.png" Stretch="None"></Image>
+            </Button>
+            <!---矩形-->
+            <Button Name="DrawRect"  Click="DrawRect_Click" Grid.Column="3" Margin="0">
+                <Image  Height="55" Width="55" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/images/polygon/drawRect.png" Stretch="None" ></Image>
+            </Button>
+            <!---圆形-->
+            <Button Name="DrawCircle" Click="DrawCircle_Click"  Grid.Column="4" Margin="0">
+                <Image Height="55" Width="55" HorizontalAlignment="Center" VerticalAlignment="Center"  Source="/images/polygon/drawCircle.png" Stretch="None"></Image>
+            </Button>
+            <!---清除-->
+            <Button Name="Clear"  Click="Clear_Click" Grid.Column="7" Margin="0">
+                <Image Height="55" Width="55" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/images/clear1.png" Stretch="None" Grid.Column="7"></Image>
+            </Button>
+
+        </Grid>
+    </Grid>
+</navigation:Page>

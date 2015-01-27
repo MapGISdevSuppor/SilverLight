@@ -1,0 +1,22 @@
+﻿<uc:BaseUserControl x:Class="ZDIMSDemo.Controls.BufferAnalyse"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+                    xmlns:uc="clr-namespace:ZDIMSDemo.Controls"
+    d:DesignHeight="183" d:DesignWidth="321" xmlns:my="clr-namespace:EasySL.Controls;assembly=EasySL.Controls" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+
+    <my:DialogPanel Height="183" Name="dialogPanel1" Width="321" Title="缓冲区分析" DragEnable="True" Background="White">
+        <Canvas Height="145" Width="313" Background="White">
+            <sdk:Label Content="缓冲分析半径:"  Width="80" Height="26" Canvas.Left="42" Canvas.Top="8" />
+            <sdk:Label Canvas.Left="47" Canvas.Top="71" Height="23" Name="label1" Width="64" Content="结果图层名:" />
+            <Button Canvas.Left="65" Canvas.Top="109" Content="提交" Height="23" Name="buffer" Width="62" Click="buffer_Click" />
+            <TextBox Canvas.Left="142" Canvas.Top="9" Height="23" Name="bufferRadius" Width="120" Text="0.003" />
+            <sdk:Label Canvas.Left="41" Canvas.Top="39" Content="缓冲跟踪半径:" Height="26" Width="80" />
+            <TextBox Canvas.Left="142" Canvas.Top="40" Height="23" Name="traceRadius" Width="120"  Text="0.002"/>
+            <TextBox Canvas.Left="142" Canvas.Top="70" Height="23" Name="resultLayerName" Width="120"  Text="bufferResult"/>
+            <Button Canvas.Left="173" Canvas.Top="109" Content="取消" Height="23" Name="cancle" Width="62" Click="cancle_Click" />
+        </Canvas>
+    </my:DialogPanel>
+</uc:BaseUserControl>

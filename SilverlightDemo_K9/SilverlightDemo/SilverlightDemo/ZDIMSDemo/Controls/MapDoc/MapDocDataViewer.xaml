@@ -1,0 +1,32 @@
+﻿<uc:BaseUserControl x:Class="ZDIMSDemo.Controls.MapDoc.MapDocDataViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:uc="clr-namespace:ZDIMSDemo.Controls"
+    d:DesignHeight="320" d:DesignWidth="515" xmlns:my="clr-namespace:EasySL.Controls;assembly=EasySL.Controls" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit">
+
+    <my:DialogPanel Height="320" HorizontalAlignment="Left" VerticalAlignment="Top" Width="515"
+                     x:Name="myDialog" Background="White" Title="矢量文档的查询结果" DragEnable="True" >
+        <Grid x:Name="LayoutRoot" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <sdk:DataPager Height="28" Name="dataPager1" Source="{Binding}" DisplayMode="FirstLastPreviousNextNumeric" NumericButtonCount="10" AutoEllipsis="True"  Width="505" HorizontalContentAlignment="Center" Margin="0,0,0,2" />
+            <controls:TabControl Grid.Row="1" Height="255" Name="tabControl1" Width="505">
+                <!--<controls:TabItem Header="tabItem1" Name="tabItem1">
+                <Grid>
+                    <sdk:DataGrid Height="221" HorizontalAlignment="Left" Name="dataGrid1" VerticalAlignment="Top" Width="493" />
+                </Grid>
+            </controls:TabItem>-->
+            </controls:TabControl>
+        </Grid>
+    </my:DialogPanel>
+</uc:BaseUserControl>

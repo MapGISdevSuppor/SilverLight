@@ -1,0 +1,33 @@
+﻿地图基本操作: 
+
+一、示例功能： 
+
+    该示例实现地图的基本操作功能，包括地图的放大、缩小、移动、复位、更新。 
+
+二、实现说明： 
+
+    1、数据：使用世界地图的瓦片数据（world.HDF），已在GIS服务器中发布。
+
+    2、实现步骤： 
+
+   （1）先在设计面板中拖入一个地图容器控件（IMSMap）； 
+
+   （2）再在地图容器中拖入一个瓦片图层控件（TileLayer），设置相应参数，加载世界地图； 
+
+   （3）添加自定义功能控制按钮，在该按钮中通过调用地图容器的相应方法实现地图的放大、缩小、移动、复位、更新功能。 
+
+    3、参数说明
+
+    OperType方法的参数：
+ 
+       IMSOperType.ZoomIn：放大 
+
+       IMSOperType.ZoomOut：缩小 
+
+       IMSOperType.Drag：移动 
+
+       IMSOperType.Refresh方法：刷新 
+
+       IMSOperType.Restore方法：复位 
+
+注：详细说明请参见MapGIS IGServer for Silverlight的API手册。

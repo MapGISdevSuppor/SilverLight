@@ -1,0 +1,47 @@
+﻿<uc:BaseUserControl x:Class="ZDIMSDemo.Controls.MarkerEditer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uc="clr-namespace:ZDIMSDemo.Controls"
+    xmlns:my="clr-namespace:EasySL.Controls;assembly=EasySL.Controls"
+    mc:Ignorable="d"
+    d:DesignHeight="250" d:DesignWidth="400" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" Loaded="BaseUserControl_Loaded">
+    <my:DialogPanel Name="dialog" Title="标注管理"  DragEnable="True" Background="White">
+        <Grid x:Name="LayoutRoot" Background="White" Width="390" Height="210">
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="122,10,0,0" Name="textBox_markerx" VerticalAlignment="Top" Width="165" DataContext="{Binding}" TextChanged="textBox_markerx_TextChanged" />
+            <TextBox Height="23" HorizontalAlignment="Left" Margin="121,48,0,0" Name="textBox_markery" VerticalAlignment="Top" Width="166" TextChanged="textBox_markerx_TextChanged" />
+            <Border BorderBrush="Silver" BorderThickness="1" Height="50" HorizontalAlignment="Left" Margin="31,136,0,0" Name="border1" VerticalAlignment="Top" Width="341">
+                <Grid Height="Auto" Name="grid1" Width="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Row="0" Cursor="Hand"  Grid.Column="0" Source="/images/mark/marker2/image2/p1.png" MouseLeftButtonDown="image_marker1_MouseLeftButtonDown"   Name="image_marker1" Stretch="Fill"   />
+                    <Image  Grid.Row="0" Cursor="Hand"  Grid.Column="1" Source="/images/mark/marker2/image2/p2.png" MouseLeftButtonDown="image_marker1_MouseLeftButtonDown"   Name="image_marker2" Stretch="Fill"   />
+                    <Image  Grid.Row="0" Cursor="Hand"  Grid.Column="2" Source="/images/mark/marker2/image2/p3.png" MouseLeftButtonDown="image_marker1_MouseLeftButtonDown"   Name="image_marker3" Stretch="Fill"   />
+                    <Image  Grid.Row="0" Cursor="Hand"  Grid.Column="3" Source="/images/mark/marker2/image2/p4.png" MouseLeftButtonDown="image_marker1_MouseLeftButtonDown"   Name="image_marker4" Stretch="Fill"   />
+                    <Image  Grid.Row="0" Cursor="Hand"  Grid.Column="4" Source="/images/mark/marker2/image2/p5.png" MouseLeftButtonDown="image_marker1_MouseLeftButtonDown"   Name="image_marker5" Stretch="Fill"   />
+                    <Image  Grid.Row="0" Cursor="Hand"  Grid.Column="5" Source="/images/mark/marker2/image2/p6.png" MouseLeftButtonDown="image_marker1_MouseLeftButtonDown"   Name="image_marker6" Stretch="Fill"   />
+                    <Image  Grid.Row="0" Cursor="Hand"  Grid.Column="6" Source="/images/mark/marker2/image2/p7.png" MouseLeftButtonDown="image_marker1_MouseLeftButtonDown"   Name="image_marker7" Stretch="Fill"   />
+                    <Image  Grid.Row="0" Cursor="Hand"  Grid.Column="7" Source="/images/mark/marker2/image2/p8.png" MouseLeftButtonDown="image_marker1_MouseLeftButtonDown"   Name="image_marker8" Stretch="Fill"   />
+                    <Image  Grid.Row="0" Cursor="Hand"  Grid.Column="8" Source="/images/mark/marker2/image2/p9.png" MouseLeftButtonDown="image_marker1_MouseLeftButtonDown"   Name="image_marker9" Stretch="Fill"   />
+                </Grid>
+            </Border>
+            <sdk:Label Height="28" HorizontalAlignment="Left" Margin="51,14,0,0" Name="label1" Content="标注坐标X:" VerticalAlignment="Top" Width="60" />
+            <sdk:Label Height="28" HorizontalAlignment="Left" Margin="60,91,0,0" Name="label3" Content="标注图像:" VerticalAlignment="Top" Width="54" />
+            <Image Height="27" HorizontalAlignment="Right"  Source="/images/mark/marker2/image2/p1.png" Margin="0,83,236,0" Name="image_marker" Stretch="Fill" VerticalAlignment="Top" Width="33" />
+            <sdk:Label Content="点击下面的图像进行更新" Height="28" HorizontalAlignment="Left" Margin="163,91,0,0" Name="label4" VerticalAlignment="Top" Width="125" />
+            <sdk:Label Content="标注坐标Y:" Height="28" HorizontalAlignment="Left" Margin="53,52,0,0" Name="label2" VerticalAlignment="Top" Width="60" />
+        </Grid>
+    </my:DialogPanel>
+</uc:BaseUserControl>

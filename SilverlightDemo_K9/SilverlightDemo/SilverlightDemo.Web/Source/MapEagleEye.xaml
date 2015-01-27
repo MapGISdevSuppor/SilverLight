@@ -1,0 +1,27 @@
+﻿<navigation:Page x:Class="SilverlightDemo.MapEagleEye" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:my="clr-namespace:ZDIMS.Map;assembly=ZDIMS1.0"
+           Title="鹰眼显示"
+           Loaded="UserControl_Loaded">
+    <Grid x:Name="LayoutRoot">
+        <!---地图容器-->
+        <my:IMSMap HorizontalAlignment="Left" Margin="0,0,0,0"  EnableZoomOutMinLevel="False"
+                   InitShowLevel="2"  LevelNum="6"   Name="iMSMap1" 
+                    VerticalAlignment="Top"  XMinMap="114.125602"  XMaxMap="114.500788"
+				YMinMap="30.453932" YMaxMap="30.829118"   >
+                <my:TileLayer Canvas.Left="0" Canvas.Top="0" Name="tileLayer1" 
+                          AutoGetMapInfo="True" HdfName="whmap.HDF"   />
+            <!---鹰眼-->
+            <my:IMSEagleEye  LevelNum="6"  LevelDiff="1" Width="200" Height="160" 
+                             EagleLocation="BottomRight"  Name="iMSEagleEye1"    >
+                <my:TileLayer Canvas.Left="0" Canvas.Top="0" Name="tileLayer2" 
+                          AutoGetMapInfo="True" HdfName="whmap.HDF"   />
+            </my:IMSEagleEye>
+        </my:IMSMap>
+    </Grid>
+</navigation:Page>

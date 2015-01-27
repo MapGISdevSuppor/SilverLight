@@ -1,0 +1,39 @@
+﻿打印地图: 
+
+
+一、示例功能： 
+
+
+    该示例实现web端的地图打印功能，整合了地图出图三要素。 
+
+
+二、实现说明： 
+
+
+    1、数据：使用世界地图的瓦片数据（world.HDF），已在GIS服务器中发布。 
+
+    2、实现步骤： 
+
+   （1）先在设计面板中拖入一个地图容器控件（IMSMap）、瓦片图层控件（TileLayer），实现瓦片地图的显示； 
+
+   （2）再在地图容器中button控件（Button），并添加click事件。 
+
+   （3）在click事件处理函数中实例化二次开发库里封装的控件，。 
+
+    3、参数说明
+
+    调用接口： 
+
+       EditText：添加文本控件 
+
+       ChooseCompassDialog：选择指北针类型对话框 
+
+       CompassType：指北针类型
+
+       ChooseScaleBarDialog：选择比例尺类型对话框 
+
+       ScaleType：比例尺类型，其值类型为枚举型 
+
+       EditImage：添加图片控件 
+
+       editFrame：图框控件 

@@ -1,0 +1,74 @@
+﻿标绘: 
+
+一、示例功能： 
+
+    该示例实现在地图上绘制标绘箭头以及指北针。
+ 
+二、实现说明： 
+
+    1、数据：使用世界地图的瓦片地图(world.hdf)，已在GIS服务器中发布。 
+
+    2、实现步骤： 
+
+   （1）首先实例化DrawingBase对象； 
+
+   （2）然后给DrawingBase的属性imsMap赋值，属性FillColor设置绘制的颜色，属性FillOpacity设置绘制的透明度； 
+
+   （3）调用DrawingBase里的initDraw()方法来实现绘制图形，同时通过枚举类型DrawingBaseType来设置要绘制的图形类型。 
+
+    3、操作说明： 
+
+   （1）绘制：选中图标，在地图上单击鼠标左键开始绘图，双击结束，其中除了简单箭头、燕尾箭头、自定义箭头、自定义燕尾箭头 和直箭头 
+
+必须双击结束外，其他的图形绘制均可单击结束和双击结束。另外，自定义箭头和自定义燕尾箭头的绘制在选中之后至少要在地图上点击两下确定才能确定图形。 
+
+   （2）修改：鼠标左键单击一次地图上绘制的图形，此时在图形上或者周围出现正方形的修改点，拖动修改点即可修改绘制的图形。 
+
+   （3）拖动：在修改点在图形上出现之后，再在图形上点击一次鼠标左键，此时鼠标的样式会变成手型，鼠标点击移动鼠标即可实现图形的拖动。 
+
+   （4）删除：在绘制的图形上单击鼠标右键，此时右键菜单中会有删除图形的选项，点击删除图形的功能菜单即可删除该图形。 
+
+    4、参数说明 
+
+    DrawingBaseType参数：
+
+       DrawingBaseType.SimpleArrow：简单箭头 
+
+       DrawingBaseType.TailedArrow：燕尾箭头
+
+       DrawingBaseType.CustomArrow：自定义箭头
+
+       DrawingBaseType.CustomTailedArrow：自定义燕尾箭头 
+
+       DrawingBaseType.StraightArrow：直箭头 
+
+       DrawingBaseType.DoubleArrow：双箭头 
+
+       DrawingBaseType.AssemblyArea：集结地域 
+
+       DrawingBaseType.Circle：圆形区域 
+
+       DrawingBaseType.CurveFlag：曲线旗标 
+
+       DrawingBaseType.RectFlag：直角旗标
+
+       DrawingBaseType.TriangleFlag：三角旗标 
+
+       DrawingBaseType.ClosedangleCompass：尖角指北针
+
+       DrawingBaseType.FourstarCompass：四角指北针 
+
+       DrawingBaseType.RhombusCompass：菱形指北针 
+
+       DrawingBaseType.TriangleCompass：三角指北针
+
+       DrawingBaseType.ArrowcrossCompass：十字箭头指北针 
+
+       DrawingBaseType.CircleClosedangleCompass：圆形尖角指北针 
+
+       DrawingBaseType.DoubleClosedangleCompass：双向尖角指北针
+
+       DrawingBaseType.SameDirectionClosedangleCompass：同向尖角指北针 
+
+       DrawingBaseType.VaneCompass：风向标指北针
+

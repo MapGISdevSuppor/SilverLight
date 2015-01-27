@@ -1,0 +1,57 @@
+﻿<uc:BaseUserControl xmlns:my="clr-namespace:EasySL.Controls;assembly=EasySL.Controls"  x:Class="ZDIMSDemo.Controls.GPSSample"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:uc="clr-namespace:ZDIMSDemo.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="296" d:DesignWidth="426" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" Loaded="BaseUserControl_Loaded">
+    <my:DialogPanel Name="dialog" Title="设备跟踪"  DragEnable="True" Background="White">
+        <Grid x:Name="LayoutRoot" Background="White">
+            <Border BorderBrush="Silver" BorderThickness="1" Canvas.ZIndex="0" Height="119" HorizontalAlignment="Left" Margin="12,9,0,0" Name="border1" VerticalAlignment="Top" Width="406" />
+            <Canvas>
+            <sdk:Label Height="22" HorizontalAlignment="Left" Margin="20,22,0,0" Name="label1" VerticalAlignment="Top" Width="99" Content="选择跟踪设备编号：" />
+            <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,18,118,0" Name="comboBox_device" VerticalAlignment="Top" Width="181" ItemsSource="{Binding}" SelectedIndex="-1" Canvas.Left="127" Canvas.Top="0" SelectionChanged="comboBox_device_SelectionChanged">
+                <ComboBoxItem Content="13147177455" />
+                <ComboBoxItem Content="13147177456" />
+                <ComboBoxItem Content="13147177457" />
+                <ComboBoxItem Content="13147177458" />
+            </ComboBox>
+            <CheckBox Content="跟踪GPS位置" Height="16" HorizontalAlignment="Left" Margin="29,55,0,0" Name="checkBox1" VerticalAlignment="Top" Checked="checkBox1_Checked" Unchecked="checkBox1_Checked" />
+            <CheckBox Content="始终居中显示" Height="16" HorizontalAlignment="Left" Margin="135,55,0,0" Name="checkBox2" VerticalAlignment="Top" />
+            <CheckBox Content="绘制轨迹" Height="16" HorizontalAlignment="Left" Margin="244,55,0,0" Name="checkBox3" VerticalAlignment="Top" Checked="checkBox3_Checked" Unchecked="checkBox3_Checked" />
+                <sdk:Label Content="刷新时间间隔(秒)：" Height="22" HorizontalAlignment="Left" Margin="20,97,0,0" Name="label2" VerticalAlignment="Top" Width="99" />
+            <Slider Height="23" HorizontalAlignment="Left" Margin="125,94,0,0" Name="slider1" VerticalAlignment="Top" Width="124" SmallChange="1" Minimum="1" Maximum="5" Value="1" ValueChanged="slider1_ValueChanged" />
+                <sdk:Label Canvas.Left="260" Name="interval" Canvas.Top="93" Height="28"  Width="120" Content="1秒" />
+            </Canvas>
+            <Border BorderBrush="Silver" Canvas.ZIndex="0" BorderThickness="1" Height="119" HorizontalAlignment="Left" Margin="10,139,0,0" Name="border2" VerticalAlignment="Top" Width="406">
+                <Canvas>
+                    <sdk:Label Content="开始日期：" Height="22" Margin="20,10,347,0" Name="label3" VerticalAlignment="Top" />
+                    <sdk:DatePicker Height="23" HorizontalAlignment="Left" Margin="76,10,0,0" Name="datePicker1" VerticalAlignment="Top" Width="125" SelectedDateFormat="Short" />
+                    <toolkit:TimePicker Height="22" HorizontalAlignment="Left" Margin="270,10,0,0" Name="timePicker1" VerticalAlignment="Top" Value="00:00:00" Culture="zh-CN">
+                        <toolkit:TimePicker.Format>
+                            <toolkit:CustomTimeFormat Format="HH:mm:ss" />
+                        </toolkit:TimePicker.Format>
+                        <toolkit:TimePicker.TimeGlobalizationInfo>
+                            <toolkit:TimeGlobalizationInfo />
+                        </toolkit:TimePicker.TimeGlobalizationInfo>
+                    </toolkit:TimePicker>
+                    <sdk:Label Content="开始时间：" Height="22" HorizontalAlignment="Left" Margin="214,10,0,0" Name="label4" VerticalAlignment="Top" Width="59" />
+                    <sdk:Label Content="结束日期：" Height="22" Margin="20,40,347,0" Name="label5" VerticalAlignment="Top" />
+                    <sdk:DatePicker Height="23" HorizontalAlignment="Left" Margin="76,40,0,0" Name="datePicker2" SelectedDateFormat="Short" VerticalAlignment="Top" Width="125" />
+                    <toolkit:TimePicker Culture="zh-CN" Height="22" HorizontalAlignment="Left" Margin="270,40,0,0" Name="timePicker2" Value="00:00:00" VerticalAlignment="Top">
+                        <toolkit:TimePicker.Format>
+                            <toolkit:CustomTimeFormat Format="HH:mm:ss" />
+                        </toolkit:TimePicker.Format>
+                        <toolkit:TimePicker.TimeGlobalizationInfo>
+                            <toolkit:TimeGlobalizationInfo />
+                        </toolkit:TimePicker.TimeGlobalizationInfo>
+                    </toolkit:TimePicker>
+                    <sdk:Label Content="结束时间：" Height="22" HorizontalAlignment="Left" Margin="214,40,0,0" Name="label6" VerticalAlignment="Top" Width="59" />
+                    <Button Content="查看轨迹" Height="23" HorizontalAlignment="Left" Margin="127,224,0,0" Name="button_showHistoryPath" VerticalAlignment="Top" Width="75" Canvas.Left="-13" Canvas.Top="-136" Click="button_showHistoryPath_Click" />
+                    <Button Content="清除轨迹" Height="23" HorizontalAlignment="Right" Margin="0,224,130,0" Name="button_clearHistoryPath" VerticalAlignment="Top" Width="75" Canvas.Left="214" Canvas.Top="-136" Click="button_clearHistoryPath_Click" />
+                </Canvas>
+            </Border>
+        </Grid>
+    </my:DialogPanel>
+</uc:BaseUserControl>

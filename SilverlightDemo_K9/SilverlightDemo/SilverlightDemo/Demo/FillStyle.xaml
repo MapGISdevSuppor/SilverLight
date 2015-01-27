@@ -1,0 +1,156 @@
+﻿<navigation:Page x:Class="SilverlightDemo.Demo.FillStyle" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           d:DesignWidth="640" d:DesignHeight="480"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:my="clr-namespace:ZDIMS.Map;assembly=ZDIMS1.0"  xmlns:my1="clr-namespace:ZDIMS.OtherMap;assembly=ZDIMS1.0" xmlns:my2="clr-namespace:ZDIMS.Drawing;assembly=ZDIMS1.0" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:my3="clr-namespace:ZdimsExtends.util;assembly=ZdimsExtends"
+           Title="FillStyle Page"
+           Loaded="UserControl_Loaded">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <my:IMSMap  Name="iMSMap1" HorizontalAlignment="Left" Margin="0"  XMaxMap="188.619962766591" XMinMap="-181.18399779022" YMaxMap="279.069894232288" YMinMap="-90.7340663245236" InitShowLevel="3" LevelNum="8" EnableZoomOutMinLevel="False" RestoreCenterX="12.99919517012924" RestoreCenterY="30.671057152220655" >
+            <!--添加瓦片图层-->
+            <my:TileLayer  HdfName="world.hdf" AutoGetMapInfo="True"  Name="tileLayer1"></my:TileLayer>
+            <!--添加绘图层-->
+            <my2:GraphicsLayer Name="graphicsLayer">
+            </my2:GraphicsLayer>
+        </my:IMSMap>
+
+        <Canvas x:Name="ResultsDisplayCanvas"  HorizontalAlignment="Left" VerticalAlignment="Top"  Canvas.Left="2" Canvas.Top="5" Width="200" Height="200" Canvas.ZIndex="10000" >
+            <Rectangle Stroke="Gray"  RadiusX="10" RadiusY="10" Fill="#77919191" Canvas.Left="0" Canvas.Top="0" Margin="0" Width="200" Height="200" >
+                <Rectangle.Effect>
+                    <DropShadowEffect/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Fill="#FFFFFFFF" Stroke="DarkGray" RadiusX="5" RadiusY="5" Canvas.Left="10" Canvas.Top="15" Width="180" Height="175"   />
+            <sdk:Label   Content="            预定义区样式设置框" FontFamily="Lucida Sans Unicode" FontSize="12"  FontStretch="Expanded" FontWeight="ExtraBlack" Foreground="White" Canvas.ZIndex="200000" Width="158"></sdk:Label>
+            <sdk:Label Canvas.Left="11" Canvas.Top="13" Height="23" Name="label4" Width="52" Content="边框样式:" />
+            <ComboBox Height="23" Name="setStrokeType1" DropDownClosed="setStrokeType1_DropDownClosed" Width="76" SelectedIndex="0"  Margin="0" Canvas.Left="72" Canvas.Top="16" >
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="Soild" Source="/images/shape/drawLine.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="Dash" Source="/images/shape/dash.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="DashDot" Source="/images/shape/dashdot.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="Dot" Source="/images/shape/dot.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image Tag="DashDotDot" Source="/images/shape/dashdotdot.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+            </ComboBox>
+            <sdk:Label Canvas.Left="11" Canvas.Top="39" Height="23" Name="label5" Width="54" Content="边框颜色:" />
+            <sdk:Label Canvas.Left="11" Canvas.Top="72" Content="边框透明度:" Height="23" Name="label6" Width="64" />
+            <Slider Canvas.Left="72" Canvas.Top="73" Height="23" Name="SetStrookeOpa1" Value="0" ValueChanged="SetStrookeOpa1_ValueChanged" Minimum="0" Maximum="1" Width="120" />
+            <my3:ColorsPicker Canvas.Left="74"   Canvas.Top="42" Name="StrokecolorsPicker1" Height="28" Width="28" />
+            <ComboBox Height="23" Name="setFillType"  DropDownClosed="setFillType_DropDownClosed" Width="76" SelectedIndex="0"  Margin="0" Canvas.Left="72" Canvas.Top="103" >
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="竖线" Source="/images/polygon/vertical.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="颜色填充" Source="/images/polygon/polygonSolid.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="横线" Source="/images/polygon/horizontal.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="反斜线" Source="/images/polygon/backslash.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image Tag="斜线" Source="/images/polygon/slash.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image Tag="网格"  Source="/images/polygon/cross.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+            </ComboBox>
+            <sdk:Label Canvas.Left="14" Canvas.Top="103" Height="23" Name="label1" Width="52" Content="填充符号:" />
+            <sdk:Label Canvas.Left="13" Canvas.Top="134" Height="23" Name="label2" Width="62" Content="填充透明度:" />
+            <sdk:Label Canvas.Left="14" Canvas.Top="159" Content="填充颜色:" Height="23" Name="label3" Width="53" />
+            <Slider Canvas.Left="71" Canvas.Top="134" Height="27" Name="SetFillOpa" Value="30" ValueChanged="SetFillOpa_ValueChanged" Minimum="0" Maximum="1" Width="120" />
+            <my3:ColorsPicker Canvas.Left="72"   Canvas.Top="159" Name="fillcolorsPicker" Height="28" Width="28" />
+        </Canvas>
+        <Canvas x:Name="Picstyle"   HorizontalAlignment="Right" VerticalAlignment="Top"  Canvas.Left="2" Canvas.Top="5" Width="200" Height="150" Canvas.ZIndex="10000" >
+            <Rectangle Stroke="Gray"  RadiusX="10" RadiusY="10" Fill="#77919191" Canvas.Left="0" Canvas.Top="0" Margin="0" Width="200" Height="150" >
+                <Rectangle.Effect>
+                    <DropShadowEffect/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Fill="#FFFFFFFF" Stroke="DarkGray" RadiusX="5" RadiusY="5" Canvas.Left="10" Canvas.Top="15" Width="180" Height="125"   />
+            <sdk:Label   Content="             图片区样式设置框" FontFamily="Lucida Sans Unicode" FontSize="12"  FontStretch="Expanded" FontWeight="ExtraBlack" Foreground="White" Canvas.ZIndex="200000" Width="158"></sdk:Label>
+            <sdk:Label Canvas.Left="11" Canvas.Top="13" Height="23" Name="label34" Width="52" Content="边框样式:" />
+            <ComboBox Height="23" Name="setStrokeType" DropDownClosed="setStrokeType_DropDownClosed" Width="76" SelectedIndex="0"  Margin="0" Canvas.Left="72" Canvas.Top="16" >
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="Soild" Source="/images/shape/drawLine.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="Dash" Source="/images/shape/dash.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="DashDot" Source="/images/shape/dashdot.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image  Tag="Dot" Source="/images/shape/dot.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image Tag="DashDotDot" Source="/images/shape/dashdotdot.png"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+            </ComboBox>
+            <sdk:Label Canvas.Left="11" Canvas.Top="39" Height="23" Name="label89" Width="54" Content="边框颜色:" />
+            <sdk:Label Canvas.Left="11" Canvas.Top="68" Content="边框透明度:" Height="23" Name="label76" Width="64" />
+            <Slider Canvas.Left="72" Canvas.Top="69" Height="23" Name="SetStrookeOpa" Value="0" ValueChanged="SetStrookeOpa_ValueChanged" Minimum="0" Maximum="1" Width="120" />
+            <my3:ColorsPicker Canvas.Left="83"   Canvas.Top="42" Name="colorsPicker" Height="28" Width="28" />
+            <sdk:Label Canvas.Left="11" Canvas.Top="91" Content="图片透明度:" Height="23" Name="label7" Width="64" />
+            <Slider Canvas.Left="71" Canvas.Top="91" Height="23" Maximum="1" Minimum="0" Name="SetOpacity"  ValueChanged="SetOpacity_ValueChanged" Value="1" Width="120" />
+            <sdk:Label Canvas.Left="11" Canvas.Top="113" Content="图片选择:" Height="23" Name="label8" Width="53" />
+            <ComboBox Canvas.Left="64" Canvas.Top="116" Height="23"  DropDownClosed="setSource_DropDownClosed"   SelectedIndex="0" Name="setSource" Width="59" >              
+               <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image Tag="/images/globe.png" Source="/images/globe.png" Stretch="UniformToFill" Width="60" Height="30" ></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+                <ComboBoxItem >
+                    <ComboBoxItem.Content >
+                        <Image Tag="/images/red2.png" Source="/images/red2.png" Width="30" Height="30"></Image>
+                    </ComboBoxItem.Content>
+                </ComboBoxItem>
+            </ComboBox>
+        </Canvas>
+    </Grid>
+</navigation:Page>

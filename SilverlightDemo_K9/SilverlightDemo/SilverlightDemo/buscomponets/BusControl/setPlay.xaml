@@ -1,0 +1,85 @@
+﻿<uc:BaseUserControl x:Class="SilverlightDemo.buscomponets.BusControl.setPlay"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"  xmlns:uc="clr-namespace:SilverlightDemo.buscomponets" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <UserControl.Resources>
+        <Storyboard x:Key="stbShowHeader">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+										   Storyboard.TargetName="LayoutRoot"
+									 Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)"	   >
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5"
+									  Value="10"
+									  KeySpline="0,0,0,1" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+      
+        <Storyboard x:Key="stbContentBgBack1">
+           
+            <DoubleAnimation BeginTime="00:00:00"
+							 Storyboard.TargetName="LayoutRoot"
+							 Storyboard.TargetProperty="Opacity"
+							 From="1"
+							 Duration="00:00:00.5"
+							 To="0"></DoubleAnimation>
+        </Storyboard>
+        <Storyboard x:Key="stbContentBgBack">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+										   Storyboard.TargetName="LayoutRoot"
+										   Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5"
+									  Value="-200"
+									  KeySpline="0,0,0,1" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot"  Background="Transparent" Height="100" Width="200"  MouseLeftButtonDown="LayoutRoot_MouseLeftButtonDown">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform />
+                <SkewTransform />
+                <RotateTransform />
+                <TranslateTransform X="-200" />
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Canvas x:Name="dialogPanel1"  Height="100" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top"    Canvas.ZIndex="10000" >
+            <Image Name="close" Width="20" Canvas.ZIndex="19900" Height="16" Cursor="Hand"  MouseEnter="close_MouseEnter"  MouseLeave="close_MouseLeave" MouseLeftButtonUp="close_MouseLeftButtonUp" Source="/images/close_32.png" Canvas.Left="182" Canvas.Top="0"></Image>
+            <Rectangle Stroke="Gray"  RadiusX="10" RadiusY="10" Fill="#77919191" Canvas.Left="0" Canvas.Top="0" Margin="0" Width="200" Height="100" >
+                <Rectangle.Effect>
+                    <DropShadowEffect/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Fill="#FFFFFFFF" Stroke="DarkGray" RadiusX="5" RadiusY="5" Canvas.Left="10" Canvas.Top="12" Width="180" Height="80"   />
+            <Slider Canvas.Left="67" Canvas.Top="33"  Height="23" Name="slider1" Width="120"  Minimum="-300"  Value="-150" Maximum="0" ValueChanged="slider1_ValueChanged" 
+                    >
+                <ToolTipService.ToolTip >
+                    <TextBlock Name="tooltip1"  Text="150"></TextBlock>
+                </ToolTipService.ToolTip>
+            </Slider>
+            <!--<Button  Height="30" Grid.Row="1" Name="btnPlay"  Margin="5,0,160,0"  Click="btnPlay_Click" VerticalAlignment="Top" Width="30" Canvas.Top="59" Canvas.Left="28">
+                <ToolTipService.ToolTip>
+                    <TextBlock Name="tooltip" Text="播放"></TextBlock>
+                </ToolTipService.ToolTip>-->
+            <Image Name="pause"  Canvas.Top="60" Width="30" MouseEnter="close_MouseEnter" MouseLeave="close_MouseLeave"  Height="30" Canvas.Left="50" Source="/images/play/play-32.png"  MouseLeftButtonUp="pause_MouseLeftButtonUp" Stretch="Uniform">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Name="tooltip" Text="播放"></TextBlock>
+                    </ToolTipService.ToolTip>
+                </Image>
+            <!--</Button>-->
+            <!--<Button  Height="30" Grid.Row="1" Name="btnStop"  HorizontalAlignment="Left" Margin="100,0,50,0" Click="btnStop_Click" VerticalAlignment="Top" Width="30" Canvas.Top="59" Canvas.Left="28">
+                <ToolTipService.ToolTip>
+                    <TextBlock Text="停止"></TextBlock>
+                </ToolTipService.ToolTip>-->
+            <Image Name="stop" Source="/images/play/play_stop-32.png" Width="30" Height="30"    MouseEnter="close_MouseEnter" MouseLeave="close_MouseLeave"  Canvas.Top="60" Canvas.Left="125" MouseLeftButtonUp="stop_MouseLeftButtonUp" Stretch="Uniform">
+                   
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="停止"></TextBlock>
+                        </ToolTipService.ToolTip>
+                   
+                </Image>
+            <!--</Button>-->
+            <sdk:Label Canvas.Left="14" Canvas.Top="31" Height="28" Name="label1" Width="47" Content="播放速度:" />
+        </Canvas>
+    </Grid>
+</uc:BaseUserControl>

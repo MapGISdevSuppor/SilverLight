@@ -1,0 +1,36 @@
+﻿<navigation:Page x:Class="SilverlightDemo.MapMeasure" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:ims="clr-namespace:ZDIMS.Map;assembly=ZDIMS1.0"
+           xmlns:my3="clr-namespace:ZDIMS.Drawing;assembly=ZDIMS1.0"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           Title="测量" Unloaded="Close_unLoad" xmlns:fish="clr-namespace:FishEyeSL;assembly=FishEyeSL"
+            Loaded="UserControl_Loaded">
+    <Grid x:Name="LayoutRoot">
+        <!---地图容器-->
+        <ims:IMSMap HorizontalAlignment="Left" Margin="0,0,0,0"  InitShowLevel="3"   Name="iMSMap1" LevelNum="8"   VerticalAlignment="Top"  EnableZoomOutMinLevel="False"  
+                    XMaxMap="188.619962766591" XMinMap="-181.18399779022" YMaxMap="279.069894232288" YMinMap="-90.7340663245236"
+                     RestoreCenterX="3.72" RestoreCenterY="-10.17">
+            <!---瓦片地图-->
+            <ims:TileLayer Margin="0,0,0,0" HorizontalAlignment="Left" HdfName="world.hdf"  Name="tileLayer1" VerticalAlignment="Top"  />
+            <!---绘图图层-->
+            <my3:GraphicsLayer Canvas.Left="167" Canvas.Top="212" Height="100" Name="graphicsLayer1" Width="200" />
+            <!---标注图层-->
+            <my3:MarkLayer Canvas.Left="194" Canvas.Top="116" Height="100" Name="markLayer1" Width="200" EnableMarkHiden="False" EnablePolymericMark="True" EnableZoomAnimation="True"/>
+        </ims:IMSMap>
+        <Canvas Margin="0,0,0,0" Width="60" Height="70" Name="imgwin" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <fish:FishEyePanel Canvas.ZIndex="190000" Background="Transparent" Magnification="3" ScaleToFit="False" Width="54" Height="54"   VerticalAlignment="Bottom" HorizontalAlignment="Center"  Grid.Row="1">
+                <Button Name="busSch" Height="50" Width="50" >
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="测量" />
+                    </ToolTipService.ToolTip>
+                    <Image  Source="/images/toolbar/btn_33.png" Stretch="Uniform" Width="48" Height="48" Name="img"  MouseLeftButtonDown="img_MouseLeftButtonDown"
+                   Cursor="Hand"/>
+                </Button>   
+            </fish:FishEyePanel>
+        </Canvas>
+    </Grid>
+</navigation:Page>

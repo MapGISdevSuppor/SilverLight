@@ -1,0 +1,24 @@
+﻿<uc:BaseUserControl x:Class="ZDIMSDemo.Controls.FloatTreeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uc="clr-namespace:ZDIMSDemo.Controls"
+    xmlns:es="clr-namespace:EasySL.Controls;assembly=EasySL.Controls"
+    mc:Ignorable="d"
+    d:DesignHeight="515" d:DesignWidth="260" Opacity="0" x:Name="baseCtr">
+    <es:DialogPanel x:Name="diapnl" Background="Transparent" Title="数据目录">
+        <uc:IMSCatalog x:Name="MapTree" Height="450" Width="260" ></uc:IMSCatalog>
+    </es:DialogPanel>
+    <uc:BaseUserControl.Resources>
+        <Storyboard x:Name="showFade1">
+            <DoubleAnimation
+                Duration="00:00:1.5"
+                From="0.00"
+                To="0.85"
+                Storyboard.TargetName="baseCtr"
+                Storyboard.TargetProperty="Opacity"
+                />
+        </Storyboard>
+    </uc:BaseUserControl.Resources>
+</uc:BaseUserControl>

@@ -1,0 +1,50 @@
+﻿<UserControl   x:Class="ZDIMSDemo.SearchDemo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" 
+             xmlns:uc="clr-namespace:ZDIMSDemo.Controls" xmlns:my1="clr-namespace:ZDIMSDemo.Controls.MapDoc" 
+    d:DesignHeight="600" d:DesignWidth="800"
+             xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:my="clr-namespace:ZDIMS.Map;assembly=ZDIMS1.0"
+             xmlns:my3="clr-namespace:ZDIMS.Drawing;assembly=ZDIMS1.0" xmlns:my2="clr-namespace:ZDIMSDemo.Controls.Layer"
+             xmlns:my4="clr-namespace:ZDIMSDemo.Controls.FishEyeMenu" xmlns:my5="clr-namespace:EasySL.Controls;assembly=EasySL.Controls">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid Background="#dfe8f6">
+                <Border x:Name="rightPanel" BorderBrush="#99bbe8" BorderThickness="1">
+                    <Grid>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" BorderThickness="0">
+                        
+                                <my:IMSMap  Name="iMSMap1"  Canvas.Left="0" Canvas.Top="0"  Margin="0" OperType="Drag" 
+                                         LevelNum="7"
+                                       >
+                           
+                                <my:TileLayer Height="100" Name="tileLayer1" Width="200"
+                              ServerAddress="http://127.0.0.1/RelayHandlerSite/RelayHandler.ashx"
+
+                              HdfName="whmap.hdf" AutoGetMapInfo="True" />
+                                    <my:IMSEagleEye Name="iMSEagleEye1" Width="200" Height="160" EagleLocation="BottomLeft"></my:IMSEagleEye>
+
+                            <my:VectorMapDoc Canvas.Left="69" Canvas.Top="324" Height="100" Name="vectorMapDoc2" Width="200" EnableGPUMode="True" MapDocName="wh.Map" ServerAddress="http://127.0.0.1/RelayHandlerSite/relayhandler.ashx"></my:VectorMapDoc>
+                                    <my:VectorLayer ServerAddress="http://127.0.0.1/RelayHandlerSite/relayhandler.ashx" Canvas.Left="225" Canvas.Top="76" Height="217" Name="vectorLayer1" Width="357">
+                                        <my:GDBItem Canvas.Left="54" Canvas.Top="33" Height="147" Name="gDBItem1" Width="256" GDBName="world" GDBServerName="MapGISLocal">
+                                            <my:LayerItem Canvas.Left="74" Canvas.Top="55" Height="50" Name="layerItem1" Width="50" LayerName="行政区.WP" />
+                                            <my:LayerItem Canvas.Left="42" Canvas.Top="25" Height="50" Name="layerItem2" Width="50" LayerName="中心线" />
+                                            <my:LayerItem Canvas.Left="171" Canvas.Top="58" Height="50" Name="layerItem3" Width="50" LayerName="水系.WP" />
+                                        </my:GDBItem>
+                                        
+                                    </my:VectorLayer>        
+                                    <my3:GraphicsLayer Canvas.Left="167" Canvas.Top="212" Height="100" Name="graphicsLayer1" Width="200"></my3:GraphicsLayer>
+                                    <my3:MarkLayer Canvas.Left="194" Canvas.Top="116" Height="100" Name="markLayer1" Width="200" />
+                                    <my3:MarkLayer Canvas.Left="194" Canvas.Top="116" Height="100" Name="markLayer2" Width="200" EnableMarkHiden="False" EnablePolymericMark="True" EnableZoomAnimation="True"/>
+                                    <uc:Scale ></uc:Scale>
+                                <my4:MapgisMainMenu Cursor="Hand"  x:Name="toolMainMenu" Width="100" Height="200"  />
+                            </my:IMSMap>                       
+                        
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+</UserControl>

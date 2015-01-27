@@ -1,0 +1,283 @@
+﻿<UserControl x:Class="ZDIMSDemo.Controls.Layer.ToolbarByLayer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400"
+             xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+             xmlns:my="clr-namespace:EasySL.Controls;assembly=EasySL.Controls">
+
+    <!--<Canvas>-->
+        <sdk:TabControl Height="63" HorizontalAlignment="Left" Name="tabControl1" VerticalAlignment="Top" Width="338" Background="Transparent">
+            <ToolTipService.ToolTip>
+                <TextBlock Text="图层工具条"/>
+            </ToolTipService.ToolTip>
+            <sdk:TabItem Header="显示" Name="tabItem1">
+                <Grid Margin="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="29" />
+                    </Grid.RowDefinitions>
+                <Button  Cursor="Hand" Grid.Column="0" Grid.Row="0" Name="ZoomIn" Click="ZoomIn_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top"  BorderThickness="0" Padding="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="放大"/>
+                        </ToolTipService.ToolTip>
+                        <Image Source="/images/widget/btn_01.png" Height="26" Width="26"  HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="0" Name="image1" Stretch="Fill" />
+                    </Button>
+                <Button  Cursor="Hand" Grid.Column="1" Grid.Row="0" Name="ZoomOut" Click="ZoomOut_Click"   Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top"  BorderThickness="0" Padding="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="缩小"/>
+                        </ToolTipService.ToolTip>
+                        <Image  Source="/images/widget/btn_02.png" Height="26" Width="26"  HorizontalAlignment="Center" Margin="0" Name="image3" Stretch="Fill" VerticalAlignment="Center"/>
+                    </Button>
+                <Button Cursor="Hand" Grid.Column="2" Grid.Row="0" Name="MapMove" Click="MapMove_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="移动"/>
+                        </ToolTipService.ToolTip>
+                        <Image Source="/images/widget/btn_03.png" Height="26" Width="26"  HorizontalAlignment="Center" Margin="0" Name="image2" Stretch="Fill" VerticalAlignment="Center" />
+                    </Button>
+                <Button Cursor="Hand" Grid.Column="3" Grid.Row="0" Name="MapUpdate" Click="MapUpdate_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="刷新"/>
+                        </ToolTipService.ToolTip>
+                        <Image  Source="/images/widget/btn_05.png" Height="26" Width="26" HorizontalAlignment="Center" Margin="0" Name="image4" Stretch="Fill" VerticalAlignment="Center" />
+                    </Button>
+                <Button  Cursor="Hand" Grid.Column="4" Grid.Row="0" Name="MapRestore" Click="MapRestore_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="复位"/>
+                        </ToolTipService.ToolTip>
+                        <Image  Source="/images/widget/btn_04.png"  Height="26" Width="26" HorizontalAlignment="Center" Margin="0" Name="image5" Stretch="Fill" VerticalAlignment="Center" />
+                    </Button>
+                <Button Cursor="Hand" Grid.Column="5" Grid.Row="0" Name="MapEagleEye" Click="EagleEye_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="鹰眼"/>
+                        </ToolTipService.ToolTip>
+                        <Image  Source="/images/widget/tool_6.PNG" Height="26" Width="26" HorizontalAlignment="Center" Margin="0" Name="image6" Stretch="Fill" VerticalAlignment="Center" />
+                    </Button>
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem Header="查询" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                        <ColumnDefinition Width="30"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="29" />
+                    </Grid.RowDefinitions>
+                <Button Cursor="Hand" Grid.Column="0" Grid.Row="0" Name="DotSelect" Click="DotSelect_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0" BorderThickness="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="点击查询"/>
+                        </ToolTipService.ToolTip>
+                        <Image Source="/images/widget/btn_06.png" Height="26" Width="26"  HorizontalAlignment="Center" Margin="0" Stretch="Fill" VerticalAlignment="Center"/>
+                    </Button>
+                <Button Cursor="Hand" Grid.Column="1" Grid.Row="0" Name="RectSelect" Click="RectSelect_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="拉框查询"/>
+                        </ToolTipService.ToolTip>
+                        <Image  Source="/images/widget/btn_07.png"  Height="26" Width="26"  HorizontalAlignment="Center" Margin="0" Stretch="Fill" VerticalAlignment="Center"  />
+                    </Button>
+                <Button Cursor="Hand"  Grid.Column="2" Grid.Row="0" Name="CircleSelect" Click="CircleSelect_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="画圆查询"/>
+                        </ToolTipService.ToolTip>
+                        <Image Source="/images/widget/btn_08.png"   Height="26" Width="26" HorizontalAlignment="Center" Margin="0" Stretch="Fill" VerticalAlignment="Center" />
+                    </Button>
+                <Button Cursor="Hand" Grid.Column="3" Grid.Row="0" Name="LineSelect" Click="LineSelect_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0" BorderThickness="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="线查询"/>
+                        </ToolTipService.ToolTip>
+                        <Image Source="/images/widget/btn_09.png"  Height="26" Width="26" HorizontalAlignment="Center" Margin="0"  Stretch="Fill" VerticalAlignment="Center"  />
+                    </Button>
+                <Button Cursor="Hand" Grid.Column="4" Name="PloySelect" Click="PloySelect_Click" Height="26" Width="26" VerticalAlignment="Top" BorderThickness="0" Padding="0" Margin="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="多边形查询"/>
+                        </ToolTipService.ToolTip>
+                        <Image  Source="/images/widget/btn_10.png" Height="26" Width="26"  HorizontalAlignment="Center" Margin="0"  Stretch="Fill" VerticalAlignment="Center" />
+                    </Button>
+                <Button Cursor="Hand" Grid.Column="5" Grid.Row="0" Name="AttSelect" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" Click="AttSelect_Click" Padding="0" BorderThickness="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="属性条件查询"/>
+                        </ToolTipService.ToolTip>
+                        <Image  Source="/images/widget/btn_11.png" Height="26" Width="26" HorizontalAlignment="Center" Margin="0"  Stretch="Fill" VerticalAlignment="Center" />
+                    </Button>
+
+                <Button Cursor="Hand" Grid.Column="6" Grid.Row="0" Name="DotConSelect" Click="DotConSelect_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="点击条件查询"/>
+                        </ToolTipService.ToolTip>
+                        <Image Source="/images/widget/btn_12.png"  Height="26" Width="26"  HorizontalAlignment="Center" Margin="0" Stretch="Fill" VerticalAlignment="Center" />
+                    </Button>
+                <Button Cursor="Hand" Grid.Column="7" Grid.Row="0" Name="RectConSelect" Click="RectConSelect_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0" BorderThickness="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="拉框条件查询"/>
+                        </ToolTipService.ToolTip>
+                        <Image  Source="/images/widget/btn_13.png" Height="26" Width="26"   HorizontalAlignment="Center" Margin="0" Stretch="Fill" VerticalAlignment="Center"  />
+                    </Button>
+                <Button Cursor="Hand"  Grid.Column="8" Grid.Row="0" Name="CircleConSelect" Click="CircleConSelect_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="画圆条件查询"/>
+                        </ToolTipService.ToolTip>
+                        <Image Source="/images/widget/btn_14.png" Height="26" Width="26"  HorizontalAlignment="Center" Margin="0" Stretch="Fill" VerticalAlignment="Center"/>
+                    </Button>
+                <Button Cursor="Hand" Grid.Column="9" Grid.Row="0" Name="LineConSelect" Click="LineConSelect_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0" BorderThickness="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="线条件查询"/>
+                        </ToolTipService.ToolTip>
+                        <Image Source="/images/widget/btn_15.png" Height="26" Width="26" HorizontalAlignment="Center" Margin="0"  Stretch="Fill" VerticalAlignment="Center"  />
+                    </Button>
+                <Button Cursor="Hand" Grid.Column="10" Grid.Row="0" Name="PloyConSelect" Click="PloyConSelect_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                        <ToolTipService.ToolTip>
+                            <TextBlock Text="多边形条件查询"/>
+                        </ToolTipService.ToolTip>
+                        <Image  Source="/images/widget/btn_16.png" Height="26" Width="26"  HorizontalAlignment="Center" Margin="0"  Stretch="Fill" VerticalAlignment="Center" />
+                    </Button>
+                </Grid>
+            </sdk:TabItem>
+        <sdk:TabItem Header="编辑" >
+            <Grid Background="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="29" />
+                </Grid.RowDefinitions>
+                <Button Cursor="Hand" Grid.Column="0" Grid.Row="0" Name="AddDot" Click="AddDot_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="添加点"/>
+                    </ToolTipService.ToolTip>
+                    <Image Source="/images/widget/tool_21.png" HorizontalAlignment="Center" Margin="0" Stretch="Fill" VerticalAlignment="Center" Height="26" Width="26" />
+                </Button>
+                <Button  Cursor="Hand" Grid.Column="1" Grid.Row="0" Name="AddLine" Click="AddLine_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="添加线"/>
+                    </ToolTipService.ToolTip>
+                    <Image  Source="/images/widget/tool_22.png"  HorizontalAlignment="Center" Margin="0" Stretch="Fill" VerticalAlignment="Center" Height="26" Width="26" />
+                </Button>
+                <Button  Cursor="Hand" Grid.Column="2" Grid.Row="0" Name="AddArea" Click="AddArea_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="添加区"/>
+                    </ToolTipService.ToolTip>
+                    <Image Source="/images/widget/tool_23.png"  HorizontalAlignment="Center" Margin="0" Stretch="Fill" VerticalAlignment="Center" Height="26" Width="26" />
+                </Button>
+            </Grid>
+        </sdk:TabItem>
+        <sdk:TabItem Header="分析" >
+            <Grid Background="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="29" />
+                </Grid.RowDefinitions>
+                <Button  Cursor="Hand" Grid.Column="0" Grid.Row="0" Name="BusAnalyse" Click="BusAnalyse_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="公交换乘"/>
+                    </ToolTipService.ToolTip>
+                    <Image  Source="/images/widget/btn_22.png"  HorizontalAlignment="Center" Margin="0" Stretch="Fill" VerticalAlignment="Center" Height="26" Width="26" />
+                </Button>
+                <Button  Cursor="Hand" Grid.Column="1" Grid.Row="0" Name="NetAnalyse" Click="NetAnalyse_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="网络分析"/>
+                    </ToolTipService.ToolTip>
+                    <Image Source="/images/widget/btn_23.png"  HorizontalAlignment="Center" Margin="0" Stretch="Fill" VerticalAlignment="Center" Height="26" Width="26" />
+                </Button>
+                <Button Cursor="Hand" BorderThickness="0" Padding="0" Height="26" HorizontalAlignment="Left" Margin="0,0,0,0" Name="button_circleClip" VerticalAlignment="Top" Width="26" Grid.Column="2" Click="circleClip_click" >
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="圆裁剪"/>
+                    </ToolTipService.ToolTip>
+                    <Image HorizontalAlignment="Left" Margin="0,0,0,0" Name="image7" Stretch="Fill" VerticalAlignment="Center" Width="26" Height="26" Source="/images/widget/btn_17.png" />
+                </Button>
+
+                <Button  Cursor="Hand" BorderThickness="0" Padding="0" Height="26" HorizontalAlignment="Left" Margin="0,0,0,0" Name="button_polygonClip" VerticalAlignment="Top" Width="26" Grid.Column="3" Click="polygonClip_click">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="多边形裁剪"/>
+                    </ToolTipService.ToolTip>
+                    <Image HorizontalAlignment="Left" Name="image8" Stretch="Fill" VerticalAlignment="Center" Width="26" Height="26" Source="/images/widget/btn_18.png" />
+                </Button>
+
+                <Button  Cursor="Hand" BorderThickness="0" Padding="0" Height="26" HorizontalAlignment="Left" Margin="0,0,0,0" Name="button_overLayerAnalyse" VerticalAlignment="Top" Width="26" Grid.Column="4" Click="OverLayerAnalyse_click">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="叠加分析"/>
+                    </ToolTipService.ToolTip>
+                    <Image HorizontalAlignment="Left" Margin="0,0,0,0" Name="image9" Stretch="Fill" VerticalAlignment="Center" Width="26" Height="26" Source="/images/widget/btn_19.png" />
+                </Button>
+                <Button  Cursor="Hand" BorderThickness="0" Padding="0" Height="26" HorizontalAlignment="Left" Margin="0,0,0,0" Name="button_topAnalyse" VerticalAlignment="Top"  Width="26" Grid.Column="5" Click="topAnalyse_click">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="拓扑分析"/>
+                    </ToolTipService.ToolTip>
+                    <Image HorizontalAlignment="Left" Margin="0,0,0,0" Name="image12" Stretch="Fill" VerticalAlignment="Center" Width="26" Height="26" Source="/images/widget/btn_20.png" />
+                </Button>
+                <Button  Cursor="Hand" BorderThickness="0" Padding="0" Height="26" HorizontalAlignment="Left" Margin="0,0,0,0" Name="button_project" VerticalAlignment="Top" Width="26" Grid.Column="6" Click="project_click">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="投影转换"/>
+                    </ToolTipService.ToolTip>
+                    <Image HorizontalAlignment="Left" Margin="0,0,0,0" Name="image13" Stretch="Fill" VerticalAlignment="Center" Width="26" Height="26" Source="/images/widget/btn_21.png"/>
+                </Button>
+            </Grid>
+        </sdk:TabItem>
+        <sdk:TabItem Header="视图" >
+            <Grid Background="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                    <ColumnDefinition Width="30"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="29" />
+                </Grid.RowDefinitions>
+                <Button  Cursor="Hand" Grid.Column="0" Grid.Row="0" Name="dispSet" Click="dispSet_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="视图参数设置"/>
+                    </ToolTipService.ToolTip>
+                    <Image  Source="/images/widget/btn_32.png" HorizontalAlignment="Center" Margin="0"  Stretch="Fill" VerticalAlignment="Center" Height="26" Width="26" />
+                </Button>
+                <Button  Cursor="Hand" Grid.Column="1" Grid.Row="0" Name="gps" Click="gps_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="设备跟踪"/>
+                    </ToolTipService.ToolTip>
+                    <Image  Source="/images/widget/btn_21.png" HorizontalAlignment="Center" Margin="0"  Stretch="Fill" VerticalAlignment="Center" Height="26" Width="26" />
+                </Button>
+                <Button  Cursor="Hand" Grid.Column="2" Grid.Row="0" Name="measure" Click="measure_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="测量"/>
+                    </ToolTipService.ToolTip>
+                    <Image  Source="/images/widget/btn_33.png" HorizontalAlignment="Center" Margin="0"  Stretch="Fill" VerticalAlignment="Center" Height="26" Width="26" />
+                </Button>
+                <Button  Cursor="Hand" Grid.Column="3" Grid.Row="0" Name="position" Click="position_Click" Height="26" Width="26" HorizontalAlignment="Left" VerticalAlignment="Top" BorderThickness="0" Padding="0">
+                    <ToolTipService.ToolTip>
+                        <TextBlock Text="位置信息"/>
+                    </ToolTipService.ToolTip>
+                    <Image  Source="/images/widget/btn_28.png" HorizontalAlignment="Center" Margin="0"  Stretch="Fill" VerticalAlignment="Center" Height="26" Width="26" />
+                </Button>
+            </Grid>
+        </sdk:TabItem>
+    </sdk:TabControl>
+    <!--</Canvas>-->
+</UserControl>
