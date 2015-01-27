@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <stops>
+    <X>12728647.712585449</X>
+    <Y>3579603.3365478516</Y>
+    <StopName>团结村</StopName>
+    
+  </stops>
+  <stops>
+    <X>12729488.519714356</X>
+   
+    <Y>3578924.9580688477</Y>
+    <StopName>徐东大街</StopName>
+    
+  </stops>
+  <stops>
+    <X>12730635.074890137</X>
+  
+    <Y>3577921.7222900391</Y>
+    <StopName>徐东大街</StopName>
+   
+  </stops>
+
+  <stops>
+    <X>12731867.621704102</X>
+    <Y>3577596.8649902344</Y>
+    <StopName>东湖路</StopName>
+    
+  </stops>
+</NewDataSet>

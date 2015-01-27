@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SearchMarketBykey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchMarketBykeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchMarketBykeyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchDetailsByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="flg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchDetailsByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchDetailsByIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UppdateFinancial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UppdateFinancialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UppdateFinancialResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Uppdateprodect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UppdateprodectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UppdateprodectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="info" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByCircle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="x" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="y" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="r" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByCircleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByCircleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UppDateOrderStatment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MarketID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UppDateOrderStatmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UppDateOrderStatmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SearchMarketBykeySoapIn">
+    <wsdl:part name="parameters" element="tns:SearchMarketBykey" />
+  </wsdl:message>
+  <wsdl:message name="SearchMarketBykeySoapOut">
+    <wsdl:part name="parameters" element="tns:SearchMarketBykeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchDetailsByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchDetailsByID" />
+  </wsdl:message>
+  <wsdl:message name="SearchDetailsByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchDetailsByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="UppdateFinancialSoapIn">
+    <wsdl:part name="parameters" element="tns:UppdateFinancial" />
+  </wsdl:message>
+  <wsdl:message name="UppdateFinancialSoapOut">
+    <wsdl:part name="parameters" element="tns:UppdateFinancialResponse" />
+  </wsdl:message>
+  <wsdl:message name="UppdateprodectSoapIn">
+    <wsdl:part name="parameters" element="tns:Uppdateprodect" />
+  </wsdl:message>
+  <wsdl:message name="UppdateprodectSoapOut">
+    <wsdl:part name="parameters" element="tns:UppdateprodectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportInfo" />
+  </wsdl:message>
+  <wsdl:message name="ImportInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="addDataSoapIn">
+    <wsdl:part name="parameters" element="tns:addData" />
+  </wsdl:message>
+  <wsdl:message name="addDataSoapOut">
+    <wsdl:part name="parameters" element="tns:addDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCircleSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByCircle" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCircleSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByCircleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UppDateOrderStatmentSoapIn">
+    <wsdl:part name="parameters" element="tns:UppDateOrderStatment" />
+  </wsdl:message>
+  <wsdl:message name="UppDateOrderStatmentSoapOut">
+    <wsdl:part name="parameters" element="tns:UppDateOrderStatmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchMarketBykeyHttpGetIn">
+    <wsdl:part name="Key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchMarketBykeyHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchDetailsByIDHttpGetIn">
+    <wsdl:part name="ID" type="s:string" />
+    <wsdl:part name="flg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchDetailsByIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UppdateFinancialHttpGetIn">
+    <wsdl:part name="data" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UppdateFinancialHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UppdateprodectHttpGetIn">
+    <wsdl:part name="data" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UppdateprodectHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportInfoHttpGetIn">
+    <wsdl:part name="ID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="addDataHttpGetIn">
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="info" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCircleHttpGetIn">
+    <wsdl:part name="x" type="s:string" />
+    <wsdl:part name="y" type="s:string" />
+    <wsdl:part name="r" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCircleHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UppDateOrderStatmentHttpGetIn">
+    <wsdl:part name="MarketID" type="s:string" />
+    <wsdl:part name="data" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UppDateOrderStatmentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchMarketBykeyHttpPostIn">
+    <wsdl:part name="Key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchMarketBykeyHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchDetailsByIDHttpPostIn">
+    <wsdl:part name="ID" type="s:string" />
+    <wsdl:part name="flg" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchDetailsByIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UppdateFinancialHttpPostIn">
+    <wsdl:part name="data" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UppdateFinancialHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UppdateprodectHttpPostIn">
+    <wsdl:part name="data" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UppdateprodectHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportInfoHttpPostIn">
+    <wsdl:part name="ID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ImportInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="addDataHttpPostIn">
+    <wsdl:part name="type" type="s:string" />
+    <wsdl:part name="info" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCircleHttpPostIn">
+    <wsdl:part name="x" type="s:string" />
+    <wsdl:part name="y" type="s:string" />
+    <wsdl:part name="r" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCircleHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UppDateOrderStatmentHttpPostIn">
+    <wsdl:part name="MarketID" type="s:string" />
+    <wsdl:part name="data" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UppDateOrderStatmentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="SearchMarketBykey">
+      <wsdl:input message="tns:SearchMarketBykeySoapIn" />
+      <wsdl:output message="tns:SearchMarketBykeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDetailsByID">
+      <wsdl:input message="tns:SearchDetailsByIDSoapIn" />
+      <wsdl:output message="tns:SearchDetailsByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UppdateFinancial">
+      <wsdl:input message="tns:UppdateFinancialSoapIn" />
+      <wsdl:output message="tns:UppdateFinancialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Uppdateprodect">
+      <wsdl:input message="tns:UppdateprodectSoapIn" />
+      <wsdl:output message="tns:UppdateprodectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportInfo">
+      <wsdl:input message="tns:ImportInfoSoapIn" />
+      <wsdl:output message="tns:ImportInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addData">
+      <wsdl:input message="tns:addDataSoapIn" />
+      <wsdl:output message="tns:addDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCircle">
+      <wsdl:input message="tns:SearchByCircleSoapIn" />
+      <wsdl:output message="tns:SearchByCircleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UppDateOrderStatment">
+      <wsdl:input message="tns:UppDateOrderStatmentSoapIn" />
+      <wsdl:output message="tns:UppDateOrderStatmentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="SearchMarketBykey">
+      <wsdl:input message="tns:SearchMarketBykeyHttpGetIn" />
+      <wsdl:output message="tns:SearchMarketBykeyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDetailsByID">
+      <wsdl:input message="tns:SearchDetailsByIDHttpGetIn" />
+      <wsdl:output message="tns:SearchDetailsByIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UppdateFinancial">
+      <wsdl:input message="tns:UppdateFinancialHttpGetIn" />
+      <wsdl:output message="tns:UppdateFinancialHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Uppdateprodect">
+      <wsdl:input message="tns:UppdateprodectHttpGetIn" />
+      <wsdl:output message="tns:UppdateprodectHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportInfo">
+      <wsdl:input message="tns:ImportInfoHttpGetIn" />
+      <wsdl:output message="tns:ImportInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addData">
+      <wsdl:input message="tns:addDataHttpGetIn" />
+      <wsdl:output message="tns:addDataHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCircle">
+      <wsdl:input message="tns:SearchByCircleHttpGetIn" />
+      <wsdl:output message="tns:SearchByCircleHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UppDateOrderStatment">
+      <wsdl:input message="tns:UppDateOrderStatmentHttpGetIn" />
+      <wsdl:output message="tns:UppDateOrderStatmentHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="SearchMarketBykey">
+      <wsdl:input message="tns:SearchMarketBykeyHttpPostIn" />
+      <wsdl:output message="tns:SearchMarketBykeyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDetailsByID">
+      <wsdl:input message="tns:SearchDetailsByIDHttpPostIn" />
+      <wsdl:output message="tns:SearchDetailsByIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UppdateFinancial">
+      <wsdl:input message="tns:UppdateFinancialHttpPostIn" />
+      <wsdl:output message="tns:UppdateFinancialHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Uppdateprodect">
+      <wsdl:input message="tns:UppdateprodectHttpPostIn" />
+      <wsdl:output message="tns:UppdateprodectHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportInfo">
+      <wsdl:input message="tns:ImportInfoHttpPostIn" />
+      <wsdl:output message="tns:ImportInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addData">
+      <wsdl:input message="tns:addDataHttpPostIn" />
+      <wsdl:output message="tns:addDataHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCircle">
+      <wsdl:input message="tns:SearchByCircleHttpPostIn" />
+      <wsdl:output message="tns:SearchByCircleHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UppDateOrderStatment">
+      <wsdl:input message="tns:UppDateOrderStatmentHttpPostIn" />
+      <wsdl:output message="tns:UppDateOrderStatmentHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchMarketBykey">
+      <soap:operation soapAction="http://tempuri.org/SearchMarketBykey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDetailsByID">
+      <soap:operation soapAction="http://tempuri.org/SearchDetailsByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UppdateFinancial">
+      <soap:operation soapAction="http://tempuri.org/UppdateFinancial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Uppdateprodect">
+      <soap:operation soapAction="http://tempuri.org/Uppdateprodect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportInfo">
+      <soap:operation soapAction="http://tempuri.org/ImportInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addData">
+      <soap:operation soapAction="http://tempuri.org/addData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCircle">
+      <soap:operation soapAction="http://tempuri.org/SearchByCircle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UppDateOrderStatment">
+      <soap:operation soapAction="http://tempuri.org/UppDateOrderStatment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchMarketBykey">
+      <soap12:operation soapAction="http://tempuri.org/SearchMarketBykey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDetailsByID">
+      <soap12:operation soapAction="http://tempuri.org/SearchDetailsByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UppdateFinancial">
+      <soap12:operation soapAction="http://tempuri.org/UppdateFinancial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Uppdateprodect">
+      <soap12:operation soapAction="http://tempuri.org/Uppdateprodect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportInfo">
+      <soap12:operation soapAction="http://tempuri.org/ImportInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addData">
+      <soap12:operation soapAction="http://tempuri.org/addData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCircle">
+      <soap12:operation soapAction="http://tempuri.org/SearchByCircle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UppDateOrderStatment">
+      <soap12:operation soapAction="http://tempuri.org/UppDateOrderStatment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="SearchMarketBykey">
+      <http:operation location="/SearchMarketBykey" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDetailsByID">
+      <http:operation location="/SearchDetailsByID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UppdateFinancial">
+      <http:operation location="/UppdateFinancial" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Uppdateprodect">
+      <http:operation location="/Uppdateprodect" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportInfo">
+      <http:operation location="/ImportInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addData">
+      <http:operation location="/addData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCircle">
+      <http:operation location="/SearchByCircle" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UppDateOrderStatment">
+      <http:operation location="/UppDateOrderStatment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="SearchMarketBykey">
+      <http:operation location="/SearchMarketBykey" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDetailsByID">
+      <http:operation location="/SearchDetailsByID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UppdateFinancial">
+      <http:operation location="/UppdateFinancial" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Uppdateprodect">
+      <http:operation location="/Uppdateprodect" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportInfo">
+      <http:operation location="/ImportInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addData">
+      <http:operation location="/addData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCircle">
+      <http:operation location="/SearchByCircle" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UppDateOrderStatment">
+      <http:operation location="/UppDateOrderStatment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://192.168.21.29/WebService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://192.168.21.29/WebService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://192.168.21.29/WebService/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://192.168.21.29/WebService/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

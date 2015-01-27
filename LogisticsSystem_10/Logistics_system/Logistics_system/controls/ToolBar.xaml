@@ -1,0 +1,141 @@
+﻿<UserControl x:Class="Logistics_system.controls.ToolBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+             xmlns:menu="clr-namespace:DevExpress.AgMenu;assembly=DevExpress.AgMenu.v8.2"
+    xmlns:fish="clr-namespace:FishEyeSL;assembly=FishEyeSL">
+    
+    
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FF1F3B53"/>
+            <Setter Property="Foreground" Value="#FF000000"/>
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                        <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                        <GradientStop Color="#FF718597" Offset="0.375"/>
+                        <GradientStop Color="#FF617584" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="00:00:00.15" To="MouseOver"/>
+                                        <VisualTransition GeneratedDuration="00:00:00.15" To="Pressed"/>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard/>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard/>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard/>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="FocusStates">
+                                    <VisualState x:Name="Focused">
+                                        <Storyboard/>
+                                    </VisualState>
+                                    <VisualState x:Name="Unfocused"/>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" x:Name="contentPresenter" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="Transparent" Width="400" Height="100">
+        <Grid.ColumnDefinitions>
+            <!--<ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>
+            <ColumnDefinition Width="50"></ColumnDefinition>-->
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="50*" />
+            <ColumnDefinition Width="50*" />
+            <!--<ColumnDefinition Width="52*" />
+            <ColumnDefinition Width="48*" />
+            <ColumnDefinition Width="100*" />-->
+        </Grid.ColumnDefinitions>
+        <!--<Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF0091FF" Offset="0"/>
+                <GradientStop Color="#FFAAD7F9" Offset="1"/>
+                <GradientStop Color="#FFAAD7F9" Offset="0.683"/>
+            </LinearGradientBrush>
+        </Grid.Background>-->
+        <Ellipse Height="20" Fill="#FF004BF8" Margin="0,0,0,0" Grid.ColumnSpan="7" VerticalAlignment="Bottom" d:LayoutOverrides="Height" HorizontalAlignment="Center" Width="350" Opacity="1" OpacityMask="#FF003BFF">
+            <Ellipse.Effect>
+                <!--EC006DD8-->
+                <BlurEffect Radius="90"/>
+            </Ellipse.Effect>
+        </Ellipse>
+        <!--##EC000000-->
+        <fish:FishEyePanel Background="Transparent"  Magnification="3" ScaleToFit="False" Height="80" Grid.ColumnSpan="4" Margin="0,20,0,9">
+            <Button  Name="market_Search" Height="50" Click="market_Search_Click">
+                <ToolTipService.ToolTip>
+                    <TextBlock Text="门店查询"/>
+                </ToolTipService.ToolTip>
+                <Image Source="../images/14属性条件查询.png"  Stretch="Fill"/>
+            </Button>
+            <Button  Name="AddMarke" Height="50" Click="AddMarke_Click">
+                <ToolTipService.ToolTip>
+                    <TextBlock Text="门店录入"/>
+                </ToolTipService.ToolTip>
+                <Image Source="../images/Edit.png"  Stretch="Fill"/>
+            </Button>
+            <Button Height="50" Name="delieveProdects"  Click="warnbt_Click"  >
+                <ToolTipService.ToolTip>
+                    <TextBlock Text="配送货物"/>
+                </ToolTipService.ToolTip>
+                <Image   Name="warn" Source="../images/car12.png" Stretch="Fill" />
+            </Button>
+            <Button Height="50" Name="staticAna" Click="staticAna_Click">
+                <ToolTipService.ToolTip>
+                    <TextBlock Text="数据统计"/>
+                </ToolTipService.ToolTip>
+                <Image Source="../images/统计%20拷贝.png"  Stretch="Fill"/> 
+               
+            </Button>
+            <!--<Image Height="150" Name="image1" Stretch="Fill" Width="200" />-->
+            <!--<Button Height="50">
+                <Image Source="../images/Under-construction.png" Stretch="Fill"/>
+            </Button>-->
+            <!--<Button Height="50" Name="warnbt" >
+                <Image  Source="../images/Vista-Shield.png" Stretch="Fill"/>
+            </Button>-->
+            
+        </fish:FishEyePanel>
+        <!--<menu:AgMenu x:Name="menu1" PopupAnimationType="Scroll" HorizontalAlignment="Center" Width="30" Opacity="0" Height="50"  VerticalAlignment="Center" Grid.Column="4">
+            <menu:AgMenuItem Header="" Width="40" Height="50"  >
+                <menu:AgMenuItem Header="财务统计" IsCheckable="True" Click="finecial_Click" IsRadioItem="True" IsChecked="True">
+                    <menu:AgMenuItem.Icon>
+                        <Image Source="../images/dollar.png"/>
+                    </menu:AgMenuItem.Icon>
+                </menu:AgMenuItem>
+                <menu:AgMenuItem Header="货物统计" IsCheckable="True" Click="protects_click" IsRadioItem="True">
+                    <menu:AgMenuItem.Icon>
+                        <Image Source="../images/protects.png" Width="23" Height="23"/>
+                    </menu:AgMenuItem.Icon>
+                </menu:AgMenuItem>
+            </menu:AgMenuItem>
+        </menu:AgMenu>-->
+    </Grid>
+</UserControl>

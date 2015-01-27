@@ -1,0 +1,688 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0170BBAF-F66B-4334-850C-10F1D4F37ECC}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Logistics_system</RootNamespace>
+    <AssemblyName>Logistics_system</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>zh-Hans</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Logistics_system.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Logistics_system.App</SilverlightAppEntry>
+    <TestPageFileName>Logistics_systemTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="agTweener">
+      <HintPath>..\..\..\sp1 Silverlight站点\Release\ZDIMSDemo\Bin\Debug\agTweener.dll</HintPath>
+    </Reference>
+    <Reference Include="ColorPicker">
+      <HintPath>..\..\..\Sl库（3.10）\ColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="CurveMenuPanel">
+      <HintPath>..\..\..\Silverlight资料\CurveMenuPanel\CurveMenuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.AgDataGrid.v8.2">
+      <HintPath>D:\Program Files\Developer Express\Free Controls for Silverlight\Sources\DevExpress.Dll\DevExpress.AgDataGrid.v8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.AgMenu.v8.2">
+      <HintPath>D:\Program Files\Developer Express\Free Controls for Silverlight\Sources\DevExpress.Dll\DevExpress.AgMenu.v8.2.dll</HintPath>
+    </Reference>
+    <Reference Include="EasySL.Controls">
+      <HintPath>..\..\..\sp1 Silverlight站点\Release\ZDIMSDemo\Bin\Debug\EasySL.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="FishEyeSL">
+      <HintPath>..\..\..\Silverlight资料\FishEyeSL\FishEyeSL\Bin\Debug\FishEyeSL.dll</HintPath>
+    </Reference>
+    <Reference Include="FJ.Core">
+      <HintPath>..\..\统计图\source\Common\FJ.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GifImageLib">
+      <HintPath>..\..\..\Silverlight资料\gif\GifImages\GifImages\GifImageLib\Bin\Debug\GifImageLib.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="Pacem.Silverlight">
+      <HintPath>..\..\..\Silverlight资料\CurveMenuPanel\Pacem.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="ScatterView">
+      <HintPath>..\..\..\sp1 Silverlight站点\Release\ZDIMSDemo\Bin\Debug\ScatterView.dll</HintPath>
+    </Reference>
+    <Reference Include="SLVisifire.Charts">
+      <HintPath>..\..\统计图\Silverlight Binaries\SLVisifire.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="SLVisifire.Gauges">
+      <HintPath>..\..\统计图\Silverlight Binaries\SLVisifire.Gauges.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217" />
+    <Reference Include="System.Json, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Data.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit.Internals, Version=4.0.5.0, Culture=neutral, PublicKeyToken=2c5c654d367bf4a7, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="WebPrint">
+      <HintPath>..\..\..\Silverlight集锦\库\WebPrint\WebPrint\Bin\Debug\WebPrint.dll</HintPath>
+    </Reference>
+    <Reference Include="wmtLibrarys.Controls">
+      <HintPath>..\..\..\sp1 Silverlight站点\Release\ZDIMSDemo\Bin\Debug\wmtLibrarys.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="ZDIMS1.0">
+      <HintPath>..\..\..\..\18-SilverLight库\11-9\ZDIMS1.0.dll</HintPath>
+    </Reference>
+    <Reference Include="ZDIMSDemo">
+      <HintPath>..\..\..\..\08-DCS\SL示例（java版）\SlApp(Silverlight问题集锦_11_24)\SlApp\Bin\Debug\ZDIMSDemo.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="chart1\ChartControl.xaml.cs">
+      <DependentUpon>ChartControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="chart1\ChartType.cs" />
+    <Compile Include="chart1\dataBing.cs" />
+    <Compile Include="chart1\prodectChart.xaml.cs">
+      <DependentUpon>prodectChart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="checkTextLegality.cs" />
+    <Compile Include="controls\AddMarket.xaml.cs">
+      <DependentUpon>AddMarket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\addMarks.cs" />
+    <Compile Include="controls\BusAnalyse.xaml.cs">
+      <DependentUpon>BusAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\BusRoad.cs" />
+    <Compile Include="controls\DataForm.xaml.cs">
+      <DependentUpon>DataForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\DetailsForms.xaml.cs">
+      <DependentUpon>DetailsForms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\EditMark.xaml.cs">
+      <DependentUpon>EditMark.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\GIFToolTip.xaml.cs">
+      <DependentUpon>GIFToolTip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\MapSite.xaml.cs">
+      <DependentUpon>MapSite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\MyProgressBar.xaml.cs">
+      <DependentUpon>MyProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\netAnalyse.xaml.cs">
+      <DependentUpon>netAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\oradrForm.xaml.cs">
+      <DependentUpon>oradrForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\SlopePnt.cs" />
+    <Compile Include="controls\staticAnalyse.xaml.cs">
+      <DependentUpon>staticAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\subStatic.xaml.cs">
+      <DependentUpon>subStatic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\ToolBar.xaml.cs">
+      <DependentUpon>ToolBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\tooltip.xaml.cs">
+      <DependentUpon>tooltip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\trackplay.cs" />
+    <Compile Include="controls\trackplaycontrol.xaml.cs">
+      <DependentUpon>trackplaycontrol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="controls\VectorLine.cs" />
+    <Compile Include="DataClasses.cs" />
+    <Compile Include="DemosRegistration.cs" />
+    <Compile Include="DemosRegistration1.cs" />
+    <Compile Include="getProperties.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OptionsPanels\AppearanceOptionsPanel.cs" />
+    <Compile Include="OptionsPanels\ColumnLayoutOptionsPanel.cs" />
+    <Compile Include="OptionsPanels\ColumnTypesOptionsPanel.cs" />
+    <Compile Include="OptionsPanels\GroupingOptionsPanel.cs" />
+    <Compile Include="OptionsPanels\PreviewLayoutOptionsPanel.cs" />
+    <Compile Include="OptionsPanels\PreviewOptionsPanel.cs" />
+    <Compile Include="OptionsPanels\RowTemplateOptionsPanel.cs" />
+    <Compile Include="OptionsPanels\TotalSummariesOptionsPanel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceClient\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SilverlightControl1.xaml.cs">
+      <DependentUpon>SilverlightControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SilverlightControl2.xaml.cs">
+      <DependentUpon>SilverlightControl2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SilverlightControl3.xaml.cs">
+      <DependentUpon>SilverlightControl3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XMLSerialization.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="chart1\ChartControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="chart1\prodectChart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\AddMarket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\BusAnalyse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\DataForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\DetailsForms.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\EditMark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\GIFToolTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\MapSite.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\MyProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="controls\netAnalyse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\oradrForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\staticAnalyse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\subStatic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\ToolBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\tooltip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\trackplaycontrol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SilverlightControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SilverlightControl2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SilverlightControl3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\.svn\all-wcprops" />
+    <None Include="images\.svn\entries" />
+    <None Include="images\.svn\prop-base\1.JPG.svn-base" />
+    <None Include="images\.svn\prop-base\10.jpg.svn-base" />
+    <None Include="images\.svn\prop-base\2.JPG.svn-base" />
+    <None Include="images\.svn\prop-base\3.JPG.svn-base" />
+    <None Include="images\.svn\prop-base\4.JPG.svn-base" />
+    <None Include="images\.svn\prop-base\5.JPG.svn-base" />
+    <None Include="images\.svn\prop-base\6.JPG.svn-base" />
+    <None Include="images\.svn\prop-base\7.JPG.svn-base" />
+    <None Include="images\.svn\prop-base\8.gif.svn-base" />
+    <None Include="images\.svn\prop-base\9.gif.svn-base" />
+    <None Include="images\.svn\prop-base\alert_icon.png.svn-base" />
+    <None Include="images\.svn\prop-base\banner_bg.gif.svn-base" />
+    <None Include="images\.svn\prop-base\banner_bj.gif.svn-base" />
+    <None Include="images\.svn\prop-base\banner_logo.gif.svn-base" />
+    <None Include="images\.svn\prop-base\banner_map.gif.svn-base" />
+    <None Include="images\.svn\prop-base\banner_right.gif.svn-base" />
+    <None Include="images\.svn\prop-base\button_go.png.svn-base" />
+    <None Include="images\.svn\prop-base\button_go_click.png.svn-base" />
+    <None Include="images\.svn\prop-base\button_go_hover.png.svn-base" />
+    <None Include="images\.svn\prop-base\b_33.gif.svn-base" />
+    <None Include="images\.svn\prop-base\c_BottomLeft.gif.svn-base" />
+    <None Include="images\.svn\prop-base\c_BottomRight.gif.svn-base" />
+    <None Include="images\.svn\prop-base\c_TopLeft.gif.svn-base" />
+    <None Include="images\.svn\prop-base\c_TopRight.gif.svn-base" />
+    <None Include="images\.svn\prop-base\do_add.png.svn-base" />
+    <None Include="images\.svn\prop-base\do_delete.png.svn-base" />
+    <None Include="images\.svn\prop-base\do_modify.png.svn-base" />
+    <None Include="images\.svn\prop-base\do_refresh.png.svn-base" />
+    <None Include="images\.svn\prop-base\do_split.png.svn-base" />
+    <None Include="images\.svn\prop-base\eagleCtrl_lt.gif.svn-base" />
+    <None Include="images\.svn\prop-base\eagleCtrl_rb.gif.svn-base" />
+    <None Include="images\.svn\prop-base\eyeBtn.png.svn-base" />
+    <None Include="images\.svn\prop-base\eyeImgBtn.PNG.svn-base" />
+    <None Include="images\.svn\prop-base\flashpoint.gif.svn-base" />
+    <None Include="images\.svn\prop-base\globe.png.svn-base" />
+    <None Include="images\.svn\prop-base\hand.gif.svn-base" />
+    <None Include="images\.svn\prop-base\hand.png.svn-base" />
+    <None Include="images\.svn\prop-base\header.jpg.svn-base" />
+    <None Include="images\.svn\prop-base\layer.png.svn-base" />
+    <None Include="images\.svn\prop-base\leftHide_icon.png.svn-base" />
+    <None Include="images\.svn\prop-base\leftShow_icon.png.svn-base" />
+    <None Include="images\.svn\prop-base\leftTitle_bg.png.svn-base" />
+    <None Include="images\.svn\prop-base\loading.png.svn-base" />
+    <None Include="images\.svn\prop-base\logo.png.svn-base" />
+    <None Include="images\.svn\prop-base\magnify.pbj.svn-base" />
+    <None Include="images\.svn\prop-base\mapgis.gif.svn-base" />
+    <None Include="images\.svn\prop-base\mapgis.jpg.svn-base" />
+    <None Include="images\.svn\prop-base\o_BottomLeft.gif.svn-base" />
+    <None Include="images\.svn\prop-base\o_BottomRight.gif.svn-base" />
+    <None Include="images\.svn\prop-base\o_TopLeft.gif.svn-base" />
+    <None Include="images\.svn\prop-base\o_TopRight.gif.svn-base" />
+    <None Include="images\.svn\prop-base\pause.jpg.svn-base" />
+    <None Include="images\.svn\prop-base\pin.png.svn-base" />
+    <None Include="images\.svn\prop-base\play.jpg.svn-base" />
+    <None Include="images\.svn\prop-base\rightTitle_bg.png.svn-base" />
+    <None Include="images\.svn\prop-base\star.gif.svn-base" />
+    <None Include="images\.svn\prop-base\topmenu_bg.png.svn-base" />
+    <None Include="images\.svn\prop-base\top_bg.png.svn-base" />
+    <None Include="images\.svn\prop-base\zoomIn.png.svn-base" />
+    <None Include="images\.svn\prop-base\zoomOut.png.svn-base" />
+    <None Include="images\.svn\prop-base\区.png.svn-base" />
+    <None Include="images\.svn\prop-base\点.png.svn-base" />
+    <None Include="images\.svn\prop-base\线.png.svn-base" />
+    <None Include="images\.svn\text-base\1.JPG.svn-base" />
+    <None Include="images\.svn\text-base\10.jpg.svn-base" />
+    <None Include="images\.svn\text-base\2.JPG.svn-base" />
+    <None Include="images\.svn\text-base\3.JPG.svn-base" />
+    <None Include="images\.svn\text-base\4.JPG.svn-base" />
+    <None Include="images\.svn\text-base\5.JPG.svn-base" />
+    <None Include="images\.svn\text-base\6.JPG.svn-base" />
+    <None Include="images\.svn\text-base\7.JPG.svn-base" />
+    <None Include="images\.svn\text-base\8.gif.svn-base" />
+    <None Include="images\.svn\text-base\9.gif.svn-base" />
+    <None Include="images\.svn\text-base\alert_icon.png.svn-base" />
+    <None Include="images\.svn\text-base\banner_bg.gif.svn-base" />
+    <None Include="images\.svn\text-base\banner_bj.gif.svn-base" />
+    <None Include="images\.svn\text-base\banner_logo.gif.svn-base" />
+    <None Include="images\.svn\text-base\banner_map.gif.svn-base" />
+    <None Include="images\.svn\text-base\banner_right.gif.svn-base" />
+    <None Include="images\.svn\text-base\button_go.png.svn-base" />
+    <None Include="images\.svn\text-base\button_go_click.png.svn-base" />
+    <None Include="images\.svn\text-base\button_go_hover.png.svn-base" />
+    <None Include="images\.svn\text-base\b_33.gif.svn-base" />
+    <None Include="images\.svn\text-base\c_BottomLeft.gif.svn-base" />
+    <None Include="images\.svn\text-base\c_BottomRight.gif.svn-base" />
+    <None Include="images\.svn\text-base\c_TopLeft.gif.svn-base" />
+    <None Include="images\.svn\text-base\c_TopRight.gif.svn-base" />
+    <None Include="images\.svn\text-base\do_add.png.svn-base" />
+    <None Include="images\.svn\text-base\do_delete.png.svn-base" />
+    <None Include="images\.svn\text-base\do_modify.png.svn-base" />
+    <None Include="images\.svn\text-base\do_refresh.png.svn-base" />
+    <None Include="images\.svn\text-base\do_split.png.svn-base" />
+    <None Include="images\.svn\text-base\eagleCtrl_lt.gif.svn-base" />
+    <None Include="images\.svn\text-base\eagleCtrl_rb.gif.svn-base" />
+    <None Include="images\.svn\text-base\eyeBtn.png.svn-base" />
+    <None Include="images\.svn\text-base\eyeImgBtn.PNG.svn-base" />
+    <None Include="images\.svn\text-base\flashpoint.gif.svn-base" />
+    <None Include="images\.svn\text-base\globe.png.svn-base" />
+    <None Include="images\.svn\text-base\hand.gif.svn-base" />
+    <None Include="images\.svn\text-base\hand.png.svn-base" />
+    <None Include="images\.svn\text-base\header.jpg.svn-base" />
+    <None Include="images\.svn\text-base\layer.png.svn-base" />
+    <None Include="images\.svn\text-base\leftHide_icon.png.svn-base" />
+    <None Include="images\.svn\text-base\leftShow_icon.png.svn-base" />
+    <None Include="images\.svn\text-base\leftTitle_bg.png.svn-base" />
+    <None Include="images\.svn\text-base\loading.png.svn-base" />
+    <None Include="images\.svn\text-base\logo.png.svn-base" />
+    <None Include="images\.svn\text-base\magnify.pbj.svn-base" />
+    <None Include="images\.svn\text-base\mapgis.gif.svn-base" />
+    <None Include="images\.svn\text-base\mapgis.jpg.svn-base" />
+    <None Include="images\.svn\text-base\o_BottomLeft.gif.svn-base" />
+    <None Include="images\.svn\text-base\o_BottomRight.gif.svn-base" />
+    <None Include="images\.svn\text-base\o_TopLeft.gif.svn-base" />
+    <None Include="images\.svn\text-base\o_TopRight.gif.svn-base" />
+    <None Include="images\.svn\text-base\pause.jpg.svn-base" />
+    <None Include="images\.svn\text-base\pin.png.svn-base" />
+    <None Include="images\.svn\text-base\play.jpg.svn-base" />
+    <None Include="images\.svn\text-base\rightTitle_bg.png.svn-base" />
+    <None Include="images\.svn\text-base\star.gif.svn-base" />
+    <None Include="images\.svn\text-base\topmenu_bg.png.svn-base" />
+    <None Include="images\.svn\text-base\top_bg.png.svn-base" />
+    <None Include="images\.svn\text-base\zoomIn.png.svn-base" />
+    <None Include="images\.svn\text-base\zoomOut.png.svn-base" />
+    <None Include="images\.svn\text-base\区.png.svn-base" />
+    <None Include="images\.svn\text-base\点.png.svn-base" />
+    <None Include="images\.svn\text-base\线.png.svn-base" />
+    <None Include="images\bus\Thumbs.db" />
+    <None Include="images\bus\vssver2.scc" />
+    <None Include="images\Thumbs.db" />
+    <None Include="images\widget\Thumbs.db" />
+    <None Include="images\widget\vssver2.scc" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Service References\ServiceClient\Service.wsdl" />
+    <Resource Include="images\bus\bus.gif" />
+    <Resource Include="images\bus\car.gif" />
+    <Resource Include="images\bus\car.PNG" />
+    <Resource Include="images\bus\changebus.gif" />
+    <Resource Include="images\bus\cheng.gif" />
+    <Resource Include="images\bus\end.PNG" />
+    <Resource Include="images\bus\end2.PNG" />
+    <Resource Include="images\bus\huan.gif" />
+    <Resource Include="images\bus\pause.jpg" />
+    <Resource Include="images\bus\play.jpg" />
+    <Resource Include="images\bus\qi.gif" />
+    <Resource Include="images\bus\qidian.gif" />
+    <Resource Include="images\bus\shift.gif" />
+    <Resource Include="images\bus\star.gif" />
+    <Resource Include="images\bus\start1.PNG" />
+    <Resource Include="images\bus\start2.PNG" />
+    <Resource Include="images\bus\stop.gif" />
+    <Resource Include="images\bus\stop.jpg" />
+    <Resource Include="images\bus\stop.PNG" />
+    <Resource Include="images\bus\walk.gif" />
+    <Resource Include="images\bus\zhong.gif" />
+    <Resource Include="images\bus\zhongdian.gif" />
+    <Resource Include="images\bus\zou.gif" />
+    <Resource Include="images\widget\6.PNG" />
+    <Resource Include="images\widget\8.gif" />
+    <Resource Include="images\widget\8.png" />
+    <Resource Include="images\widget\btn_01.png" />
+    <Resource Include="images\widget\btn_02.png" />
+    <Resource Include="images\widget\btn_03.png" />
+    <Resource Include="images\widget\btn_04.png" />
+    <Resource Include="images\widget\btn_05.png" />
+    <Resource Include="images\widget\btn_06.png" />
+    <Resource Include="images\widget\btn_07.png" />
+    <Resource Include="images\widget\btn_08.png" />
+    <Resource Include="images\widget\btn_09.png" />
+    <Resource Include="images\widget\btn_10.png" />
+    <Resource Include="images\widget\btn_11.png" />
+    <Resource Include="images\widget\btn_12.png" />
+    <Resource Include="images\widget\btn_13.png" />
+    <Resource Include="images\widget\btn_14.png" />
+    <Resource Include="images\widget\btn_15.png" />
+    <Resource Include="images\widget\btn_16.png" />
+    <Resource Include="images\widget\btn_17.png" />
+    <Resource Include="images\widget\btn_18.png" />
+    <Resource Include="images\widget\btn_19.png" />
+    <Resource Include="images\widget\btn_20.png" />
+    <Resource Include="images\widget\btn_21.png" />
+    <Resource Include="images\widget\btn_22.png" />
+    <Resource Include="images\widget\btn_23.png" />
+    <Resource Include="images\widget\btn_24.png" />
+    <Resource Include="images\widget\btn_25.png" />
+    <Resource Include="images\widget\btn_26.png" />
+    <Resource Include="images\widget\btn_27.png" />
+    <Resource Include="images\widget\btn_28.png" />
+    <Resource Include="images\widget\btn_29.png" />
+    <Resource Include="images\widget\btn_30.png" />
+    <Resource Include="images\widget\btn_31.png" />
+    <Resource Include="images\widget\btn_32.png" />
+    <Resource Include="images\widget\btn_33.png" />
+    <Resource Include="images\widget\bus.gif" />
+    <Resource Include="images\widget\b_33.png" />
+    <Resource Include="images\widget\m.png" />
+    <Resource Include="images\widget\tool_21.gif" />
+    <Resource Include="images\widget\tool_22.gif" />
+    <Resource Include="images\widget\tool_23.gif" />
+    <Resource Include="images\widget\tool_28.gif" />
+    <Resource Include="images\widget\tool_29.gif" />
+    <Resource Include="images\widget\tool_30.gif" />
+    <Resource Include="images\widget\tool_31.gif" />
+    <Resource Include="images\widget\tool_32.gif" />
+    <Resource Include="images\widget\tool_33.gif" />
+    <Resource Include="images\widget\tool_34.gif" />
+    <Resource Include="images\widget\tool_35.gif" />
+    <Resource Include="images\widget\tool_6.PNG" />
+    <Resource Include="images\widget\tool_7.gif" />
+    <Resource Include="images\1.gif" />
+    <Resource Include="images\1.JPG" />
+    <Resource Include="images\线.png" />
+    <Resource Include="images\2.gif" />
+    <Resource Include="images\2.JPG" />
+    <Resource Include="images\3.JPG" />
+    <Resource Include="images\4.JPG" />
+    <Resource Include="images\5.JPG" />
+    <Resource Include="images\6.gif" />
+    <Resource Include="images\6.JPG" />
+    <Resource Include="images\7.JPG" />
+    <Resource Include="images\8.gif" />
+    <Resource Include="images\9.gif" />
+    <Resource Include="images\mov.gif" />
+    <Resource Include="images\move.PNG" />
+    <Resource Include="images\move1.png" />
+    <Resource Include="images\play\pause.png" />
+    <Resource Include="images\play\play stop.png" />
+    <Resource Include="images\play\play.png" />
+    <Resource Include="images\tooltip\SiteContentBg.png" />
+    <Resource Include="images\tooltip\SiteHeaderBg.png" />
+    <Resource Include="images\banner.png" />
+    <Resource Include="images\bottom.png" />
+    <Resource Include="images\banner1.png" />
+    <Resource Include="images\banner3.png" />
+    <Resource Include="images\banner122.png" />
+    <Resource Include="images\banner100.png" />
+    <Resource Include="images\banner101.png" />
+    <Resource Include="images\banner102.png" />
+    <Resource Include="images\banner111.png" />
+    <Resource Include="images\btn_08.png" />
+    <Resource Include="images\Close.png" />
+    <Resource Include="images\car12.png" />
+    <None Include="Service References\ServiceClient\Service.disco" />
+    <None Include="Service References\ServiceClient\configuration91.svcinfo" />
+    <None Include="Service References\ServiceClient\configuration.svcinfo" />
+    <None Include="Service References\ServiceClient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Alarm.png" />
+    <Resource Include="images\Anouncement.png" />
+    <Resource Include="images\Config-Tools.png" />
+    <Resource Include="images\Paste.png" />
+    <Resource Include="images\Under-construction.png" />
+    <Resource Include="images\Vista-Shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\8标注.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\14属性条件查询.png" />
+    <Resource Include="images\9点击查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\35位置信息.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\6鹰眼.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\static.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\27路径分析.png" />
+    <Resource Include="images\32网络分析.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\car.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\currencies_24.png" />
+    <Resource Include="images\currency.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\dollar.png" />
+    <Resource Include="images\euro.png" />
+    <Resource Include="images\folder_closed_32.png" />
+    <Resource Include="images\pounds.png" />
+    <Resource Include="images\yen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\统计 拷贝.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\protects.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Cars.xml" />
+    <Content Include="Data\Employees.xml" />
+    <Content Include="Data\stops.xml" />
+    <Resource Include="images\car1.PNG" />
+    <Resource Include="images\flashpoint.gif" />
+    <Resource Include="images\SiteIcon.png" />
+    <Resource Include="images\red2.png" />
+    <Resource Include="images\pp1.png" />
+    <Resource Include="images\pp2.png" />
+    <Resource Include="images\red.png" />
+    <Resource Include="images\red1.png" />
+    <Resource Include="images\pin.png" />
+    <Resource Include="images\shop.png" />
+    <Resource Include="images\11.png" />
+    <Resource Include="images\22.png" />
+    <Resource Include="images\1.png" />
+    <Resource Include="images\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceClient\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\.svn\props\" />
+    <Folder Include="images\.svn\tmp\prop-base\" />
+    <Folder Include="images\.svn\tmp\props\" />
+    <Folder Include="images\.svn\tmp\text-base\" />
+    <Folder Include="images\bus\.svn\prop-base\" />
+    <Folder Include="images\bus\.svn\props\" />
+    <Folder Include="images\bus\.svn\text-base\" />
+    <Folder Include="images\bus\.svn\tmp\prop-base\" />
+    <Folder Include="images\bus\.svn\tmp\props\" />
+    <Folder Include="images\bus\.svn\tmp\text-base\" />
+    <Folder Include="images\widget\.svn\prop-base\" />
+    <Folder Include="images\widget\.svn\props\" />
+    <Folder Include="images\widget\.svn\text-base\" />
+    <Folder Include="images\widget\.svn\tmp\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

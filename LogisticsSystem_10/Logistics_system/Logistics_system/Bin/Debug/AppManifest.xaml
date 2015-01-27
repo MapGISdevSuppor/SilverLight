@@ -1,0 +1,47 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="Logistics_system" EntryPointType="Logistics_system.App" RuntimeVersion="4.0.50401.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="Logistics_system" Source="Logistics_system.dll" />
+    <AssemblyPart x:Name="agTweener" Source="agTweener.dll" />
+    <AssemblyPart x:Name="ColorPicker" Source="ColorPicker.dll" />
+    <AssemblyPart x:Name="CurveMenuPanel" Source="CurveMenuPanel.dll" />
+    <AssemblyPart x:Name="DevExpress.AgDataGrid.v8.2" Source="DevExpress.AgDataGrid.v8.2.dll" />
+    <AssemblyPart x:Name="DevExpress.AgMenu.v8.2" Source="DevExpress.AgMenu.v8.2.dll" />
+    <AssemblyPart x:Name="EasySL.Controls" Source="EasySL.Controls.dll" />
+    <AssemblyPart x:Name="FishEyeSL" Source="FishEyeSL.dll" />
+    <AssemblyPart x:Name="FJ.Core" Source="FJ.Core.dll" />
+    <AssemblyPart x:Name="GifImageLib" Source="GifImageLib.dll" />
+    <AssemblyPart x:Name="Pacem.Silverlight" Source="Pacem.Silverlight.dll" />
+    <AssemblyPart x:Name="ScatterView" Source="ScatterView.dll" />
+    <AssemblyPart x:Name="SLVisifire.Charts" Source="SLVisifire.Charts.dll" />
+    <AssemblyPart x:Name="SLVisifire.Gauges" Source="SLVisifire.Gauges.dll" />
+    <AssemblyPart x:Name="System.ComponentModel.DataAnnotations" Source="System.ComponentModel.DataAnnotations.dll" />
+    <AssemblyPart x:Name="System.Json" Source="System.Json.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Data.DataForm.Toolkit" Source="System.Windows.Controls.Data.DataForm.Toolkit.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Data" Source="System.Windows.Controls.Data.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Data.Input" Source="System.Windows.Controls.Data.Input.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Data.Toolkit" Source="System.Windows.Controls.Data.Toolkit.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.DataVisualization.Toolkit" Source="System.Windows.Controls.DataVisualization.Toolkit.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls" Source="System.Windows.Controls.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Input" Source="System.Windows.Controls.Input.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Input.Toolkit" Source="System.Windows.Controls.Input.Toolkit.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Layout.Toolkit" Source="System.Windows.Controls.Layout.Toolkit.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Toolkit" Source="System.Windows.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="System.Windows.Controls.Toolkit.Internals" Source="System.Windows.Controls.Toolkit.Internals.dll" />
+    <AssemblyPart x:Name="System.Xml.Linq" Source="System.Xml.Linq.dll" />
+    <AssemblyPart x:Name="System.Xml.Serialization" Source="System.Xml.Serialization.dll" />
+    <AssemblyPart x:Name="WebPrint" Source="WebPrint.dll" />
+    <AssemblyPart x:Name="wmtLibrarys.Controls" Source="wmtLibrarys.Controls.dll" />
+    <AssemblyPart x:Name="ZDIMS1.0" Source="ZDIMS1.0.dll" />
+    <AssemblyPart x:Name="ZDIMSDemo" Source="ZDIMSDemo.dll" />
+    <AssemblyPart x:Name="System.Windows.Data" Source="System.Windows.Data.dll" />
+    <AssemblyPart Source="zh-Hans/System.ComponentModel.DataAnnotations.resources.dll" />
+    <AssemblyPart Source="zh-Hans/System.Json.resources.dll" />
+    <AssemblyPart Source="zh-Hans/System.Windows.Controls.resources.dll" />
+    <AssemblyPart Source="zh-Hans/System.Windows.Controls.Data.resources.dll" />
+    <AssemblyPart Source="zh-Hans/System.Windows.Controls.Data.Input.resources.dll" />
+    <AssemblyPart Source="zh-Hans/System.Windows.Controls.Input.resources.dll" />
+    <AssemblyPart Source="zh-Hans/System.Xml.Linq.resources.dll" />
+    <AssemblyPart Source="zh-Hans/System.Xml.Serialization.resources.dll" />
+    <AssemblyPart Source="zh-Hans/System.Windows.Data.resources.dll" />
+  </Deployment.Parts>
+</Deployment>

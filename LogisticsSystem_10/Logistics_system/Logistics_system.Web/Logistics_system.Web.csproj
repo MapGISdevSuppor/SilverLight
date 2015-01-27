@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C1A20CC-EA3C-49BE-8795-7AD66C096C49}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Logistics_system.Web</RootNamespace>
+    <AssemblyName>Logistics_system.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightApplicationList>{0170BBAF-F66B-4334-850C-10F1D4F37ECC}|..\Logistics_system\Logistics_system.csproj|ClientBin|False</SilverlightApplicationList>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="ZDIMS1.0">
+      <HintPath>..\..\SilverlightDemo\SilverlightDemo\Bin\Debug\ZDIMS1.0.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ClientBin\images\1.JPG" />
+    <Resource Include="ClientBin\images\1.png" />
+    <Resource Include="ClientBin\images\11.png" />
+    <Resource Include="ClientBin\images\14属性条件查询.png" />
+    <Resource Include="ClientBin\images\2.JPG" />
+    <Resource Include="ClientBin\images\2.png" />
+    <Resource Include="ClientBin\images\22.png" />
+    <Resource Include="ClientBin\images\27路径分析.png" />
+    <Resource Include="ClientBin\images\3.JPG" />
+    <Resource Include="ClientBin\images\32网络分析.png" />
+    <Resource Include="ClientBin\images\35位置信息.png" />
+    <Resource Include="ClientBin\images\4.JPG" />
+    <Resource Include="ClientBin\images\5.JPG" />
+    <Resource Include="ClientBin\images\6.JPG" />
+    <Resource Include="ClientBin\images\6鹰眼.png" />
+    <Resource Include="ClientBin\images\7.JPG" />
+    <Resource Include="ClientBin\images\8标注.png" />
+    <Resource Include="ClientBin\images\9.gif" />
+    <Resource Include="ClientBin\images\9点击查询.png" />
+    <Resource Include="ClientBin\images\Alarm.png" />
+    <Resource Include="ClientBin\images\Anouncement.png" />
+    <Resource Include="ClientBin\images\banner.png" />
+    <Resource Include="ClientBin\images\banner1.png" />
+    <Resource Include="ClientBin\images\banner100.png" />
+    <Resource Include="ClientBin\images\banner101.png" />
+    <Resource Include="ClientBin\images\banner102.png" />
+    <Resource Include="ClientBin\images\banner111.png" />
+    <Resource Include="ClientBin\images\banner122.png" />
+    <Resource Include="ClientBin\images\banner3.png" />
+    <Resource Include="ClientBin\images\bottom.png" />
+    <Resource Include="ClientBin\images\btn_08.png" />
+    <Resource Include="ClientBin\images\bus\stop.png" />
+    <Resource Include="ClientBin\images\car.png" />
+    <Resource Include="ClientBin\images\car1.PNG" />
+    <Resource Include="ClientBin\images\Config-Tools.png" />
+    <Resource Include="ClientBin\images\currencies_24.png" />
+    <Resource Include="ClientBin\images\currency.png" />
+    <Resource Include="ClientBin\images\dollar.png" />
+    <Resource Include="ClientBin\images\Edit.png" />
+    <Resource Include="ClientBin\images\euro.png" />
+    <Resource Include="ClientBin\images\eyeBtn.png" />
+    <Resource Include="ClientBin\images\eyeImgBtn.PNG" />
+    <Resource Include="ClientBin\images\folder_closed_32.png" />
+    <Resource Include="ClientBin\images\globe.png" />
+    <Resource Include="ClientBin\images\hand.png" />
+    <Resource Include="ClientBin\images\header.jpg" />
+    <Resource Include="ClientBin\images\mapgis.jpg" />
+    <Resource Include="ClientBin\images\move.PNG" />
+    <Resource Include="ClientBin\images\move1.png" />
+    <Resource Include="ClientBin\images\navigator\add.png" />
+    <Resource Include="ClientBin\images\navigator\down.gif" />
+    <Resource Include="ClientBin\images\navigator\down.png" />
+    <Resource Include="ClientBin\images\navigator\left.gif" />
+    <Resource Include="ClientBin\images\navigator\left.png" />
+    <Resource Include="ClientBin\images\navigator\M.gif" />
+    <Resource Include="ClientBin\images\navigator\m.png" />
+    <Resource Include="ClientBin\images\navigator\refresh.gif" />
+    <Resource Include="ClientBin\images\navigator\refresh.png" />
+    <Resource Include="ClientBin\images\navigator\right.gif" />
+    <Resource Include="ClientBin\images\navigator\right.png" />
+    <Resource Include="ClientBin\images\navigator\sub.png" />
+    <Resource Include="ClientBin\images\navigator\T.png" />
+    <Resource Include="ClientBin\images\navigator\up.gif" />
+    <Resource Include="ClientBin\images\navigator\up.png" />
+    <Resource Include="ClientBin\images\Paste.png" />
+    <Resource Include="ClientBin\images\pin.png" />
+    <Resource Include="ClientBin\images\play\pause.png" />
+    <Resource Include="ClientBin\images\play\play stop.png" />
+    <Resource Include="ClientBin\images\play\play.png" />
+    <Resource Include="ClientBin\images\pounds.png" />
+    <Resource Include="ClientBin\images\pp1.png" />
+    <Resource Include="ClientBin\images\pp2.png" />
+    <Resource Include="ClientBin\images\protects.png" />
+    <Resource Include="ClientBin\images\red.png" />
+    <Resource Include="ClientBin\images\red1.png" />
+    <Resource Include="ClientBin\images\red2.png" />
+    <Resource Include="ClientBin\images\Select.png" />
+    <Resource Include="ClientBin\images\shop.png" />
+    <Resource Include="ClientBin\images\SiteIcon.png" />
+    <Resource Include="ClientBin\images\static.png" />
+    <Resource Include="ClientBin\images\tooltip\SiteContentBg.png" />
+    <Resource Include="ClientBin\images\tooltip\SiteHeaderBg.png" />
+    <Resource Include="ClientBin\images\tree\data.PNG" />
+    <Resource Include="ClientBin\images\tree\v0.PNG" />
+    <Resource Include="ClientBin\images\tree\v1.PNG" />
+    <Resource Include="ClientBin\images\tree\v2.PNG" />
+    <Resource Include="ClientBin\images\tree\v3.PNG" />
+    <Resource Include="ClientBin\images\tree\v4.PNG" />
+    <Resource Include="ClientBin\images\Under-construction.png" />
+    <Resource Include="ClientBin\images\Vista-Shield.png" />
+    <Resource Include="ClientBin\images\yen.png" />
+    <Resource Include="ClientBin\images\zoomIn.png" />
+    <Resource Include="ClientBin\images\zoomOut.png" />
+    <Resource Include="ClientBin\images\统计 拷贝.png" />
+    <Resource Include="ClientBin\images\线.png" />
+    <Resource Include="ClientBin\images\flashpoint.gif" />
+    <Content Include="ClientBin\images\car12.png" />
+    <Content Include="ClientBin\images\Close.png" />
+    <Content Include="ClientBin\Logistics_system.xap" />
+    <Content Include="config.js" />
+    <Content Include="init.js" />
+    <Content Include="Logistics_systemTestPage.aspx" />
+    <Content Include="Logistics_systemTestPage.html" />
+    <Content Include="Silverlight.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClientBin\images\.svn\all-wcprops" />
+    <None Include="ClientBin\images\.svn\entries" />
+    <None Include="ClientBin\images\.svn\prop-base\1.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\10.jpg.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\2.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\3.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\4.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\5.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\6.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\7.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\8.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\9.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\alert_icon.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\banner_bg.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\banner_bj.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\banner_logo.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\banner_map.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\banner_right.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\button_go.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\button_go_click.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\button_go_hover.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\b_33.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\c_BottomLeft.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\c_BottomRight.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\c_TopLeft.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\c_TopRight.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\do_add.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\do_delete.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\do_modify.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\do_refresh.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\do_split.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\eagleCtrl_lt.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\eagleCtrl_rb.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\eyeBtn.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\eyeImgBtn.PNG.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\flashpoint.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\globe.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\hand.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\hand.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\header.jpg.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\layer.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\leftHide_icon.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\leftShow_icon.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\leftTitle_bg.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\loading.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\logo.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\magnify.pbj.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\mapgis.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\mapgis.jpg.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\o_BottomLeft.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\o_BottomRight.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\o_TopLeft.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\o_TopRight.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\pause.jpg.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\pin.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\play.jpg.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\rightTitle_bg.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\star.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\topmenu_bg.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\top_bg.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\zoomIn.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\zoomOut.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\区.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\点.png.svn-base" />
+    <None Include="ClientBin\images\.svn\prop-base\线.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\1.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\10.jpg.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\2.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\3.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\4.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\5.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\6.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\7.JPG.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\8.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\9.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\alert_icon.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\banner_bg.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\banner_bj.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\banner_logo.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\banner_map.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\banner_right.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\button_go.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\button_go_click.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\button_go_hover.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\b_33.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\c_BottomLeft.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\c_BottomRight.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\c_TopLeft.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\c_TopRight.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\do_add.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\do_delete.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\do_modify.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\do_refresh.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\do_split.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\eagleCtrl_lt.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\eagleCtrl_rb.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\eyeBtn.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\eyeImgBtn.PNG.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\flashpoint.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\globe.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\hand.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\hand.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\header.jpg.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\layer.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\leftHide_icon.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\leftShow_icon.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\leftTitle_bg.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\loading.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\logo.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\magnify.pbj.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\mapgis.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\mapgis.jpg.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\o_BottomLeft.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\o_BottomRight.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\o_TopLeft.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\o_TopRight.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\pause.jpg.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\pin.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\play.jpg.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\rightTitle_bg.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\star.gif.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\topmenu_bg.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\top_bg.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\zoomIn.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\zoomOut.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\区.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\点.png.svn-base" />
+    <None Include="ClientBin\images\.svn\text-base\线.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\all-wcprops" />
+    <None Include="ClientBin\images\bus\.svn\entries" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\bus.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\bus.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\car.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\car.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\changebus.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\changebus.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\cheng.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\cheng.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\huan.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\huan.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\pause.jpg.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\pause.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\play.jpg.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\play.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\qi.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\qi.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\qidian.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\qidian.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\shift.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\shift.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\star.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\star.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\stop.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\stop.jpg.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\stop.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\walk.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\walk.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\zhong.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\zhong.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\zhongdian.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\zhongdian.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\zou.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\prop-base\zou.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\bus.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\bus.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\car.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\car.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\changebus.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\changebus.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\cheng.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\cheng.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\huan.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\huan.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\pause.jpg.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\pause.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\play.jpg.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\play.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\qi.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\qi.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\qidian.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\qidian.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\shift.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\shift.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\star.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\star.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\stop.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\stop.jpg.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\stop.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\walk.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\walk.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\zhong.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\zhong.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\zhongdian.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\zhongdian.png.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\zou.gif.svn-base" />
+    <None Include="ClientBin\images\bus\.svn\text-base\zou.png.svn-base" />
+    <None Include="ClientBin\images\magnify.pbj" />
+    <None Include="ClientBin\images\navigator\.svn\all-wcprops" />
+    <None Include="ClientBin\images\navigator\.svn\entries" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\add.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\down.gif.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\down.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\left.gif.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\left.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\M.gif.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\m.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\refresh.gif.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\refresh.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\right.gif.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\right.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\sub.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\T.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\up.gif.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\prop-base\up.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\add.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\down.gif.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\down.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\left.gif.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\left.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\M.gif.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\m.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\refresh.gif.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\refresh.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\right.gif.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\right.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\sub.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\T.png.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\up.gif.svn-base" />
+    <None Include="ClientBin\images\navigator\.svn\text-base\up.png.svn-base" />
+    <None Include="ClientBin\images\navigator\Thumbs.db" />
+    <None Include="ClientBin\images\navigator\vssver2.scc" />
+    <None Include="ClientBin\images\Thumbs.db" />
+    <None Include="ClientBin\images\tree\.svn\all-wcprops" />
+    <None Include="ClientBin\images\tree\.svn\entries" />
+    <None Include="ClientBin\images\tree\.svn\prop-base\data.PNG.svn-base" />
+    <None Include="ClientBin\images\tree\.svn\prop-base\v0.PNG.svn-base" />
+    <None Include="ClientBin\images\tree\.svn\prop-base\v1.PNG.svn-base" />
+    <None Include="ClientBin\images\tree\.svn\prop-base\v2.PNG.svn-base" />
+    <None Include="ClientBin\images\tree\.svn\prop-base\v3.PNG.svn-base" />
+    <None Include="ClientBin\images\tree\.svn\prop-base\v4.PNG.svn-base" />
+    <None Include="ClientBin\images\tree\.svn\text-base\data.PNG.svn-base" />
+    <None Include="ClientBin\images\tree\.svn\text-base\v0.PNG.svn-base" />
+    <None Include="ClientBin\images\tree\.svn\text-base\v1.PNG.svn-base" />
+    <None Include="ClientBin\images\tree\.svn\text-base\v2.PNG.svn-base" />
+    <None Include="ClientBin\images\tree\.svn\text-base\v3.PNG.svn-base" />
+    <None Include="ClientBin\images\tree\.svn\text-base\v4.PNG.svn-base" />
+    <None Include="ClientBin\images\tree\Thumbs.db" />
+    <None Include="ClientBin\images\tree\vssver2.scc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClientBin\images\.svn\props\" />
+    <Folder Include="ClientBin\images\.svn\tmp\prop-base\" />
+    <Folder Include="ClientBin\images\.svn\tmp\props\" />
+    <Folder Include="ClientBin\images\.svn\tmp\text-base\" />
+    <Folder Include="ClientBin\images\bus\.svn\props\" />
+    <Folder Include="ClientBin\images\bus\.svn\tmp\prop-base\" />
+    <Folder Include="ClientBin\images\bus\.svn\tmp\props\" />
+    <Folder Include="ClientBin\images\bus\.svn\tmp\text-base\" />
+    <Folder Include="ClientBin\images\navigator\.svn\props\" />
+    <Folder Include="ClientBin\images\navigator\.svn\tmp\prop-base\" />
+    <Folder Include="ClientBin\images\navigator\.svn\tmp\props\" />
+    <Folder Include="ClientBin\images\navigator\.svn\tmp\text-base\" />
+    <Folder Include="ClientBin\images\tree\.svn\props\" />
+    <Folder Include="ClientBin\images\tree\.svn\tmp\prop-base\" />
+    <Folder Include="ClientBin\images\tree\.svn\tmp\props\" />
+    <Folder Include="ClientBin\images\tree\.svn\tmp\text-base\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4626</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

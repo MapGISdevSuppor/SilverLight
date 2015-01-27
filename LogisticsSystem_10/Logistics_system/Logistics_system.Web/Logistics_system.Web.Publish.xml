@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="E:\27-Web App Market\5-Logistics_systemAPP-SL\APPFrame\6-logsitefull" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="pigg" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="True" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="True" profileName="配置文件1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="administrator" savePWD="True" userPWD="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAiwShrBicMUuSue1YCFjhswAAAAACAAAAAAADZgAAqAAAABAAAADDgPCBa6yVoIPTBpuUqqI0AAAAAASAAACgAAAAEAAAAGH0cFmOTBhFY0BGW8wRSJ8IAAAAPouBY8xYvWwUAAAAHzaaQnQJmY2RMqf3qc8mhJhkdXM=" SelectedForPublish="True">
+    <file relUrl="bin/Logistics_system.Web.dll" publishTime="10/16/2013 16:58:31" />
+    <file relUrl="Logistics_systemTestPage.aspx" publishTime="01/10/2013 14:11:42" />
+    <file relUrl="bin/Logistics_system.Web.pdb" publishTime="10/16/2013 16:58:31" />
+    <file relUrl="Web.config" publishTime="03/04/2013 17:37:59" />
+    <file relUrl="config.js" publishTime="11/10/2011 11:43:48" />
+    <file relUrl="init.js" publishTime="10/16/2013 16:58:08" />
+    <file relUrl="ClientBin/Logistics_system.xap" publishTime="10/16/2013 17:01:00" />
+    <file relUrl="bin/ZDIMS1.0.dll" publishTime="06/06/2012 16:02:10" />
+    <file relUrl="ClientBin/images/Close.png" publishTime="07/04/2012 15:59:48" />
+    <file relUrl="Silverlight.js" publishTime="10/09/2011 11:09:00" />
+    <file relUrl="Logistics_systemTestPage.html" publishTime="01/10/2013 14:11:42" />
+    <file relUrl="ClientBin/images/car12.png" publishTime="07/09/2012 17:35:28" />
+  </publishProfile>
+</publishData>
