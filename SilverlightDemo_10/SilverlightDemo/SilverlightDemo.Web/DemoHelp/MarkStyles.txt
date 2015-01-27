@@ -1,0 +1,39 @@
+﻿点样式示例: 
+
+
+一、示例功能： 
+
+
+    该示例实现几何图形、图片点样式信息的修改，包括点样式大小、颜色、透明度等。 
+
+
+二、实现说明： 
+
+
+    1、使用Silverlight二次开发库中提供的MarkLayer图层以及相关绘图样式对象实现各种点样式。 
+
+    2、实现步骤： 
+
+   （1）在MarkLayer图层中，添加IMSMark对象；
+
+   （2）将点样式对象（IMSSimpleMarkerSymbol、IMSPictureMarkerSymbol）的属性control赋值给IMSMark对象中设置MarkControl属性； 
+
+   （3）选择点对象，在样式框中修改对应点的大小、颜色、透明度以及点显示样式； 
+
+   （4）在自定义绘制结束事件中创建对应的几何对象，传入坐标点，将对象添加到绘图层控件。 
+
+    3、对象说明
+
+    MarkLayer图层参数： 
+
+    AddMark()：添加标注方法； 
+
+    IMSMark对象：标注对象 。
+
+    IMSSimpleMarkerSymbol对象：几何图形点样式（圆、五角星、菱形等），相关参数： 
+
+      SymbolStyle：点样式类型 
+
+      Size：点样式大小 
+
+    IMSPictureMarkerSymbol对象：图片点样式，可以修改图片大小、角度等属性 。

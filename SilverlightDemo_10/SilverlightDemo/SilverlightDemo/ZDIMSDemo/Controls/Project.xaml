@@ -1,0 +1,165 @@
+﻿<uc:BaseUserControl  x:Class="ZDIMSDemo.Controls.Project"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Background="White"
+     xmlns:uc="clr-namespace:ZDIMSDemo.Controls"
+             xmlns:my4="clr-namespace:EasySL.Controls;assembly=EasySL.Controls"
+                    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+    d:DesignHeight="542" d:DesignWidth="450">
+    <my4:DialogPanel Name="mydialog1" Title="投影转换" Height="542" Width="450"  DragEnable="True">
+        <Grid x:Name="LayoutRoot" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="30" />
+                <RowDefinition Height="57*" />
+            </Grid.RowDefinitions>
+            <sdk:Label Height="24" Margin="4,6,340,0" Name="label1" VerticalAlignment="Top" Content="输入坐标:"  Grid.Row="0" Width="100"/>
+            <sdk:Label HorizontalAlignment="Left" Margin="105,5,0,0" Name="label2" VerticalAlignment="Top" Height="24" Grid.Row="0" Width="27" Content="X:" FontWeight="Normal" />
+            <TextBox Height="24" HorizontalAlignment="Left" Margin="129,5,0,0" Name="coorx_src" VerticalAlignment="Top" Width="107" Text="1140000" FontWeight="Normal" />
+            <sdk:Label Grid.Row="0" Content="Y:" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="248,5,0,0" Name="label3" VerticalAlignment="Top" Width="25" />
+            <TextBox Grid.Row="0" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="272,5,0,0" Name="coory_src" Text="330000" VerticalAlignment="Top" Width="107" />
+            <sdk:Label Grid.Row="1"  Height="24" HorizontalAlignment="Left" Margin="117,5,0,0" Name="label4" VerticalAlignment="Top" Width="138" Content="原投影参数" FontWeight="Bold"  FontFamily="Trebuchet MS" Foreground="#FF2835E7" />
+            <sdk:Label Grid.Row="1" Height="24" HorizontalAlignment="Left" Margin="277,5,0,0" Name="label5" VerticalAlignment="Top" Width="160"  Content="目的投影参数" FontWeight="Bold" Foreground="#2835E7" />
+            <sdk:Label Grid.Row="2" Height="24" HorizontalAlignment="Left" Margin="4,5,0,0" Name="label6" VerticalAlignment="Top" Width="100" Content="坐标系类型："  FontWeight="Normal"/>
+            <ComboBox Grid.Row="2" Height="24" HorizontalAlignment="Left" Margin="103,5,0,0" Name="coor_src" VerticalAlignment="Top" Width="142" SelectedIndex="0" >
+                <ComboBoxItem Content="地理坐标系"></ComboBoxItem>
+                <ComboBoxItem Content="地方坐标"></ComboBoxItem>
+                <ComboBoxItem Content="平面直角坐标系"></ComboBoxItem>
+                <ComboBoxItem Content="大地直角坐标系"></ComboBoxItem>
+            </ComboBox>
+            <ComboBox Grid.Row="2" Height="24" HorizontalAlignment="Left" Margin="257,5,0,0" Name="coor_des" VerticalAlignment="Top" Width="142"  SelectedIndex="0">
+
+                <ComboBoxItem Content="地理坐标系"></ComboBoxItem>
+                <ComboBoxItem Content="地方坐标"></ComboBoxItem>
+                <ComboBoxItem Content="平面直角坐标系"></ComboBoxItem>
+                <ComboBoxItem Content="大地直角坐标系" IsSelected="True"></ComboBoxItem>
+            </ComboBox>
+            <sdk:Label Grid.Row="3" Height="24" HorizontalAlignment="Left" Margin="4,5,0,0" Name="label7" VerticalAlignment="Top" Width="100" Content="参考椭球体：" FontWeight="Normal" />
+            <ComboBox Height="24" HorizontalAlignment="Left" Margin="103,5,0,0" Name="ISpheroid_src" VerticalAlignment="Top" Width="142" Grid.Row="3" SelectedIndex="0" >
+                <ComboBoxItem Content="北京54"></ComboBoxItem>
+                <ComboBoxItem Content="西安80"></ComboBoxItem>
+
+            </ComboBox>
+            <ComboBox Height="24" HorizontalAlignment="Left" Margin="257,5,0,0" Name="ISpheroid_des" VerticalAlignment="Top" Width="142" Grid.Row="3" SelectedIndex="0" >
+                <ComboBoxItem Content="北京54"></ComboBoxItem>
+                <ComboBoxItem Content="西安80"></ComboBoxItem>
+            </ComboBox>
+            <sdk:Label Content="角度单位：" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="4,5,0,0" Name="label8" VerticalAlignment="Top" Width="100" Grid.Row="4" />
+            <ComboBox Height="24" HorizontalAlignment="Left" Margin="103,5,0,0" Name="DAngUnit_src" VerticalAlignment="Top" Width="142" Grid.Row="4" SelectedIndex="0">
+                <ComboBoxItem Content="度"></ComboBoxItem>
+                <ComboBoxItem Content="度分秒" IsSelected="True"></ComboBoxItem>
+            </ComboBox>
+            <ComboBox Height="24" HorizontalAlignment="Left" Margin="257,5,0,0" Name="DAngUnit_des" VerticalAlignment="Top" Width="142" Grid.Row="4" SelectedIndex="0" >
+                <ComboBoxItem Content="度"></ComboBoxItem>
+                <ComboBoxItem Content="度分秒" IsSelected="True"></ComboBoxItem>
+            </ComboBox>
+            <sdk:Label Content="投影类型：" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="4,5,0,0" Name="label9" VerticalAlignment="Top" Width="100" Grid.Row="5" />
+            <ComboBox Height="24" HorizontalAlignment="Left" Margin="103,5,0,0" Name="IProjTypeId_src" VerticalAlignment="Top" Width="142" Grid.Row="5" SelectedIndex="0">
+                <ComboBoxItem Content="无投影"></ComboBoxItem>
+                <ComboBoxItem Content="高斯-克吕格"></ComboBoxItem>
+                <ComboBoxItem Content="兰伯特投影"></ComboBoxItem>
+                <ComboBoxItem Content="亚尔勃斯"></ComboBoxItem>
+                <ComboBoxItem Content="普通多圆锥"></ComboBoxItem>
+                <ComboBoxItem Content="横向墨卡托"></ComboBoxItem>
+            </ComboBox>
+            <ComboBox Height="24" HorizontalAlignment="Left" Margin="257,5,0,0" Name="IProjTypeId_des" VerticalAlignment="Top" Width="142" Grid.Row="5"  SelectedIndex="1">
+                <ComboBoxItem Content="无投影"></ComboBoxItem>
+                <ComboBoxItem Content="高斯-克吕格"></ComboBoxItem>
+                <ComboBoxItem Content="兰伯特投影"></ComboBoxItem>
+                <ComboBoxItem Content="亚尔勃斯"></ComboBoxItem>
+                <ComboBoxItem Content="普通多圆锥"></ComboBoxItem>
+                <ComboBoxItem Content="横向墨卡托"></ComboBoxItem>
+            </ComboBox>
+            <sdk:Label Content="投影分带类型：" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="4,5,0,0" Name="labe20" VerticalAlignment="Top" Width="100" Grid.Row="6" />
+            <ComboBox Height="24" HorizontalAlignment="Left" Margin="103,5,0,0" Name="BZoneType_src" VerticalAlignment="Top" Width="142" Grid.Row="6" SelectedIndex="0" >
+                <ComboBoxItem Content="6度"></ComboBoxItem>
+                <ComboBoxItem Content="3度"></ComboBoxItem>
+                <ComboBoxItem Content="1.5度"></ComboBoxItem>
+
+            </ComboBox>
+            <ComboBox Height="24" HorizontalAlignment="Left" Margin="257,5,0,0" Name="BZoneType_des" VerticalAlignment="Top" Width="142" Grid.Row="6" SelectedIndex="0" >
+                <ComboBoxItem Content="6度"></ComboBoxItem>
+                <ComboBoxItem Content="3度"></ComboBoxItem>
+                <ComboBoxItem Content="1.5度"></ComboBoxItem>
+            </ComboBox>
+            <sdk:Label Content="投影带号：" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="4,5,0,0" Name="labe21" VerticalAlignment="Top" Width="100" Grid.Row="7" />
+            <TextBox Grid.Row="7" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="103,5,0,0" Name="IZone_src" Text="20" VerticalAlignment="Top" Width="142" />
+            <TextBox Grid.Row="7" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="257,5,0,0" Name="IZone_des" Text="20" VerticalAlignment="Top" Width="142" />
+            <sdk:Label Content="中心点经度：" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="4,5,0,0" Name="labe22" VerticalAlignment="Top" Width="100" Grid.Row="8" />
+            <TextBox Grid.Row="8" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="103,5,0,0" Name="DLon_src" Text="1170000" VerticalAlignment="Top" Width="142" />
+            <TextBox Grid.Row="8" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="257,5,0,0" Name="DLon_des" Text="1170000" VerticalAlignment="Top" Width="142" />
+            <sdk:Label Content="第一标准纬度：" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="4,5,0,0" Name="labe23" VerticalAlignment="Top" Width="100" Grid.Row="9" />
+            <TextBox Grid.Row="9" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="103,5,0,0" Name="ProjLat1_src" Text="" VerticalAlignment="Top" Width="142" />
+            <TextBox Grid.Row="9" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="257,5,0,0" Name="ProjLat1_des" Text="" VerticalAlignment="Top" Width="142" />
+            <sdk:Label Content="第二标准纬度：" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="4,5,0,0" Name="labe24" VerticalAlignment="Top" Width="100" Grid.Row="10" />
+            <TextBox Grid.Row="10" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="103,5,0,0" Name="ProjLat2_src" Text="" VerticalAlignment="Top" Width="142" />
+            <TextBox Grid.Row="10" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="257,5,0,0" Name="ProjLat2_des" Text="" VerticalAlignment="Top" Width="142" />
+            <sdk:Label Content="投影原点纬度：" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="4,5,0,0" Name="labe25" VerticalAlignment="Top" Width="100" Grid.Row="11" />
+            <TextBox Grid.Row="11" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="103,5,0,0" Name="ProjLat_src" Text="" VerticalAlignment="Top" Width="142" />
+            <TextBox Grid.Row="11" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="257,5,0,0" Name="ProjLat_des" Text="" VerticalAlignment="Top" Width="142" />
+            <sdk:Label Content="比例尺：" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="4,5,0,0" Name="labe26" VerticalAlignment="Top" Width="100" Grid.Row="12" />
+            <ComboBox Height="24" HorizontalAlignment="Left" Margin="103,5,0,0" Name="Scale_src" VerticalAlignment="Top" Width="142" Grid.Row="12"  SelectedIndex="0">
+                <ComboBoxItem Content="无"></ComboBoxItem>
+                <ComboBoxItem Content="1:5000"></ComboBoxItem>
+                <ComboBoxItem Content="1:1万"></ComboBoxItem>
+                <ComboBoxItem Content="1:2.5万"></ComboBoxItem>
+                <ComboBoxItem Content="1:5万"></ComboBoxItem>
+                <ComboBoxItem Content="1:10万"></ComboBoxItem>
+                <ComboBoxItem Content="1:25万"></ComboBoxItem>
+                <ComboBoxItem Content="1:50万"></ComboBoxItem>
+                <ComboBoxItem Content="1:100万"></ComboBoxItem>
+            </ComboBox>
+            <ComboBox Height="24" HorizontalAlignment="Left" Margin="257,5,0,0" Name="Scale_des" VerticalAlignment="Top" Width="142" Grid.Row="12" SelectedIndex="0">
+                <ComboBoxItem Content="无"></ComboBoxItem>
+                <ComboBoxItem Content="1:5000"></ComboBoxItem>
+                <ComboBoxItem Content="1:1万"></ComboBoxItem>
+                <ComboBoxItem Content="1:2.5万"></ComboBoxItem>
+                <ComboBoxItem Content="1:5万"></ComboBoxItem>
+                <ComboBoxItem Content="1:10万"></ComboBoxItem>
+                <ComboBoxItem Content="1:25万"></ComboBoxItem>
+                <ComboBoxItem Content="1:50万"></ComboBoxItem>
+                <ComboBoxItem Content="1:100万"></ComboBoxItem>
+            </ComboBox>
+            <sdk:Label Content="水平长度单位：" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="4,5,0,0" Name="labe27" VerticalAlignment="Top" Width="100" Grid.Row="13" />
+            <ComboBox Height="24" HorizontalAlignment="Left" Margin="103,5,0,0" Name="unit_src" VerticalAlignment="Top" Width="142" Grid.Row="13" SelectedIndex="3">
+                <ComboBoxItem Content="毫米"></ComboBoxItem>
+                <ComboBoxItem Content="厘米"></ComboBoxItem>
+                <ComboBoxItem Content="分米"></ComboBoxItem>
+                <ComboBoxItem Content="米"></ComboBoxItem>
+                <ComboBoxItem Content="公里"></ComboBoxItem>
+
+            </ComboBox>
+            <ComboBox Height="24" HorizontalAlignment="Left" Margin="257,5,0,0" Name="unit_des" VerticalAlignment="Top" Width="142" Grid.Row="13" SelectedIndex="3" >
+                <ComboBoxItem Content="毫米"></ComboBoxItem>
+                <ComboBoxItem Content="厘米"></ComboBoxItem>
+                <ComboBoxItem Content="分米"></ComboBoxItem>
+                <ComboBoxItem Content="米"></ComboBoxItem>
+                <ComboBoxItem Content="公里"></ComboBoxItem>
+            </ComboBox>
+            <sdk:Label Height="24" Margin="4,5,347,0" Name="label28" VerticalAlignment="Top" Content="转换结果：" Grid.Row="14" Width="100"/>
+            <sdk:Label HorizontalAlignment="Left" Margin="105,5,0,0" Name="labe29" VerticalAlignment="Top" Height="24" Grid.Row="14" Width="27" Content="X:" FontWeight="Normal" />
+            <TextBox Grid.Row="14" Height="24" HorizontalAlignment="Left" Margin="128,5,0,0" Name="coorx_des" VerticalAlignment="Top" Width="107" Text="" FontWeight="Normal" />
+            <sdk:Label Grid.Row="14" Content="Y:" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="248,5,0,0" Name="labe30" VerticalAlignment="Top" Width="25" />
+            <TextBox Grid.Row="14" FontWeight="Normal" Height="24" HorizontalAlignment="Left" Margin="272,5,0,0" Name="coory_des" Text="" VerticalAlignment="Top" Width="107" />
+            <Button Content="转换" Grid.Row="15" Height="28" HorizontalAlignment="Left" Margin="126,16,0,0" Name="button1" VerticalAlignment="Top" FontSize="13" FontWeight="Bold" Width="48"  Click="submit"/>
+            <Button Content="退出" Height="28" HorizontalAlignment="Right" Margin="0,17,118,0" Name="button2" VerticalAlignment="Top" Width="48" Grid.Row="15" FontSize="13" FontWeight="Bold" Click="close"/>
+            <sdk:Label Grid.Row="15" Height="28" HorizontalAlignment="Left" Margin="199,17,0,0" Name="label10" FontWeight="Normal" VerticalAlignment="Top" Width="54" Content="" />
+        </Grid>
+    </my4:DialogPanel>
+
+    </uc:BaseUserControl>

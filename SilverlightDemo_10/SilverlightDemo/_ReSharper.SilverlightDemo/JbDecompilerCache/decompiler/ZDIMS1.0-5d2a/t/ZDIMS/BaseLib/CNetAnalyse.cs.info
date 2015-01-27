@@ -1,0 +1,26 @@
+﻿Code version: 6.1.1000.82
+Assembly name ZDIMS1.0, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null mvid {569c58df-b09f-40ab-a202-d2a0289d6350}
+* ref mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  mvid {7458c81d-65bf-423c-8b4e-4347ed7d5a41}
+* ref System.Windows, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  mvid {49b66b23-3cc5-4a2c-9c09-62fe43576558}
+* ref System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  mvid {065f30c5-180f-479c-86b6-2c460a204b6d}
+* ref System.Net, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  mvid {2152c797-8217-430d-805b-c5647d0959b8}
+* ref System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+  mvid {6b01061d-0ce9-4462-8834-9971964eda04}
+* ref System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+  mvid {ce8adef2-5cd1-4f51-889c-3dc4039469fc}
+* ref System.ServiceModel.Web, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  mvid {88840d83-88eb-4cef-8117-02e7155332e2}
+* ref System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+  mvid {f36e7583-0355-4ed1-b386-ac89789c1d67}
+* ref System.Runtime.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  mvid {b363bb20-14fd-4029-a9d1-9f1e3b09ae8d}
+* ref System.Xml.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+  mvid {bebc0562-a2b2-42eb-b0fe-4da4589ace7e}
+* ref System.Windows.Browser, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  mvid {908a908c-e7a0-4c2a-bf1a-b0be24a7945f}
+* ref System.Xml, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  mvid {840c3de2-1290-4f2e-b9b8-e17337cde751}

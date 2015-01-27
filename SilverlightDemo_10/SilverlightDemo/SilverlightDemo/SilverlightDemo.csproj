@@ -1,0 +1,1085 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8FE71EAB-AD22-4BBE-9C8D-27B2336B8E69}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SilverlightDemo</RootNamespace>
+    <AssemblyName>SilverlightDemo</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>zh-Hans</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>SilverlightDemo.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>SilverlightDemo.App</SilverlightAppEntry>
+    <TestPageFileName>SilverlightDemoTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="agTweener">
+      <HintPath>Bin\Debug\agTweener.dll</HintPath>
+    </Reference>
+    <Reference Include="CurveMenuPanel">
+      <HintPath>..\..\Lib\CurveMenuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="EasySL.Controls">
+      <HintPath>..\..\DemoLib\EasySL.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="FishEyeSL">
+      <HintPath>..\..\Lib\FishEyeSL.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing">
+      <HintPath>Bin\Debug\Microsoft.Expression.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\..\Lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="ScatterView">
+      <HintPath>Bin\Debug\ScatterView.dll</HintPath>
+    </Reference>
+    <Reference Include="SilverlightContrib.Controls">
+      <HintPath>..\..\ColorDll\SilverlightContrib.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="SLVisifire.Charts, Version=0.0.0.0, Culture=neutral, PublicKeyToken=9f1c752402bc35c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\SLVisifire.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxHighlighting">
+      <HintPath>..\..\Lib\SyntaxHighlighting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=2.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
+    <Reference Include="System.Json, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Json, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Syndication, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.ServiceModel.Web.Extensions, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.DataForm.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit.Internals, Version=4.0.5.0, Culture=neutral, PublicKeyToken=2c5c654d367bf4a7, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>Bin\Debug\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Serialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="wmtLibrarys.Controls">
+      <HintPath>Bin\Debug\wmtLibrarys.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="ZDIMS1.0">
+      <HintPath>..\..\7.23\ZDIMS1.0.dll</HintPath>
+    </Reference>
+    <Reference Include="ZdimsExtends">
+      <HintPath>..\..\..\..\ZDIMS\SilverlightLib\ZdimsExtends.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="buscomponets\BaseUserControl.cs" />
+    <Compile Include="buscomponets\BusControl\BusAnalyse.xaml.cs">
+      <DependentUpon>BusAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="buscomponets\BusControl\setPlay.xaml.cs">
+      <DependentUpon>setPlay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CateConfig\Categeory.cs" />
+    <Compile Include="CateConfig\CategoryItem.cs" />
+    <Compile Include="components\BaseUserControl.cs" />
+    <Compile Include="components\IMSmyMark.cs" />
+    <Compile Include="components\IMSmyPolymericMark.cs" />
+    <Compile Include="components\ImyMark.cs" />
+    <Compile Include="components\ImyPolymericMark.cs" />
+    <Compile Include="components\MarkBase.cs" />
+    <Compile Include="components\MarkInfo.xaml.cs">
+      <DependentUpon>MarkInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="components\MarkLayer.cs" />
+    <Compile Include="components\myChartCtrl.xaml.cs">
+      <DependentUpon>myChartCtrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="components\PositionInfo.xaml.cs">
+      <DependentUpon>PositionInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\MaticData.cs" />
+    <Compile Include="Data\PolyData.cs" />
+    <Compile Include="Demo\BufferAnalyse.xaml.cs">
+      <DependentUpon>BufferAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\busChang.xaml.cs">
+      <DependentUpon>busChang.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\ClipAnalyse.xaml.cs">
+      <DependentUpon>ClipAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\DiffriendWindow.xaml.cs">
+      <DependentUpon>DiffriendWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\DrawGraphics.xaml.cs">
+      <DependentUpon>DrawGraphics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\EditableImage.cs" />
+    <Compile Include="Demo\FillStyle.xaml.cs">
+      <DependentUpon>FillStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\LineStyles.xaml.cs">
+      <DependentUpon>LineStyles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\MapCatalog.xaml.cs">
+      <DependentUpon>MapCatalog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\MapCommonControls.xaml.cs">
+      <DependentUpon>MapCommonControls.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\MapEagleEye.xaml.cs">
+      <DependentUpon>MapEagleEye.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\MapMagnifier.xaml.cs">
+      <DependentUpon>MapMagnifier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\MapMeasure.xaml.cs">
+      <DependentUpon>MapMeasure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\MapOperation.xaml.cs">
+      <DependentUpon>MapOperation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\MarkStyles.xaml.cs">
+      <DependentUpon>MarkStyles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\Military_Standard.xaml.cs">
+      <DependentUpon>Military_Standard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\NetAnalyse.xaml.cs">
+      <DependentUpon>NetAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\OverLayerAnalyse.xaml.cs">
+      <DependentUpon>OverLayerAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\PngEncoder.cs" />
+    <Compile Include="Demo\PolymericMarkDemo.xaml.cs">
+      <DependentUpon>PolymericMarkDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\QueryByBoth.xaml.cs">
+      <DependentUpon>QueryByBoth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\QueryByGeometry.xaml.cs">
+      <DependentUpon>QueryByGeometry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\QueryBySQl.xaml.cs">
+      <DependentUpon>QueryBySQl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\Show3DMap.xaml.cs">
+      <DependentUpon>Show3DMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\ShowDifferentMap.xaml.cs">
+      <DependentUpon>ShowDifferentMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\ShowOtherMap.xaml.cs">
+      <DependentUpon>ShowOtherMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\ShowStackMap.xaml.cs">
+      <DependentUpon>ShowStackMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\ShowTileLayer.xaml.cs">
+      <DependentUpon>ShowTileLayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\ShowVecterLayer.xaml.cs">
+      <DependentUpon>ShowVecterLayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\test01.xaml.cs">
+      <DependentUpon>test01.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\TheMaticDemo.xaml.cs">
+      <DependentUpon>TheMaticDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\TopAnalyse.xaml.cs">
+      <DependentUpon>TopAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\WebPrintDemo.xaml.cs">
+      <DependentUpon>WebPrintDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyControl\ChildWindow1.xaml.cs">
+      <DependentUpon>ChildWindow1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZDIMSDemo\Controls\BaseUserControl.cs" />
+    <Compile Include="ZDIMSDemo\Controls\BinClass.cs" />
+    <Compile Include="ZDIMSDemo\Controls\BufferAnalyse.xaml.cs">
+      <DependentUpon>BufferAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\BusAnalyse.xaml.cs">
+      <DependentUpon>BusAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Chart.xaml.cs">
+      <DependentUpon>Chart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\ClipAnalyse.xaml.cs">
+      <DependentUpon>ClipAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Comm\BusRoad.cs" />
+    <Compile Include="ZDIMSDemo\Controls\Comm\IFeatureStyleEditor.cs" />
+    <Compile Include="ZDIMSDemo\Controls\Comm\LineStyle.xaml.cs">
+      <DependentUpon>LineStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Comm\PointStyle.xaml.cs">
+      <DependentUpon>PointStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Comm\PolygonStyle.xaml.cs">
+      <DependentUpon>PolygonStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\FishEyeMenu\FishEyeMenuH.cs" />
+    <Compile Include="ZDIMSDemo\Controls\FishEyeMenu\FishEyeMenuV.cs" />
+    <Compile Include="ZDIMSDemo\Controls\FishEyeMenu\MainMenuFunEnum.cs" />
+    <Compile Include="ZDIMSDemo\Controls\FishEyeMenu\MapgisMainMenu.cs" />
+    <Compile Include="ZDIMSDemo\Controls\FishEyeMenu\MapgisToolSubMenu.cs" />
+    <Compile Include="ZDIMSDemo\Controls\FloatTreeView.xaml.cs">
+      <DependentUpon>FloatTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\GPSSample.xaml.cs">
+      <DependentUpon>GPSSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\IMSCatalog.cs" />
+    <Compile Include="ZDIMSDemo\Controls\LayerStateManager.cs" />
+    <Compile Include="ZDIMSDemo\Controls\Layer\LayerConditionInput.xaml.cs">
+      <DependentUpon>LayerConditionInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Layer\LayerDataViewer.xaml.cs">
+      <DependentUpon>LayerDataViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Layer\LayerDisplaySet.xaml.cs">
+      <DependentUpon>LayerDisplaySet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Layer\LayerEditor.xaml.cs">
+      <DependentUpon>LayerEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Layer\LayerTopAnalyse.xaml.cs">
+      <DependentUpon>LayerTopAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Layer\ToolbarByLayer.xaml.cs">
+      <DependentUpon>ToolbarByLayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Magnifier.cs" />
+    <Compile Include="ZDIMSDemo\Controls\MapDocDataViewerOld.xaml.cs">
+      <DependentUpon>MapDocDataViewerOld.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\MapDoc\ConditionInput.xaml.cs">
+      <DependentUpon>ConditionInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\MapDoc\DisplaySet.xaml.cs">
+      <DependentUpon>DisplaySet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\MapDoc\MapDocDataViewer.xaml.cs">
+      <DependentUpon>MapDocDataViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\MapDoc\MapDocEditor.xaml.cs">
+      <DependentUpon>MapDocEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\MapDoc\ToolbarByMapDoc.xaml.cs">
+      <DependentUpon>ToolbarByMapDoc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\MapDoc\TopAnalyse.xaml.cs">
+      <DependentUpon>TopAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\MarkerEditer.xaml.cs">
+      <DependentUpon>MarkerEditer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Measure.xaml.cs">
+      <DependentUpon>Measure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\MyProgressBar.xaml.cs">
+      <DependentUpon>MyProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\NavigationBar.xaml.cs">
+      <DependentUpon>NavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\NavigationPanel.cs" />
+    <Compile Include="ZDIMSDemo\Controls\NetAnalyse.xaml.cs">
+      <DependentUpon>NetAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\OverLayAnalyse.xaml.cs">
+      <DependentUpon>OverLayAnalyse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\PositionInfo.xaml.cs">
+      <DependentUpon>PositionInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Project.xaml.cs">
+      <DependentUpon>Project.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Scale.xaml.cs">
+      <DependentUpon>Scale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Shadow.xaml.cs">
+      <DependentUpon>Shadow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\Controls\Toolbar.xaml.cs">
+      <DependentUpon>Toolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\MyControl\NetWindow.xaml.cs">
+      <DependentUpon>NetWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ZDIMSDemo\MyControl\OverlayBySelectParam.cs" />
+    <Compile Include="ZDIMSDemo\MyControl\SlopePnt.cs" />
+    <Compile Include="ZDIMSDemo\MyControl\TrackPntInfo.cs" />
+    <Compile Include="ZDIMSDemo\MyControl\VectorLine.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="buscomponets\BusControl\BusAnalyse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="buscomponets\BusControl\setPlay.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="components\MarkInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="components\myChartCtrl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="components\PositionInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\BufferAnalyse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\busChang.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\ClipAnalyse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\DiffriendWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\DrawGraphics.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\FillStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\LineStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\MapCatalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\MapCommonControls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\MapEagleEye.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\MapMagnifier.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\MapMeasure.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\MapOperation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\MarkStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\Military_Standard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\NetAnalyse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\OverLayerAnalyse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\PolymericMarkDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\QueryByBoth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\QueryByGeometry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\QueryBySQl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\Show3DMap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\ShowDifferentMap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\ShowOtherMap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\ShowStackMap.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\ShowTileLayer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\ShowVecterLayer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Demo\test01.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\TheMaticDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\TopAnalyse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\WebPrintDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MyControl\ChildWindow1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\BufferAnalyse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\BusAnalyse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Chart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\ClipAnalyse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Comm\LineStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Comm\PointStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Comm\PolygonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\FloatTreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\GPSSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Layer\LayerConditionInput.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Layer\LayerDataViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Layer\LayerDisplaySet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Layer\LayerEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Layer\LayerTopAnalyse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Layer\ToolbarByLayer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\MapDocDataViewerOld.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\MapDoc\ConditionInput.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\MapDoc\DisplaySet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\MapDoc\MapDocDataViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\MapDoc\MapDocEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\MapDoc\ToolbarByMapDoc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\MapDoc\TopAnalyse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\MarkerEditer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Measure.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\MyProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\NavigationBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\NetAnalyse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\OverLayAnalyse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\PositionInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Project.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Scale.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Shadow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Controls\Toolbar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\MyControl\NetWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ZDIMSDemo\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\image4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\image5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\image6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\image7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Anlysis\btn_17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Anlysis\btn_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Anlysis\btn_19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Anlysis\btn_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Anlysis\btn_21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Anlysis\btn_22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Anlysis\btn_23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Display\btn_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Display\btn_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Display\btn_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Display\btn_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Display\btn_05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Display\btn_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Display\p8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Display\tool_6.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Display\tool_7.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Edit\tool_21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Edit\tool_22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Edit\tool_23.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Select\btn_06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Select\btn_07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Select\btn_08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Select\btn_09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Select\btn_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Select\btn_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Select\btn_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Select\btn_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Select\btn_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Select\btn_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\Select\btn_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\View\btn_21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\View\btn_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\View\btn_28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\View\btn_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\Controls\FishEyeMenu\images\widget\View\btn_33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\alert_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\button_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\button_go_click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\button_go_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\do_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\do_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\do_modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\do_refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\do_split.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\globe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\image3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\image4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\image5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\image6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\image7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\layer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\leftHide_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\leftShow_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\leftTitle_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\loading.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\navigator\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\navigator\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\navigator\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\navigator\m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\navigator\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\navigator\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\navigator\sub.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\navigator\T.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\navigator\up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\rightTitle_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\top_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\topmenu_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Anlysis\23圆裁剪.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Anlysis\24多边形裁剪.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Anlysis\25拓扑分析.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Anlysis\26叠加分析.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Anlysis\27路径分析.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Anlysis\28线缓冲区分析.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Anlysis\29区缓冲分析.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Anlysis\30投影分析.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Anlysis\31公交换乘.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Anlysis\32网络分析.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Display\1放大.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Display\2缩小.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Display\3移动.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Display\4复位.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Display\5刷新.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Display\6鹰眼.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Display\7放大镜.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Display\8标注.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Edit\20添加点要素.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Edit\21添加线要素.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Edit\22添加区要素.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\MainMenu\Anlysis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\MainMenu\DataTree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\MainMenu\Display.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\MainMenu\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\MainMenu\Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\MainMenu\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Select\10拉框查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Select\11画圆查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Select\12画线查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Select\13多边形查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Select\14属性条件查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Select\15点击条件查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Select\16拉框条件查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Select\17画圆条件查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Select\18画线条件查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Select\19多边形条件查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\Select\9点击查询.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\View\33导航控件.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\View\35位置信息.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\View\41显示设置.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\View\42测量.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\widget\View\43GPS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\点.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\区.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ZDIMSDemo\images\线.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\myData.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

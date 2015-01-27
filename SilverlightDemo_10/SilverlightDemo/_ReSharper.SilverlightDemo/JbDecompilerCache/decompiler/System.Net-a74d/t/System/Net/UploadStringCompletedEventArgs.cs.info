@@ -1,0 +1,8 @@
+﻿Code version: 6.1.1000.82
+Assembly name System.Net, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e mvid {2152c797-8217-430d-805b-c5647d0959b8}
+* ref mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  mvid {7458c81d-65bf-423c-8b4e-4347ed7d5a41}
+* ref System, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  mvid {065f30c5-180f-479c-86b6-2c460a204b6d}
+* ref System.Core, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e
+  mvid {73d50042-b993-41cf-abad-eff6e48c44bf}

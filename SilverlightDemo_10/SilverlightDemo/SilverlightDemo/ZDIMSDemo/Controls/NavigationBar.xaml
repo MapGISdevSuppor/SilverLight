@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="ZDIMSDemo.Controls.NavigationBar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="100" Loaded="UserControl_Loaded" Opacity="1">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent" Height="300" Width="100" Opacity="1">
+        <Image HorizontalAlignment="Left" Cursor="Hand" Margin="12,0,0,0" Name="image_up" Stretch="None" VerticalAlignment="Top"  Source="../images/navigator/up.png" MouseLeftButtonDown="image_up_MouseLeftButtonDown" />
+        <Image HorizontalAlignment="Left" Cursor="Hand" Margin="12,37,0,0" Name="image_down" Stretch="None" VerticalAlignment="Top" Source="../images/navigator/down.png" MouseLeftButtonDown="image_down_MouseLeftButtonDown" />
+        <Image Margin="0,21,68,0" Cursor="Hand" Name="image_left" Stretch="None" VerticalAlignment="Top" Source="../images/navigator/left.png" HorizontalAlignment="Right" MouseLeftButtonDown="image_left_MouseLeftButtonDown" />
+        <Image HorizontalAlignment="Right" Cursor="Hand" Margin="0,21,31,0" Name="image_right" Stretch="None" VerticalAlignment="Top" Source="../images/navigator/right.png" MouseLeftButtonDown="image_right_MouseLeftButtonDown" />
+        <Image HorizontalAlignment="Right" Cursor="Hand" Margin="0,21,51,0" Name="image_restore" Source="../images/navigator/refresh.png" Stretch="None" VerticalAlignment="Top" MouseLeftButtonDown="image_restore_MouseLeftButtonDown" />
+        <Image HorizontalAlignment="Right" Cursor="Hand" Margin="0,64,51,0" Name="image_zoomin" Source="../images/navigator/add.png" Stretch="None" VerticalAlignment="Top" MouseLeftButtonDown="image_zoomin_MouseLeftButtonDown" />
+        <Image HorizontalAlignment="Right" Cursor="Hand" Margin="0,239,51,0" Name="image_zoomout" Source="../images/navigator/sub.png" Stretch="None" VerticalAlignment="Top" MouseLeftButtonDown="image_zoomout_MouseLeftButtonDown" />
+        <Slider Height="146" HorizontalAlignment="Left" Margin="24,0,0,67" Name="slider1" VerticalAlignment="Bottom" Width="32" Orientation="Vertical" SmallChange="1" Cursor="Hand" ValueChanged="slider1_ValueChanged" />
+    </Grid>
+</UserControl>

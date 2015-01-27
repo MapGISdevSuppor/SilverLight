@@ -1,0 +1,46 @@
+﻿<navigation:Page x:Class="SilverlightDemo.QueryBySQl" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           Title="条件查询"
+           xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:my="clr-namespace:ZDIMS.Map;assembly=ZDIMS1.0" xmlns:my1="clr-namespace:ZDIMS.OtherMap;assembly=ZDIMS1.0" xmlns:my2="clr-namespace:ZDIMS.Drawing;assembly=ZDIMS1.0"
+           Loaded="UserControl_Loaded"  Unloaded="ClearRemove"   >
+    <Grid x:Name="LayoutRoot" Background="White">
+        <!--添加地图容器-->
+        <my:IMSMap  HorizontalAlignment="Left" Margin="0" Name="iMSMap1" InitShowLevel="3" LevelNum="8" EnableZoomOutMinLevel="False" RestoreCenterX="12.99919517012924" RestoreCenterY="30.671057152220655" VerticalAlignment="Top"  >
+            <!--基于K9系列平台添加瓦片数据-->
+            <!--<my:TileLayer  HdfName="world.hdf" AutoGetMapInfo="True" Name="tileLayer1"></my:TileLayer>-->
+            <!--添加瓦片图层-->
+            <my:TileLayer  HdfName="world" Name="tileLayer1" AutoGetMapInfo="True"></my:TileLayer>
+            <!--添加矢量图层-->
+            <my:VectorLayer  Display="False"  Name="vectorLayer" >
+                <my:GDBItem  Name="gdb" GDBName="平台基础示例数据" GDBServerName="MapGISLocal">
+                    <my:LayerItem Name="layer" LayerName="世界政区" LayerType="SFeatureCls">
+                    </my:LayerItem>
+                </my:GDBItem>
+            </my:VectorLayer>
+            <my2:GraphicsLayer Name="graphicsLayer1">
+            </my2:GraphicsLayer>
+            <my2:GraphicsLayer Name="graphicsLayer">
+            </my2:GraphicsLayer>
+          
+        </my:IMSMap>
+        <Canvas x:Name="ResultsDisplayCanvas"  HorizontalAlignment="Left" VerticalAlignment="Top"  Canvas.Left="2" Canvas.Top="5" Width="200" Height="150" Canvas.ZIndex="10000" >
+            <Rectangle Stroke="Gray"  RadiusX="10" RadiusY="10" Fill="#77919191" Canvas.Left="0" Canvas.Top="0" Margin="0" Width="200" Height="150" >
+                <Rectangle.Effect>
+                    <DropShadowEffect/>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Fill="#FFFFFFFF" Stroke="DarkGray" RadiusX="5" RadiusY="5" Canvas.Left="10" Canvas.Top="15" Width="180" Height="125"   />
+            <sdk:Label Canvas.Left="12" Canvas.Top="53" Height="23" Name="label1" Width="53" Content="查询条件:"/>
+            <sdk:Label Canvas.Left="12" Canvas.Top="24" Height="23" Name="label2" Width="174" Content="查询图层:世界政区" />
+            <CheckBox   Name="HightLight" Canvas.Left="12" Canvas.Top="86"  Content="高亮显示结果"/>
+            <TextBox Canvas.Left="66" Canvas.Top="53" Height="23" Name="sql"  Text="name like '中华%'"  Width="120" />
+            <Button Canvas.Left="23" Canvas.Top="109" Content="查询" Height="23" Click="select_Click" Name="select"  Width="42" />
+            <Button Canvas.Left="113" Canvas.Top="109" Content="清除结果" Height="23" Click="clear_Click" Name="clear"  Width="49" />
+        </Canvas>
+    </Grid>
+</navigation:Page>

@@ -1,0 +1,79 @@
+﻿<navigation:Page x:Class="SilverlightDemo.WebPrintDemo" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+           xmlns:my="clr-namespace:ZDIMS.Map;assembly=ZDIMS1.0" xmlns:my1="clr-namespace:ZdimsExtends.WebPrint.Frame;assembly=ZdimsExtends" xmlns:my2="clr-namespace:ZdimsExtends.util;assembly=ZdimsExtends"
+           xmlns:my3="clr-namespace:ZDIMS.Drawing;assembly=ZDIMS1.0"
+           Title="地图打印" Loaded="UserControl_Loaded">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220" />
+            <ColumnDefinition Width="380*" />
+        </Grid.ColumnDefinitions>
+        <Grid Background="White" Name="container"  Grid.Column="1">
+            <my1:editFrame  x:Name="Frame" />
+            <!--添加地图容器-->
+            <my:IMSMap  OperType="None" HorizontalAlignment="Left"   EnableZoomOutMinLevel="False"   XMaxMap="188.619962766591" XMinMap="-181.18399779022" YMaxMap="279.069894232288" YMinMap="-90.7340663245236" Background="White"  Name="iMSMap1" InitShowLevel="2"  LevelNum="8" RestoreCenterX="-32.21" RestoreCenterY="1.06" Loaded="iMSMap1_Loaded"  >
+                <!--基于K9系列平台添加瓦片数据-->
+                <!--<my:TileLayer  HdfName="world.hdf" AutoGetMapInfo="True" Name="tileLayer1"></my:TileLayer>-->
+                <!--添加瓦片图-->
+                <my:TileLayer   Name="tileLayer1" AutoGetMapInfo="True" HdfName="world"   />
+                <!--添加标注图层-->
+                <my3:MarkLayer Name="markLayer" />
+                <!--添加绘图层-->
+                <my3:GraphicsLayer Name="graphicesLaye"  />
+            </my:IMSMap>
+            <!--添加自定义控件，缩放控件大小-->
+            <my2:Adorner x:Name="adorn" Canvas.ZIndex="100000"></my2:Adorner>
+        </Grid>
+        <Canvas Grid.Column="0"   VerticalAlignment="Top" Width="220"  HorizontalAlignment="Left" Height="500">
+            <sdk:TabControl  Height="500" Margin="0"  Width="220" Name="tabControl1" >
+                <sdk:TabItem Header="输出设置" Name="set" Width="110"  >
+                    <Grid Margin="0" Height="500" >
+                        <Button Content="添加点" Height="24"   Margin="1,6,92,470" Name="AddPnt"  Click="AddPnt_Click"  />
+                        <Image Source="/images/style/pnt.png" Name="image6" Margin="8,8,176,470" Stretch="Fill" Height="20" Width="21"  />
+                        <Button Content="添加线" Height="24"  Margin="1,36,92,370" Name="AddLine" VerticalAlignment="Top" Click="AddLine_Click" />
+                        <Image Source="/images/style/line.png" Name="image7" Margin="8,37,180,440" Stretch="Fill" Height="20" Width="21"  />
+                        <Button Content="添加区" Height="24" HorizontalAlignment="Left" Margin="1,66,92,340" Name="AddPolygon" VerticalAlignment="Top"   Click="AddPolygon_Click" Width="115" />
+                        <Image Source="/images/style/polygon.png" Name="image8" Margin="8,68,178,410" Stretch="Fill" Height="20" Width="21"  />
+                        <Button Content="       添加比例尺" FontSize="12" Height="24" FontStretch="Normal" Name="ScaleCol" Click="AddScale_Click" Margin="1,96,92,380" ></Button>
+                        <Image Source="/images/print/blc.png" Name="image3" Margin="8,101,178,379" Stretch="Fill" Height="20" Width="21"  />
+                        <Button Content="       添加指北针" Height="24"  Margin="1,128,92,348" Name="addCompass"  Click="addCompass1"  />
+                        <Image Source="/images/print/zbz.png" Stretch="Fill" Height="20" Width="21" Margin="8,131,179,0" VerticalAlignment="Top"></Image>
+                        <Button Content="    添加文本" Height="24"  Margin="1,158,90,318" Name="addText" Click="addText_Click"  />
+                        <Image Source="/images/print/wb.png" Stretch="Fill" Height="20" Width="21" Margin="8,161,178,319" ></Image>
+                        <Button Content="           添加图片         " Height="24" HorizontalAlignment="Left" Margin="1,190,0,286" Name="addImage" Click="addImage_Click" Width="116" />
+                        <Image Source="/images/print/tp.png" Stretch="Fill" Height="20" Width="21" Margin="8,193,178,287"></Image>
+                        <Button Content="    添加图框" Height="24"  Margin="1,222,90,254" Name="addFrame"  Click="addFrame_Click"  />
+                        <Image Source="/images/print/tk.png" Stretch="Fill" Height="20" Width="21" Margin="8,225,178,255" ></Image>
+                        <Button Content="    删除图框" Height="24"  Margin="1,256,90,220" Name="delFrame"  Click="delFrame_Click"  />
+                        <Image Source="/images/print/tk.png" Stretch="Fill" Height="20" Width="21" Margin="8,259,178,221" ></Image>
+                    </Grid>
+                </sdk:TabItem>
+                <sdk:TabItem Header="打印设置" Name="print"  Width="100">
+                    <Grid Margin="0" >
+                        <Button Content="打印预览"  Height="23" HorizontalAlignment="Left" Name="button6"  Width="75" Click="printview" Margin="70,416,0,24" />
+                        <Button Content="保存图片" Height="23" Name="saveImg" Click="saveImg_Click" Margin="70,374,63,59"></Button>
+                        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="11,11,0,0" Name="label1" VerticalAlignment="Top" Width="120" Content="调整打印框位置:" />
+                        <sdk:Label Height="25" HorizontalAlignment="Left" Margin="22,41,0,0" Name="label2" VerticalAlignment="Top" Width="63" Content="x:" />
+                        <sdk:Label Height="28" HorizontalAlignment="Left" Margin="22,91,0,0" Name="label3" VerticalAlignment="Top" Width="63" Content="y:" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="62,43,0,0" Name="XPos" VerticalAlignment="Top" Width="120" Text="0" TextChanged="TextChanged" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="62,87,0,0" Name="YPos" VerticalAlignment="Top" Width="120" Text="0" TextChanged="TextChanged" />
+                        <Button Content="设置" Height="23" HorizontalAlignment="Left" Click="SetPos_Click" Margin="70,151,0,0" Name="SetPos" VerticalAlignment="Top" Width="75"  />
+                        <sdk:Label Content="调整打印框大小:" Height="28" HorizontalAlignment="Left" Margin="14,194,0,0" Name="label4" VerticalAlignment="Top" Width="120" />
+                        <sdk:Label Content="高:" Height="25" HorizontalAlignment="Left" Margin="26,224,0,0" Name="label5" VerticalAlignment="Top" Width="63" />
+                        <sdk:Label Content="宽:" Height="28" HorizontalAlignment="Left" Margin="26,274,0,0" Name="label6" VerticalAlignment="Top" Width="63" />
+                        <TextBox Height="23"  HorizontalAlignment="Left" Margin="66,226,0,0" Name="H" Text="500" VerticalAlignment="Top" Width="120" TextChanged="TextChanged" />
+                        <TextBox Height="23" HorizontalAlignment="Left" Margin="66,270,0,0" Name="W" Text="800" VerticalAlignment="Top" Width="120" TextChanged="TextChanged" />
+                        <Button Content="设置" Height="23" HorizontalAlignment="Left" Margin="70,308,0,0" Name="SetSize" Click="SetSize_Click" VerticalAlignment="Top" Width="75" />
+                        <Button Content="打印" Height="23" HorizontalAlignment="Left" Margin="70,343,0,0" Click="PrintClick_Click" Name="PrintClick" VerticalAlignment="Top" Width="75" />
+                    </Grid>
+                </sdk:TabItem>
+            </sdk:TabControl>
+        </Canvas>
+    </Grid>
+</navigation:Page>

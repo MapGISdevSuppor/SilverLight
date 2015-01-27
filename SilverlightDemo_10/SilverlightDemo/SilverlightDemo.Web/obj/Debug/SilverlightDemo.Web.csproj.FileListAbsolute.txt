@@ -1,0 +1,29 @@
+E:\Silverlight\SilverlightDemo\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.dll
+E:\Silverlight\SilverlightDemo\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.pdb
+E:\Silverlight\SilverlightDemo\SilverlightDemo\SilverlightDemo.Web\obj\Debug\ResolveAssemblyReference.cache
+E:\Silverlight\SilverlightDemo\SilverlightDemo\SilverlightDemo.Web\obj\Debug\SilverlightDemo.Web.dll
+E:\Silverlight\SilverlightDemo\SilverlightDemo\SilverlightDemo.Web\obj\Debug\SilverlightDemo.Web.pdb
+C:\Users\ZL\Desktop\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.dll
+C:\Users\ZL\Desktop\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.pdb
+C:\Users\ZL\Desktop\SilverlightDemo\SilverlightDemo.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ZL\Desktop\SilverlightDemo\SilverlightDemo.Web\obj\Debug\SilverlightDemo.Web.dll
+C:\Users\ZL\Desktop\SilverlightDemo\SilverlightDemo.Web\obj\Debug\SilverlightDemo.Web.pdb
+E:\Silverlight\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.dll
+E:\Silverlight\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.pdb
+E:\Silverlight\SilverlightDemo\SilverlightDemo.Web\obj\Debug\ResolveAssemblyReference.cache
+E:\Silverlight\SilverlightDemo\SilverlightDemo.Web\obj\Debug\SilverlightDemo.Web.dll
+E:\Silverlight\SilverlightDemo\SilverlightDemo.Web\obj\Debug\SilverlightDemo.Web.pdb
+E:\WorkSpaceForSilverlight\Silverlight\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.dll
+E:\WorkSpaceForSilverlight\Silverlight\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.pdb
+E:\WorkSpaceForSilverlight\Silverlight\SilverlightDemo\SilverlightDemo.Web\obj\Debug\ResolveAssemblyReference.cache
+E:\WorkSpaceForSilverlight\Silverlight\SilverlightDemo\SilverlightDemo.Web\obj\Debug\SilverlightDemo.Web.dll
+E:\WorkSpaceForSilverlight\Silverlight\SilverlightDemo\SilverlightDemo.Web\obj\Debug\SilverlightDemo.Web.pdb
+E:\4-Demo\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.dll
+E:\4-Demo\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.pdb
+E:\4-Demo\SilverlightDemo\SilverlightDemo.Web\obj\Debug\ResolveAssemblyReference.cache
+E:\4-Demo\SilverlightDemo\SilverlightDemo.Web\obj\Debug\SilverlightDemo.Web.dll
+E:\4-Demo\SilverlightDemo\SilverlightDemo.Web\obj\Debug\SilverlightDemo.Web.pdb
+E:\WorkSpaceForSilverlight\MapGIS 10 space\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.dll
+E:\WorkSpaceForSilverlight\MapGIS 10 space\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.pdb
+E:\WorkSpaceForSilverlight\MapGIS 10 space\SilverlightDemo\SilverlightDemo.Web\obj\Debug\SilverlightDemo.Web.dll
+E:\WorkSpaceForSilverlight\MapGIS 10 space\SilverlightDemo\SilverlightDemo.Web\obj\Debug\SilverlightDemo.Web.pdb

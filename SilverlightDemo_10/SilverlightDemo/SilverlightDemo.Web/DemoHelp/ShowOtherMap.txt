@@ -1,0 +1,43 @@
+﻿显示第三方网络地图: 
+
+一、示例功能： 
+
+    该示例实现第三方网络地图的加载显示，如google地图、微软必应地图与雅虎地图。其中，通过对话框交互，控制不同类型的google地图显示。 
+
+二、实现说明： 
+
+    1、数据：使用第三方网络地图，确保网络畅通。
+
+    2、实现步骤： 
+
+   （1）先在设计面板中拖入一个地图容器控件（IMSMap）； 
+
+   （2）再在地图容器中分别拖入google地图图层控件（GoogleTileLayer）、bing地图图层控件（BingTileLayer）、雅虎地图图层控件（YahooTileLayer），并设置相应参数； 
+
+   （3）分别加载三个地图图层的控制按钮，通过click事件设置图层的display属性，控制地图的显示； 
+
+    3、参数说明
+
+    IMSMap参数：
+ 
+       LevelNum：地图总级数 
+
+       InitShowLevel：地图初始显示级别 
+ 
+       XMaxMap，XMinMap，YMaxMap，YMinMap：加载地图的逻辑范围 
+
+    TileLayer参数：
+ 
+       StartLevel：MapGIS 瓦片数据第0级在第三方地图的级数
+
+       OriginalRow：MapGIS 瓦片数据第0级在第三方地图的行号 
+
+       OriginalColumn：MapGIS 瓦片数据第0级在第三方地图的列号
+
+       ViewBeginLevel：瓦片数据开始显示级数
+
+       ViewEndLevel：瓦片数据结束显示级数
+
+       Display：图层是否显示标志
+
+注：详细说明请参见MapGIS IGServer for Silverlight的API手册。

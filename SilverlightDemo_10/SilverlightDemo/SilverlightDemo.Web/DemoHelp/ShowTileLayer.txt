@@ -1,0 +1,36 @@
+﻿显示瓦片地图:
+一、示例功能： 
+
+    该示例实现一个简单的瓦片图加载功能，显示世界地图。
+
+二、实现说明： 
+
+    1、数据：使用世界地图的瓦片数据（world.HDF），已在GIS服务器中发布。 
+
+    2、实现步骤： 
+
+   （1）先在设计面板中拖入一个地图容器控件（IMSMap）； 
+
+   （2）再在地图容器中拖入一个瓦片图层控件（TileLayer），设置相应参数，加载世界地图。 
+
+    3、参数说明
+
+    IMSMap参数：
+ 
+       LevelNum：地图总级数 
+
+       InitShowLevel：地图初始显示级别 
+
+       EnableZoomOutMinLevel：是否允许地图放缩至最小级数 
+
+       RestoreCenterX，RestoreCenterY：复位时的中心点x、y轴坐标 
+
+       XMaxMap,XMinMap,YMaxMap,YMinMap：地图的逻辑范围
+
+    TileLayer参数：
+ 
+       HdfName：要加载的瓦片数据名称 
+
+       ServerAddress：要加载的瓦片数据服务地址(本示例在页面加载的时候赋值) 
+
+注：详细说明请参见MapGIS IGServer for Silverlight的API手册。

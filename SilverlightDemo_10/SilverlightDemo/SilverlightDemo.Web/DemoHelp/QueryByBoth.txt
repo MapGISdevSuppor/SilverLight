@@ -1,0 +1,42 @@
+﻿几何属性查询功能: 
+
+
+一、示例功能： 
+
+
+    几何属性查询示例图层要素。 
+
+
+二、实现说明： 
+
+
+    1、数据：使用世界地图的瓦片数据（world.HDF），已在GIS服务器中发布，查询图层名称（世界政区）。 
+
+    2、实现步骤： 
+
+   （1）先在设计面板中拖入一个地图容器控件（IMSMap）； 
+
+   （2）在地图容器中拖入一个瓦片图层控件（TileLayer），设置相应参数，加载世界地图； 
+
+   （3）在地图容器中拖入矢量图层相关控件（VectorLayer、GDBItem、LayerItem），设置相应参数，加载世界政区图层； 
+
+   （4）设置要查询的图层状态为可编辑或可查询状态（CSetEnumLayerStatus）； 
+
+   （5）设置web查询相关参数：几何范围、属性查询条件，调用查询方法，查询要素； 
+
+   （6）根据web查询参数，使用高亮显示对象（drawHighLight），高亮显示结果。 
+
+    3、相关对象说明
+
+    CSetEnumLayerStatus：图层状态更新对象
+
+    CWebSelectParam：Web查询参数传入对象
+
+    CLayerSelectParam：矢量图层web查询参数设置对象
+
+    VectorLayer示例图层对象中相关方法： 
+
+
+       LayerSelectAndGetAtt：查询要素属性方法 
+
+       OnLayerSelectAndGetAtt：获取查询结果 

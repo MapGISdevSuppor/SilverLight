@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<NewDataSet>
+  <places>
+    <PlaceName>温哥华</PlaceName>
+    <X>-122.995850187958</X>
+    <Y>49.31925247766244</Y>
+  </places>
+  <places>
+    <PlaceName>华盛顿</PlaceName>
+    <X>-76.96333753185513</X>
+    <Y>38.94447278589375</Y>
+  </places>
+  <places>
+    <PlaceName>巴西利亚</PlaceName>
+    <X>-47.93359120189035</X>
+    <Y>-15.786919655279648</Y>
+  </places>
+  <places>
+    <PlaceName>巴马科</PlaceName>
+    <X>-8.007674098072965</X>
+    <Y>12.672907851195195</Y>
+  </places>
+  <places>
+    <PlaceName>莫斯科</PlaceName>
+    <X>37.695301337318895</X>
+    <Y>55.79601312718498</Y>
+  </places>
+</NewDataSet>

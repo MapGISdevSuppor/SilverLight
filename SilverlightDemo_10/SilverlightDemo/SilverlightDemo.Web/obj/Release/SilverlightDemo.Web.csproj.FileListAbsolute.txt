@@ -1,0 +1,5 @@
+E:\WorkSpaceForSilverlight\Silverlight\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.dll
+E:\WorkSpaceForSilverlight\Silverlight\SilverlightDemo\SilverlightDemo.Web\bin\SilverlightDemo.Web.pdb
+E:\WorkSpaceForSilverlight\Silverlight\SilverlightDemo\SilverlightDemo.Web\obj\Release\ResolveAssemblyReference.cache
+E:\WorkSpaceForSilverlight\Silverlight\SilverlightDemo\SilverlightDemo.Web\obj\Release\SilverlightDemo.Web.dll
+E:\WorkSpaceForSilverlight\Silverlight\SilverlightDemo\SilverlightDemo.Web\obj\Release\SilverlightDemo.Web.pdb

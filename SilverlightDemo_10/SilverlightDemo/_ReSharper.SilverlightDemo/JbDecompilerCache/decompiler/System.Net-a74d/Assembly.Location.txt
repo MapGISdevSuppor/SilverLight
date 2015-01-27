@@ -1,0 +1,1 @@
+﻿C:\Program Files\Reference Assemblies\Microsoft\Framework\Silverlight\v4.0\System.Net.dll

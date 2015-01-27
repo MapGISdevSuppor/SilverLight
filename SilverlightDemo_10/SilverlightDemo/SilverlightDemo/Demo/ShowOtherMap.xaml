@@ -1,0 +1,28 @@
+﻿<navigation:Page x:Class="SilverlightDemo.ShowOtherMap" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:my="clr-namespace:ZDIMS.OtherMap;assembly=ZDIMS1.0"
+           Title="第三方地图"
+           xmlns:my1="clr-namespace:ZDIMS.Map;assembly=ZDIMS1.0"
+           Loaded="UserControl_Loaded"     >
+    <Grid x:Name="LayoutRoot">
+    <my1:IMSMap  HorizontalAlignment="Left"  Margin="0,0,0,0" LevelNum="20" InitShowLevel="0" Name="iMSMap1"  VerticalAlignment="Top"  EnableAnimate="False">
+            <!--雅虎地图-->
+            <my:YahooTileLayer  HorizontalAlignment="Left" StartDataLvl="7" ViewBeginLevel="0" Visibility="Collapsed" ViewEndLevel="18" OriginalRow="52" OriginalColumn="104" VerticalAlignment="Top" Name="yahooTile" IsDisTileNetErrInfo="False" />
+            <!--微软必应地图-->
+            <my:BingTileLayer HorizontalAlignment="Left" StartDataLvl="7" Visibility="Collapsed" ViewBeginLevel="0" ViewEndLevel="17" OriginalRow="52" OriginalColumn="104" Name="bingTile" VerticalAlignment="Top" IsDisTileNetErrInfo="False"  />
+            <!--谷歌地图-->
+            <my:GoogleTileLayer Canvas.Left="0" Canvas.Top="0" StartDataLvl="7" OriginalRow="52" OriginalColumn="104"  
+                                Name="googleTile"  ViewBeginLevel="0" ViewEndLevel="22" GlLayerType="BasicMap" IsDisTileNetErrInfo="False" />
+        </my1:IMSMap>
+        <Canvas Background="#516A81"  Width="360"  Opacity="0.8" Height="40"  Name="omap"  OpacityMask="Black" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top">  
+            <Image Canvas.Left="20" Cursor="Hand" Canvas.Top="0"  Name="yahooBtn" Stretch="Fill"  Source="/images/yahoo.png" MouseLeftButtonUp="yahooBtn_MouseLeftButtonUp" />
+            <Image Canvas.Left="150" Canvas.Top="0"  Cursor="Hand" Name="bingBtn" Stretch="Fill"  Source="/images/bing.png" MouseLeftButtonUp="bingBtn_MouseLeftButtonUp"/>
+            <Image Canvas.Left="280" Canvas.Top="0" Cursor="Hand"  Name="googleBtn" Stretch="Fill"  Source="/images/google.png" MouseLeftButtonUp="googleBtn_MouseLeftButtonUp"/>
+        </Canvas>
+    </Grid>
+</navigation:Page>

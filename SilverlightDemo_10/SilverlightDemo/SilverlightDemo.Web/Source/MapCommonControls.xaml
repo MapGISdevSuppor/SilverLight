@@ -1,0 +1,27 @@
+﻿<navigation:Page x:Class="SilverlightDemo.MapCommonControls" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:my1="clr-namespace:ZDIMSDemo.Controls"
+           xmlns:my="clr-namespace:ZDIMS.Map;assembly=ZDIMS1.0"
+           Title="常用控件"
+           Loaded="UserControl_Loaded">
+    <Grid x:Name="LayoutRoot">
+        <my:IMSMap HorizontalAlignment="Left" Margin="0,0,0,0"  
+                   InitShowLevel="3"  LevelNum="8"   Name="iMSMap1"  EnableZoomOutMinLevel="False"
+                    VerticalAlignment="Top" XMaxMap="188.619962766591" XMinMap="-181.18399779022" YMaxMap="279.069894232288" YMinMap="-90.7340663245236" 
+                   RestoreCenterX="3.72" RestoreCenterY="-10.17">
+            <!--基于K9系列平台添加瓦片数据-->
+            <!--<my:TileLayer  HdfName="world.hdf" AutoGetMapInfo="True" Name="tileLayer1"></my:TileLayer>-->
+            
+            <!--显示瓦片地图-->
+            <my:TileLayer Canvas.Left="0" Canvas.Top="0" Name="tileLayer1" 
+                          AutoGetMapInfo="True" HdfName="world"  />
+                <my:IMSEagleEye   EagleLocation="BottomRight"  Name="iMSEagleEye1"   >
+                </my:IMSEagleEye>
+        </my:IMSMap>
+    </Grid>
+</navigation:Page>

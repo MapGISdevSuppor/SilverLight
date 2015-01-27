@@ -1,0 +1,37 @@
+﻿显示三维景观地图: 
+
+一、示例功能： 
+
+    该示例基于瓦片图层，实现一个三维景观地图加载功能。 
+
+二、实现说明： 
+
+    1、数据：使用三维景观示例数据（Wh3D.HDF），已在GIS服务器中发布。
+
+    2、实现步骤： 
+
+   （1）先在设计面板中拖入一个地图容器控件（IMSMap）； 
+
+   （2）再在地图容器中拖入一个瓦片图层控件（TileLayer），设置相应参数，加载已发布的三维景观地图。 
+
+    3、参数说明
+
+    IMSMap参数： 
+
+       LevelNum：地图总级数 
+
+       InitShowLevel：地图初始显示级别 
+
+       EnableZoomOutMinLevel：是否允许地图放缩至最小级数 
+
+       XMaxMap，XMinMap，YMaxMap，YMinMap：加载地图的逻辑范围
+ 
+    TileLayer参数： 
+
+       HdfName：要加载的瓦片数据名称 
+
+       ServerAddress：要加载的瓦片数据服务地址(本示例在页面加载的时候赋值)  
+
+       DataVersion：瓦片数据版本（由文件系统转成的瓦片数据版本为0，裁图时采用了优化策略的瓦片数据为2，其它为1）
+
+注：详细说明请参见MapGIS IGServer for Silverlight的API手册。

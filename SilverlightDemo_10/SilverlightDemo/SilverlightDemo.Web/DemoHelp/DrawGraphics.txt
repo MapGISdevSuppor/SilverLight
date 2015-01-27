@@ -1,0 +1,66 @@
+﻿绘图示例: 
+
+
+一、示例功能： 
+
+
+    该示例实现客户端徒手绘图功能。 
+
+
+二、实现说明： 
+
+
+    1、使用Silverlight二次开发库中提供的GraphicsLayer绘图层以及相关几何绘图对象实现绘图功能。 
+
+    2、实现步骤： 
+
+   绘制几何对象：
+
+   （1）先在设计面板中拖入一个绘图层控件（GraphicsLayer）； 
+
+   （2）设置绘图层控件的鼠标绘制类型属性（DrawingType），例如：DrawingType.Polygon； 
+
+   （3）添加绘图层控件的绘制结束事件（DrawingOverCallback）； 
+
+   （4）在自定义绘制结束事件中创建对应的几何对象，传入坐标点，将对象添加到绘图层控件。 
+
+   绘制自由线、自由面： 自定义自由绘制对象freeDrawing，实现自由面、自由线以及扩展的点、线、面样式对象的绘制
+
+   （1）初始化一个扩展绘图对象（freeDrawing）； 
+
+   （2）设置扩展绘图对象（freeDrawing）的绘图类型（FreeHanderType.FreeLine、FreeHanderType.PreMarkStyle（点样式）等类型）； 
+
+   （3）监听扩展绘图对象（freeDrawing）的绘制结束事件，在事件中获取坐标，定义对应的几何对象添加到绘图层中； 
+
+    3、参数说明
+
+    GraphicsLayer绘图层参数： 
+
+       DrawingType：绘图类型 
+
+       DrawingOverCallback：鼠标随手图形绘制结束的回调 
+
+       AddGraphics：添加图形到绘图层方法 
+
+    4、基础几何绘图对象，在MapGIS IGServer Flex二次开发基础库（zdims4.0.swc）中。 
+
+      IMSBeeline：简单线(直线) 
+
+      IMSCircle：圆图形 
+
+      IMSPolygon：多边形 
+
+      IMSPolyline：折线 
+
+      IMSRectangle：矩形 
+
+    5、扩展自定义点、线、面对象
+
+     IMSSimpleMarkerSymbol：预定义点样式对象；
+
+     IMSSimpleFillStyle：矢量位图填充多边形绘图样式 ；
+
+     IMSPredefinedLineStyle：扩展线样式对象。 
+
+
+注：详细说明请参见MapGIS IGServer for Silverlight的API手册。 
